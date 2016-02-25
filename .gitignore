@@ -1,0 +1,13 @@
+env/*
+static/admin*
+static/CACHE*
+static/redactor*
+media/*
+archive/*
+*.pyc
+*.swp
+*.swo
+*.swn
+*.sqlite3
+*.log
+rno/localsettings.py
