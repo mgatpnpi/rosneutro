@@ -1,0 +1,7 @@
+	{% load static %}
+	{% load compress %}
+{% compress js %}
+<script src="{% static 'js/jquery-1.11.3.js'%}"></script>
+	<script src="{% static 'js/dropdown.js' %}"></script>
+	<script src="{% static 'js/collapse.js' %}"></script>
+{% endcompress %}

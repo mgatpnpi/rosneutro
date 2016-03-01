@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import sys
+from django.utils.translation import ugettext_lazy as _
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -22,6 +23,9 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = ['localhost',]
+
+# Database
+# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 
 DATABASES = {
@@ -43,9 +47,7 @@ SECRET_KEY = '7q$gxw_g00e(+nx5#7nm056b(4m(tj2s-9_fwfgg*v79(ck4^l'
 EMAIL_PORT = 1025
 EMAIL_HOST = 'localhost'
 
-DEFAULT_FROM_EMAIL = 'golubevma@lns.pnpi.spb.ru'
-NEWS_EMAIL = 'noreply@lns.pnpi.spb.ru'
-WORKSHOP_EMAIL = 'workshop@lns.pnpi.spb.ru'
+DEFAULT_FROM_EMAIL = 'noreply@rno.pnpi.spb.ru'
 # <<< development settings overrided by localsettings.py
 try:
     from localsettings import *
@@ -62,6 +64,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'redactor',
+    'compressor',
+    'pages'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -73,6 +78,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware'
 )
 
 ROOT_URLCONF = 'rno.urls'
@@ -80,7 +86,7 @@ ROOT_URLCONF = 'rno.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,35 +99,53 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
 WSGI_APPLICATION = 'rno.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
+LANGUAGES = (
+('ru', _('Russian')),
+('en', _('English')),
+)
+LOCALE_PATHS = (
+        os.path.join(BASE_DIR, 'locale'),
+)
 
-TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
+
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+ARCHIVE_ROOT = os.path.join(BASE_DIR, 'archive')
+
+REDACTOR_OPTIONS = {'lang': 'ru', 'plugins': ['scriptbuttons']}
+REDACTOR_UPLOAD = 'uploads/'
+REDACTOR_UPLOAD_HANDLER = 'redactor.handlers.UUIDUploader'
+
+COMPRESS_ENABLED = True
+COMPRESS_ROOT = os.path.join(BASE_DIR, 'static')
+COMPRESS_PRECOMPILERS = (
+        ('text/less', 'lessc {infile} {outfile}'),
+        )
