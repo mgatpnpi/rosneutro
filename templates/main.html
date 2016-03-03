@@ -1,16 +1,66 @@
 {% extends 'base.html'%}
 {% load i18n %}
+{% block header %}
+<div class="centering">
+<div id="mainpageh1">
+    <h1>{% trans "Российское Нейтронографическое Общество"%}</h1>
+    <br>
+    
+<a class="btn btn-default btn-lg mainpageregistraionbutton" href="#content">{% trans "О Нас" %}</a>
+&nbsp;
+&nbsp;
+&nbsp;
+<a class="btn btn-default btn-lg mainpageregistraionbutton" href="#form-section">{% trans "Регистрация" %}</a>
+</div>
+</div>
+{% endblock %}
 {% block content %}
-    <h1>{% trans "Российское Нейтронографическое Сообщество"%}</h1>
-<br>
-<br>
-<br>
-
 
     {{ custom_settings.translated.mainpagecontent | safe }}
+    
 <br>
 <br>
 <br>
-
+{% endblock %}
+{% block aftercontent %}
+<section id="form-section">
+    <br>
+    <br>
+    <br>
+<div class="container">
+        <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8" id="form-bg">
+    <br>
+<h2 class="text-center">Форма регистрации</h2>
+                    {#% include 'registration_form.html' %#}
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   
+                </div>
+                <div class="col-lg-2"></div>
+        </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+</section>
 
 {% endblock %}

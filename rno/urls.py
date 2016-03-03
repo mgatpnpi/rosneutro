@@ -20,9 +20,10 @@ from pages.views import MainPageView
 
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
-    url(r'^$', MainPageView.as_view(), name = "main-page"),
+    url(r'^$', MainPageView.as_view(), name = "main_page"),
     url(r'^redactor/', include('redactor.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^members/', include('members.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

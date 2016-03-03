@@ -66,7 +66,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'redactor',
     'compressor',
-    'pages'
+    'pages',
+    'members'
 )
 
 MIDDLEWARE_CLASSES = (

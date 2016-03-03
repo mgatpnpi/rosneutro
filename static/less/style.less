@@ -48,3 +48,52 @@
 // Utility classes
 @import "utilities.less";
 @import "responsive-utilities.less";
+
+
+html, body{
+    height: 100%;
+}
+.bgimage{
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+}
+#main-page-header{
+    .bgimage;
+    min-height: 100%; 
+    height: 100%; 
+    background-image: url(../img/top_bg_small.jpg);
+    position: relative;
+}
+#form-section{
+    .bgimage;
+    background-image: url(../img/form_bg_small.jpg);
+}
+#form-bg{
+    background: #fff;
+}
+@media(min-width: @screen-sm){
+    #main-page-header{
+        background-image: url(../img/top_bg.jpg);
+    }
+    #form-section{
+        background-image: url(../img/form_bg.jpg);
+    }
+}
+.centering{
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+#mainpageh1{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+}
+.mainpageregistraionbutton{
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+}

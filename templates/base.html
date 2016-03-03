@@ -19,6 +19,7 @@
 <body>
         
     <nav class="navbar navbar-default navbar-fixed-top">
+
     <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
@@ -34,23 +35,27 @@
                 </div>
     </div>
     </nav>
-        <br>
-        <br>
-        <br>
+<header id="main-page-header">
+        {% block header %}
+        {% endblock %}
+
+</header>
         <br>
         <br>
 <div class="container">
         
-                    <div class="row">
-                            <div class="col-sm-2">
-                            </div>
-                            <div class="col-sm-10">
+                    <div class="row" id="content">
+                            <div class="col-sm-12">
+        <br>
+        <br>
+        <br>
             {% block content %}
             {% endblock %}
                             </div>
                     </div>
 </div>
-
+            {% block aftercontent %}
+            {% endblock %}
 {% include 'js.html'%}
 </body>
 </html>
