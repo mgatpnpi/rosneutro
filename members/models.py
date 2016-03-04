@@ -4,7 +4,9 @@ from pages.models import Translation, Translatable
 
 class Person(models.Model):
     DEGREES = (
-            ('test', 'test'),
+            ('prof', 'профессор'),
+            ('doc', 'доктор'),
+            ('cand', 'кандидат'),
     )
     first_name = models.CharField(
             max_length = 255,
