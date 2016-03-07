@@ -3,7 +3,6 @@ from django import forms
 from .models import Person
 from captcha.fields import ReCaptchaField
 from datetime import date
-from dateutil.relativedelta import relativedelta
 
 class ModelBootstrappedForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -24,7 +23,7 @@ class ModelBootstrappedForm(forms.ModelForm):
         self.fields.values()[0].widget.attrs['autofocus'] = 'autofocus'
 
 class PersonForm(ModelBootstrappedForm):
-    captcha = ReCaptchaField
+    captcha = ReCaptchaField(use_ssl=True, attrs={'theme':'clean', 'lang': 'ru'})
     class Meta:
         model = Person
         fields = [

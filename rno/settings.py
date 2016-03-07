@@ -66,6 +66,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'redactor',
     'compressor',
+    'captcha',
     'pages',
     'members'
 )

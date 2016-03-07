@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-01 09:29-0600\n"
+"POT-Creation-Date: 2016-03-06 18:14-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: rno/settings.py:116
+#: rno/settings.py:117
 msgid "Russian"
 msgstr ""
 
-#: rno/settings.py:117
+#: rno/settings.py:118
 msgid "English"
 msgstr ""
 
@@ -29,22 +29,30 @@ msgstr ""
 msgid "РОСНЕЙТРО"
 msgstr ""
 
-#: templates/base.html:25
+#: templates/base.html:26
 msgid "МЕНЮ"
 msgstr ""
 
-#: templates/main.html:4
-msgid "Российское Нейтронографическое Сообщество"
+#: templates/main.html:7
+msgid "Российское Нейтронографическое Общество"
 msgstr ""
 
-#: templates/menu.html:3
-msgid "Главная"
+#: templates/main.html:10 templates/menu.html:8
+msgid "О Нас"
 msgstr ""
 
-#: templates/menu.html:4
-msgid "Участники"
+#: templates/main.html:14 templates/menu.html:11 templates/registration.html:4
+msgid "Регистрация"
 msgstr ""
 
 #: templates/menu.html:5
+msgid "Главная"
+msgstr ""
+
+#: templates/menu.html:13
+msgid "Участники"
+msgstr ""
+
+#: templates/menu.html:14
 msgid "Архивный сайт"
 msgstr ""

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.views.generic.base import ContextMixin
 from .models import CustomSettings
+from members.forms import PersonForm
 
 class PageContextMixin(ContextMixin):
     module = False
@@ -17,3 +18,7 @@ class PageContextMixin(ContextMixin):
 class MainPageView(PageContextMixin, TemplateView):
     module = 'main'
     template_name = 'main.html'
+    def get_context_data(self, **kwargs):
+        context = super(MainPageView, self).get_context_data(**kwargs)
+        context['form'] = PersonForm
+        return context

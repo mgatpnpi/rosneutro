@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from pages.models import Translation, Translatable
+import string
+import random
+
+def generate_random_string():
+    pool = string.letters + string.digits
+    return ''.join(random.choice(pool) for i in xrange(50))
 
 class Person(models.Model):
     DEGREES = (
@@ -57,6 +63,10 @@ class Person(models.Model):
             verbose_name = "Подтвердил Email",
             default = False
     )
+    subscribed = models.BooleanField(
+            verbose_name = "Подтвердил Email",
+            default = False
+    )
     random_string = models.SlugField(
             max_length = 50,
             verbose_name = "Секретная строка"
@@ -71,5 +81,9 @@ class Person(models.Model):
     updated = models.DateTimeField(
             auto_now = True
     )
+    def save(self):
+        if not self.random_string:
+            self.random_string = generate_random_string()
+        return super(Person, self).save()
     
 
