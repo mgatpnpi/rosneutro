@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% load i18n %}
+{% block content %}
+
+<h1>Список участников</h1>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<td> № </td>
+				<td> Фамилия </td>
+				<td> Имя </td>
+				<td> Отчество </td>
+				<td> Организация </td>
+			</tr>
+		</thead>
+		<tbody>
+		{% for member in members %}
+		<tr>
+			<td>{{ forloop.counter }}</td>
+			<td>{{ member.last_name }}</td>
+			<td>{{ member.first_name }}</td>
+			<td>{{ member.middle_name }}</td>
+			<td>{{ member.organization }}</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
+
+

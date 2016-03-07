@@ -1,0 +1,49 @@
+<form action="{% url "members_registration" %}" method="post">
+		{% csrf_token %}
+		{% for field in form %}
+			{% if field.errors %}
+				<div class="alert alert-danger">
+					{{ field.errors }}
+				</div>
+			{% endif %}
+
+			<div class="form-group row">
+					<label class="control-label col-md-5">
+                    <b>
+					{{ field.label }}
+					{% if field.field.required %}
+					<sup>
+						<span class="text-danger">обязательно<span>
+								</sup>
+					{% endif %}
+					</b>
+<br>
+
+					<small style="font-weight: normal">
+					{{ field.help_text }}
+					</small>
+                    </label>
+						<div class="col-md-7 controls">
+{% if field.field.widget.input_type == 'date'%}
+
+						<div class="input-group">
+						        {{ field }}
+                       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+						</div>
+{% else %}
+						        {{ field }}
+{% endif %}
+						</div>
+			</div>
+            
+            {% endfor %}
+		<div class="row">
+            <div class="col-md-8"></div>
+		<div class="col-md-4">
+		        <button type="submit" class="btn btn-success btn-lg btn-default clearfix pull-right">Зарегистрироваться</button>
+		</div>
+		</div>
+        
+        <br>
+</form>
+
