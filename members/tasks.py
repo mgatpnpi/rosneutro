@@ -23,4 +23,3 @@ http://rno.pnpi.spb.ru{% url "members_email_confirm" person.random_string %}
         [person.email],
         fail_silently = False
     )
-    return True
