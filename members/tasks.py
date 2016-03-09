@@ -11,7 +11,7 @@ def secret_link_email(person):
     email_template = Template("""
 Этот адрес электронной почты был указан при регистрации на сайте Российского Нейтронографического общества
 
-Вот секретная ссылка для подтверждения регистрации:
+Вот ваша секретная ссылка для подтверждения регистрации:
 http://rno.pnpi.spb.ru{% url "members_email_confirm" person.random_string %}
 
 

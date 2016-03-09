@@ -9,11 +9,6 @@ def generate_random_string():
     return ''.join(random.choice(pool) for i in xrange(50))
 
 class Person(models.Model):
-    DEGREES = (
-            ('prof', 'профессор'),
-            ('doc', 'доктор'),
-            ('cand', 'кандидат'),
-    )
     first_name = models.CharField(
             max_length = 255,
             verbose_name = "Имя"
@@ -44,7 +39,6 @@ class Person(models.Model):
             max_length = 255,
             verbose_name = "Ученая степень",
             blank = True,
-            choices = DEGREES
     )
     interests = models.TextField(
             verbose_name = "Научные интересы",
