@@ -27,9 +27,9 @@ class PersonForm(ModelBootstrappedForm):
     class Meta:
         model = Person
         fields = [
+            'last_name',
             'first_name',
             'middle_name',
-            'last_name',
             'birthday',
             'email',
             'organization',

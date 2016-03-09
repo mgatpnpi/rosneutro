@@ -8,12 +8,14 @@ from dateutil.relativedelta import relativedelta
 from datetime import datetime
 from .models import Person
 from .forms import PersonForm
+from .tasks import secret_link_email
 
 class RegistrationView(PageContextMixin, CreateView):
     model = Person
     form_class = PersonForm
     template_name = "registration.html"
     def get_success_url(self):
+        secret_link_email.delay(self.object)
         return reverse('members_success')
 
 class RegistrationSuccessView(PageContextMixin, TemplateView):

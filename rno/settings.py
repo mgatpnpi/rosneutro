@@ -151,3 +151,10 @@ COMPRESS_ROOT = os.path.join(BASE_DIR, 'static')
 COMPRESS_PRECOMPILERS = (
         ('text/less', 'lessc {infile} {outfile}'),
         )
+
+FROM_EMAIL = "noreply@oiks.pnpi.spb.ru"
+
+CELERY_TASK_RESULT_EXPIRES=3600
+CELERY_ROUTES = {
+    'rno.tasks.secret_link_email': {'queue': 'confirmation'},
+    }

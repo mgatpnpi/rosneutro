@@ -81,9 +81,9 @@ class Person(models.Model):
     updated = models.DateTimeField(
             auto_now = True
     )
-    def save(self):
+    def save(self, **kwargs):
         if not self.random_string:
             self.random_string = generate_random_string()
-        return super(Person, self).save()
+        return super(Person, self).save(**kwargs)
     
 
