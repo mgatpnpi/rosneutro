@@ -16,7 +16,7 @@ http://rno.pnpi.spb.ru{% url "members_email_confirm" person.random_string %}
 
 
 """)
-    send_mail(
+    return send_mail(
         "[ РосНейтрО ] Подтверждение регистрации на сайте",
         email_template.render(Context({'person': person})),
         settings.FROM_EMAIL,

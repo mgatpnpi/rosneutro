@@ -2,6 +2,19 @@
 	{% load compress %}
 {% compress js %}
 <script src="{% static 'js/jquery-1.11.3.js'%}"></script>
+{% if form %}
+    <script src="{% static 'js/bootstrap-datepicker.js'%}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.ru.js'%}"></script>
+{% endif %}
 	<script src="{% static 'js/dropdown.js' %}"></script>
 	<script src="{% static 'js/collapse.js' %}"></script>
+<script>
+$(function(){
+        $('.datepicker').datepicker({
+            format: 'dd.mm.yyyy',
+            language: 'ru',
+            forceParse: false
+		});
+});
+</script>
 {% endcompress %}

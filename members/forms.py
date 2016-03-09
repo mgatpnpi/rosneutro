@@ -20,7 +20,7 @@ class ModelBootstrappedForm(forms.ModelForm):
                         'class': 'form-control datepicker',
                         })
                     field.widget.input_type = 'date'
-        self.fields.values()[0].widget.attrs['autofocus'] = 'autofocus'
+        #self.fields.values()[0].widget.attrs['autofocus'] = 'autofocus'
 
 class PersonForm(ModelBootstrappedForm):
     captcha = ReCaptchaField(use_ssl=True, attrs={'theme':'clean', 'lang': 'ru'})
