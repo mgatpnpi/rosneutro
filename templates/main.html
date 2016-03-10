@@ -17,6 +17,9 @@
 </header>
 {% endblock %}
 {% block content %}
+<h2>{% trans "О Нас" %}</h2>
+<br>
+
 
     {{ custom_settings.translated.mainpagecontent | safe }}
     
@@ -34,7 +37,7 @@
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8" id="form-bg">
     <br>
-<h2 class="text-center">Форма регистрации</h2>
+<h2 class="text-center">{% trans 'Регистрация' %}</h2>
                     {% include 'registration_form.html' %}
                 </div>
                 <div class="col-lg-2"></div>

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-10 01:48-0600\n"
+"POT-Creation-Date: 2016-03-10 03:45-0600\n"
 "PO-Revision-Date: 2016-03-09 11:39+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7\n"
 
-#: rno/settings.py:118
+#: rno/settings.py:117
 msgid "Russian"
 msgstr "Русский"
 
-#: rno/settings.py:119
+#: rno/settings.py:118
 msgid "English"
 msgstr "English"
 
@@ -37,7 +37,7 @@ msgstr "Seems something got broken"
 msgid "РОСНЕЙТРО"
 msgstr "ROSNEITRO"
 
-#: templates/base.html:26
+#: templates/base.html:32
 msgid "МЕНЮ"
 msgstr "MENU"
 
@@ -45,33 +45,39 @@ msgstr "MENU"
 msgid "Российское Нейтронографическое Общество"
 msgstr "Russian Neutron Scattering Society"
 
-#: templates/main.html:10 templates/menu.html:8
+#: templates/main.html:10 templates/main.html.py:20 templates/menu.html:8
 msgid "О Нас"
 msgstr "About us"
 
-#: templates/main.html:14 templates/menu.html:11 templates/registration.html:4
+#: templates/main.html:14 templates/main.html.py:40 templates/menu.html:11
+#: templates/registration.html:3 templates/registration.html.py:5
 msgid "Регистрация"
 msgstr "Membership"
 
-#: templates/members_list.html:5 templates/menu.html:13
+#: templates/members_list.html:3 templates/members_list.html.py:7
+#: templates/menu.html:13
 msgid "Участники"
 msgstr "Members"
 
-#: templates/members_list.html:10
+#: templates/members_list.html:11
 msgid "Фамилия"
 msgstr "Last Name"
 
-#: templates/members_list.html:11
+#: templates/members_list.html:12
 msgid "Имя"
 msgstr "First Name"
 
-#: templates/members_list.html:12
+#: templates/members_list.html:13
 msgid "Отчество"
 msgstr "Middle Name"
 
-#: templates/members_list.html:13
+#: templates/members_list.html:14
 msgid "Организация"
 msgstr "Organisation"
+
+#: templates/members_list.html:15
+msgid "Подтвержден"
+msgstr "Verified"
 
 #: templates/menu.html:5
 msgid "Главная"

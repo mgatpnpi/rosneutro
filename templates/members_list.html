@@ -8,21 +8,25 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<td> № </td>
 				<td>{% trans 'Фамилия' %}</td>
 				<td>{% trans 'Имя' %}</td>
 				<td>{% trans 'Отчество' %}</td>
 				<td>{% trans 'Организация' %}</td>
+				<td>{% trans 'Подтвержден' %}</td>
 			</tr>
 		</thead>
 		<tbody>
 		{% for member in members %}
 		<tr>
-			<td>{{ forloop.counter }}</td>
 			<td>{{ member.last_name }}</td>
 			<td>{{ member.first_name }}</td>
 			<td>{{ member.middle_name }}</td>
 			<td>{{ member.organization }}</td>
+			<td>    
+                {% if member.approved %}
+                    <span class="glyphicon glyphicon-ok-sign text-success"></span>
+                {% endif %}
+            </td>
 		</tr>
 		{% endfor %}
 		</tbody>
