@@ -22,7 +22,8 @@ class Person(models.Model):
             verbose_name = "Фамилия"
     )
     birthday = models.DateField(
-            verbose_name = "Дата рождения"
+            verbose_name = "Дата рождения",
+            help_text = "Введите дату в формате дд.мм.гггг или гггг-мм-дд"
     )
     email = models.EmailField(
             verbose_name = "Email"

@@ -4,6 +4,7 @@
 {% block content %}
 <h1>{% trans "Регистрация" %}</h1>
 <br>
+{{ settings.translated.formpagecontent|safe }}
 
 {% include 'registration_form.html' %}
 {% endblock %}

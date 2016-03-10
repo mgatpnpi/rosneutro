@@ -40,3 +40,4 @@ class CustomSettingsTranslation(Translation):
     parent = models.ForeignKey('CustomSettings', related_name='translations')
 
     mainpagecontent = RedactorField("Содержимое главной страницы")
+    formpagecontent = RedactorField("Содержимое страницы с формой регистрации", null = True, blank = True)
