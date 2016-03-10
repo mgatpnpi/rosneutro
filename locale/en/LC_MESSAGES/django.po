@@ -7,23 +7,31 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-06 18:14-0600\n"
+"POT-Creation-Date: 2016-03-10 01:48-0600\n"
 "PO-Revision-Date: 2016-03-09 11:39+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 1.8.7\n"
 
-#: rno/settings.py:117
+#: rno/settings.py:118
 msgid "Russian"
 msgstr "Русский"
 
-#: rno/settings.py:118
+#: rno/settings.py:119
 msgid "English"
 msgstr "English"
+
+#: templates/404.html:3 templates/404.html.py:8
+msgid "Такой страницы нет"
+msgstr "No such page"
+
+#: templates/500.html:2 templates/500.html.py:7
+msgid "Похоже что-то сломалось"
+msgstr "Seems something got broken"
 
 #: templates/base.html:8
 msgid "РОСНЕЙТРО"
@@ -45,14 +53,30 @@ msgstr "About us"
 msgid "Регистрация"
 msgstr "Membership"
 
+#: templates/members_list.html:5 templates/menu.html:13
+msgid "Участники"
+msgstr "Members"
+
+#: templates/members_list.html:10
+msgid "Фамилия"
+msgstr "Last Name"
+
+#: templates/members_list.html:11
+msgid "Имя"
+msgstr "First Name"
+
+#: templates/members_list.html:12
+msgid "Отчество"
+msgstr "Middle Name"
+
+#: templates/members_list.html:13
+msgid "Организация"
+msgstr "Organisation"
+
 #: templates/menu.html:5
 msgid "Главная"
 msgstr "Home"
 
-#: templates/menu.html:13
-msgid "Участники"
-msgstr "Members"
-
 #: templates/menu.html:14
 msgid "Архивный сайт"
-msgstr "Old version of the website"
+msgstr "Old website"

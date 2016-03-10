@@ -6,6 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}{% trans 'РОСНЕЙТРО' %}</title>
+	{% if keywords %}
+	<meta name="keywords" content="{{ keywords }}">
+	{% endif %}
+	{% if description %}
+	<meta name="description" content="{{ description }}">
+	{% endif %}
 	{% load static %}
 	{% load compress %}
 	{% compress css %}
@@ -18,7 +24,7 @@
 </head>
 <body>
         
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" id="navbar">
 
     <div class="container">
             <div class="navbar-header">

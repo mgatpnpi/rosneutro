@@ -1,16 +1,18 @@
 {% extends 'base.html'%}
 {% load i18n %}
+{% block title %}{% trans 'Участники' %} - {% endblock %}
+
 {% block content %}
 
-<h1>Список участников</h1>
+<h1>{% trans 'Участники'%}</h1>
 	<table class="table table-striped">
 		<thead>
 			<tr>
 				<td> № </td>
-				<td> Фамилия </td>
-				<td> Имя </td>
-				<td> Отчество </td>
-				<td> Организация </td>
+				<td>{% trans 'Фамилия' %}</td>
+				<td>{% trans 'Имя' %}</td>
+				<td>{% trans 'Отчество' %}</td>
+				<td>{% trans 'Организация' %}</td>
 			</tr>
 		</thead>
 		<tbody>

@@ -15,6 +15,31 @@ $(function(){
             language: 'ru',
             forceParse: false
 		});
+  $('a[href*=#]:not([href=#])').click(function() {
+      var target = $('#'+ $(this).attr('href').split('#')[1]);
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+      }
+  });
+
+
+    if($('#main-page-header').length){
+            if(!$('#navbar').hasClass('menutoptransparent') && $(window).scrollTop() < $('#main-page-header').height()){
+                $('#navbar').addClass('menutoptransparent');
+            }
+    }
+    $(window).scroll(function(){
+        if($('#main-page-header').length){
+            if(!$('#navbar').hasClass('menutoptransparent') && $(window).scrollTop() < $('#main-page-header').height()){
+                $('#navbar').addClass('menutoptransparent');
+            }
+            if($('#navbar').hasClass('menutoptransparent') && $(window).scrollTop() > $('#main-page-header').height()){
+                $('#navbar').removeClass('menutoptransparent');
+            }
+        }
+    });
 });
 </script>
 {% endcompress %}

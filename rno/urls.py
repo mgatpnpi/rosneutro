@@ -16,7 +16,9 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from pages.views import MainPageView
+from django.views.generic import TemplateView
+from pages.views import MainPageView, PageContextMixin
+
 
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
@@ -24,6 +26,7 @@ urlpatterns = [
     url(r'^redactor/', include('redactor.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^members/', include('members.urls')),
+    url(r'^robots\.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -10,4 +10,5 @@ archive/*
 *.swn
 *.sqlite3
 *.log
+*.mo
 rno/localsettings.py
