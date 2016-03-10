@@ -15,7 +15,7 @@ class RegistrationView(PageContextMixin, CreateView):
     form_class = PersonForm
     template_name = "registration.html"
     def get_success_url(self):
-        secret_link_email.delay(self.object)
+        secret_link_email.delay(self.object.email, self.object.random_string)
         return reverse('members_success')
 
 class RegistrationSuccessView(PageContextMixin, TemplateView):
