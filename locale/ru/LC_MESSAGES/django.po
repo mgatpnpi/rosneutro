@@ -3,58 +3,58 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-06 18:14-0600\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2016-03-09 13:26+0300\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.7\n"
 
 #: rno/settings.py:117
 msgid "Russian"
-msgstr ""
+msgstr "Русский"
 
 #: rno/settings.py:118
 msgid "English"
-msgstr ""
+msgstr "English"
 
 #: templates/base.html:8
 msgid "РОСНЕЙТРО"
-msgstr ""
+msgstr "РОСНЕЙТРО"
 
 #: templates/base.html:26
 msgid "МЕНЮ"
-msgstr ""
+msgstr "МЕНЮ"
 
 #: templates/main.html:7
 msgid "Российское Нейтронографическое Общество"
-msgstr ""
+msgstr "Российское Нейтронографическое Общество"
 
 #: templates/main.html:10 templates/menu.html:8
 msgid "О Нас"
-msgstr ""
+msgstr "О нас"
 
 #: templates/main.html:14 templates/menu.html:11 templates/registration.html:4
 msgid "Регистрация"
-msgstr ""
+msgstr "Регистрация"
 
 #: templates/menu.html:5
 msgid "Главная"
-msgstr ""
+msgstr "Главная"
 
 #: templates/menu.html:13
 msgid "Участники"
-msgstr ""
+msgstr "Участники"
 
 #: templates/menu.html:14
 msgid "Архивный сайт"
-msgstr ""
+msgstr "Архивный сайт"
