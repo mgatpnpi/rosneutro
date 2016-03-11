@@ -9,6 +9,24 @@ def generate_random_string():
     return ''.join(random.choice(pool) for i in xrange(50))
 
 class Person(models.Model):
+    DEGREES = (
+        (u'к.ф.-м.н.', u'к.ф.-м.н.'),
+        (u'д.ф.-м.н.', u'д.ф.-м.н.'),
+        (u'к.т.н.', u'к.т.н.'),
+        (u'д.т.н.', u'д.т.н.'),
+        (u'к.б.н.', u'к.б.н.'),
+        (u'д.б.н.', u'д.б.н.'),
+        (u'к.х.н.', u'к.х.н.'),
+        (u'д.х.н.', u'д.х.н.'),
+        (u'к.г.-м.н.', u'к.г.-м.н.'),
+        (u'д.г.-м.н.', u'д.г.-м.н.'),
+        (u'к.и.н.', u'к.и.н.'),
+        (u'д.и.н.', u'д.и.н.'),
+        (u'к.м.н.', u'к.м.н.'),
+        (u'д.м.н.', u'д.м.н.'),
+        (u'к.фарм.н.', u'к.фарм.н.'),
+        (u'д.фарм.н.', u'д.фарм.н.'),
+    )
     first_name = models.CharField(
             max_length = 255,
             verbose_name = "Имя"
@@ -39,10 +57,16 @@ class Person(models.Model):
     degree = models.CharField(
             max_length = 255,
             verbose_name = "Ученая степень",
+            choices = DEGREES,
             blank = True,
     )
     interests = models.TextField(
             verbose_name = "Научные интересы",
+            blank = True
+    )
+    note = models.TextField(
+            verbose_name = "Примечания",
+            null = True,
             blank = True
     )
     publications = models.TextField(

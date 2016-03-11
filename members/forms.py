@@ -35,10 +35,5 @@ class PersonForm(ModelBootstrappedForm):
             'organization',
             'position',
             'degree',
-            'interests',
-            'publications',
+            'note'
         ]
-        widgets = {
-                'degree': forms.TextInput(attrs={'list': 'degrees'}),
-        }
-    
