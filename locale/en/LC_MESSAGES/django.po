@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-10 03:45-0600\n"
-"PO-Revision-Date: 2016-03-09 11:39+0300\n"
+"POT-Creation-Date: 2016-03-11 08:08-0600\n"
+"PO-Revision-Date: 2016-03-11 16:58+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -16,6 +16,194 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7\n"
+
+#: members/models.py:14
+msgid "к.ф.-м.н."
+msgstr "Candidate of Physico-mathematical sciences"
+
+#: members/models.py:15
+msgid "д.ф.-м.н."
+msgstr "Doctor of Physico-mathematical sciences"
+
+#: members/models.py:16
+msgid "к.т.н."
+msgstr "Candidate of Technical sciences"
+
+#: members/models.py:17
+msgid "д.т.н."
+msgstr "Technical sciences"
+
+#: members/models.py:18
+msgid "к.б.н."
+msgstr "Candidate of Biological sciences"
+
+#: members/models.py:19
+msgid "д.б.н."
+msgstr "Doctor of Biological sciences"
+
+#: members/models.py:20
+msgid "к.х.н."
+msgstr "Candidate of Chemical sciences"
+
+#: members/models.py:21
+msgid "д.х.н."
+msgstr "Doctor of Chemical sciences"
+
+#: members/models.py:22
+msgid "к.г.-м.н."
+msgstr "Candidate of Geologo-mineralogical sciences"
+
+#: members/models.py:23
+msgid "д.г.-м.н."
+msgstr "Doctor of Geologo-mineralogical sciences"
+
+#: members/models.py:24
+msgid "к.и.н."
+msgstr "Candidate of Historical sciences"
+
+#: members/models.py:25
+msgid "д.и.н."
+msgstr "Doctor of Historical sciences"
+
+#: members/models.py:26
+msgid "к.м.н."
+msgstr "Candidate of Medical sciences"
+
+#: members/models.py:27
+msgid "д.м.н."
+msgstr "Doctor of Medical sciences"
+
+#: members/models.py:28
+msgid "к.фарм.н."
+msgstr "Candidate of Pharmaceutical sciences"
+
+#: members/models.py:29
+msgid "д.фарм.н."
+msgstr "Doctor of Pharmaceutical sciences"
+
+#: members/models.py:32
+msgid "Biology"
+msgstr "Biology"
+
+#: members/models.py:33
+msgid "Chemistry"
+msgstr "Chemistry"
+
+#: members/models.py:34
+msgid "Crystallography"
+msgstr "Crystallography"
+
+#: members/models.py:35
+msgid "Engineering"
+msgstr "Engineering"
+
+#: members/models.py:36
+msgid "Cond. Matter Physics"
+msgstr "Condensed Matter Physics"
+
+#: members/models.py:37
+msgid "Fundamental Physics"
+msgstr "Fundamental and Nuclear Physics"
+
+#: members/models.py:38
+msgid "Ceramics"
+msgstr "Ceramics"
+
+#: members/models.py:39
+msgid "Metallic Materials"
+msgstr "Metallic Materials"
+
+#: members/models.py:40
+msgid "Polymers"
+msgstr "Polymers"
+
+#: members/models.py:41
+msgid "Other Materials Science"
+msgstr "Other Materials Science"
+
+#: members/models.py:42
+msgid "Instrumentation"
+msgstr "Instrumentation"
+
+#: members/models.py:43
+msgid "Other"
+msgstr "Other"
+
+#: members/models.py:47 templates/members_list.html:12
+msgid "Имя"
+msgstr "First name"
+
+#: members/models.py:51 templates/members_list.html:13
+msgid "Отчество"
+msgstr "Middle name"
+
+#: members/models.py:55 templates/members_list.html:11
+msgid "Фамилия"
+msgstr "Last name"
+
+#: members/models.py:58
+msgid "Дата рождения"
+msgstr "Date of birth"
+
+#: members/models.py:59
+msgid "Введите дату в формате дд.мм.гггг или гггг-мм-дд"
+msgstr "Insert date in dd.mm.yyyy or yyyy-mm-dd format"
+
+#: members/models.py:62
+msgid "Email"
+msgstr "Email"
+
+#: members/models.py:66 templates/members_list.html:14
+msgid "Организация"
+msgstr "Organization"
+
+#: members/models.py:70
+msgid "Должность"
+msgstr "Job title"
+
+#: members/models.py:74
+msgid "Ученая степень"
+msgstr "Academic degree"
+
+#: members/models.py:80
+msgid "Научные интересы"
+msgstr "Areas of expertise"
+
+#: members/models.py:86
+msgid "Примечания"
+msgstr "Comments"
+
+#: members/models.py:91
+msgid "Публикации"
+msgstr "Publications"
+
+#: members/models.py:92
+msgid ""
+"Вы можете просто дать ссылку на свой профиль в Research Gate, или на "
+"аналогичный ресурс"
+msgstr ""
+"You may provide a web-link to your ResearchGate profile or a link to a "
+"similar Website"
+
+#: members/models.py:96
+msgid "Подтвержденo право голоса"
+msgstr "Right of vote confirmed"
+
+#: members/models.py:100
+msgid "Подтвердил Email"
+msgstr "Email confirmed"
+
+#: members/models.py:104
+msgid "Подписан на рассылку"
+msgstr "Subscription activated"
+
+#: members/models.py:109
+msgid "Секретная строка"
+msgstr "Secret entry"
+
+#: members/models.py:112
+msgid "Опубликован"
+msgstr "Online application has been successfully submitted!"
 
 #: rno/settings.py:117
 msgid "Russian"
@@ -27,19 +215,27 @@ msgstr "English"
 
 #: templates/404.html:3 templates/404.html.py:8
 msgid "Такой страницы нет"
-msgstr "No such page"
+msgstr "Page not found"
 
 #: templates/500.html:2 templates/500.html.py:7
 msgid "Похоже что-то сломалось"
-msgstr "Seems something got broken"
+msgstr "Seems something broke"
 
-#: templates/base.html:8
+#: templates/base.html:9
 msgid "РОСНЕЙТРО"
 msgstr "ROSNEITRO"
 
-#: templates/base.html:32
+#: templates/base.html:33
 msgid "МЕНЮ"
 msgstr "MENU"
+
+#: templates/confirm_email.html:5
+msgid "Спасибо!"
+msgstr ""
+
+#: templates/confirm_email.html:6
+msgid "Теперь ваш адрес электронной почты подтвержден"
+msgstr ""
 
 #: templates/main.html:7
 msgid "Российское Нейтронографическое Общество"
@@ -59,25 +255,9 @@ msgstr "Membership"
 msgid "Участники"
 msgstr "Members"
 
-#: templates/members_list.html:11
-msgid "Фамилия"
-msgstr "Last Name"
-
-#: templates/members_list.html:12
-msgid "Имя"
-msgstr "First Name"
-
-#: templates/members_list.html:13
-msgid "Отчество"
-msgstr "Middle Name"
-
-#: templates/members_list.html:14
-msgid "Организация"
-msgstr "Organisation"
-
 #: templates/members_list.html:15
 msgid "Подтвержден"
-msgstr "Verified"
+msgstr "Membership verified"
 
 #: templates/menu.html:5
 msgid "Главная"
@@ -86,3 +266,15 @@ msgstr "Home"
 #: templates/menu.html:14
 msgid "Архивный сайт"
 msgstr "Old website"
+
+#: templates/registration_form.html:44
+msgid "Зарегистрироваться"
+msgstr "Submit registration form"
+
+#: templates/registration_success.html:5
+msgid "Ваши данные сохранены, но это еще не все"
+msgstr ""
+
+#: templates/registration_success.html:6
+msgid "На ваш e-mail выслана ссылка для подтверждения"
+msgstr ""

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-10 03:45-0600\n"
-"PO-Revision-Date: 2016-03-09 13:26+0300\n"
+"POT-Creation-Date: 2016-03-11 08:08-0600\n"
+"PO-Revision-Date: 2016-03-11 17:02+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -18,6 +18,193 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7\n"
+
+#: members/models.py:14
+msgid "к.ф.-м.н."
+msgstr "к.ф.-м.н."
+
+#: members/models.py:15
+msgid "д.ф.-м.н."
+msgstr "д.ф.-м.н."
+
+#: members/models.py:16
+msgid "к.т.н."
+msgstr "к.т.н."
+
+#: members/models.py:17
+msgid "д.т.н."
+msgstr "д.т.н."
+
+#: members/models.py:18
+msgid "к.б.н."
+msgstr "к.б.н."
+
+#: members/models.py:19
+msgid "д.б.н."
+msgstr "д.б.н."
+
+#: members/models.py:20
+msgid "к.х.н."
+msgstr "к.х.н."
+
+#: members/models.py:21
+msgid "д.х.н."
+msgstr "д.х.н."
+
+#: members/models.py:22
+msgid "к.г.-м.н."
+msgstr "к.г.-м.н."
+
+#: members/models.py:23
+msgid "д.г.-м.н."
+msgstr "д.г.-м.н."
+
+#: members/models.py:24
+msgid "к.и.н."
+msgstr "к.и.н."
+
+#: members/models.py:25
+msgid "д.и.н."
+msgstr "д.и.н."
+
+#: members/models.py:26
+msgid "к.м.н."
+msgstr "к.м.н."
+
+#: members/models.py:27
+msgid "д.м.н."
+msgstr "д.м.н."
+
+#: members/models.py:28
+msgid "к.фарм.н."
+msgstr "к.фарм.н."
+
+#: members/models.py:29
+msgid "д.фарм.н."
+msgstr "д.фарм.н."
+
+#: members/models.py:32
+msgid "Biology"
+msgstr "Биология"
+
+#: members/models.py:33
+msgid "Chemistry"
+msgstr "Химия"
+
+#: members/models.py:34
+msgid "Crystallography"
+msgstr "Кристаллография"
+
+#: members/models.py:35
+msgid "Engineering"
+msgstr "Инженерное дело"
+
+#: members/models.py:36
+msgid "Cond. Matter Physics"
+msgstr "Физика конденсированного состояния"
+
+#: members/models.py:37
+msgid "Fundamental Physics"
+msgstr "Фундаментальная и ядерная физика"
+
+#: members/models.py:38
+msgid "Ceramics"
+msgstr "Керамика"
+
+#: members/models.py:39
+msgid "Metallic Materials"
+msgstr "Металлические материалы"
+
+#: members/models.py:40
+msgid "Polymers"
+msgstr "Полимеры"
+
+#: members/models.py:41
+msgid "Other Materials Science"
+msgstr "Материаловедение"
+
+#: members/models.py:42
+msgid "Instrumentation"
+msgstr "Приборостроение"
+
+#: members/models.py:43
+msgid "Other"
+msgstr "Иное"
+
+#: members/models.py:47 templates/members_list.html:12
+msgid "Имя"
+msgstr "Имя"
+
+#: members/models.py:51 templates/members_list.html:13
+msgid "Отчество"
+msgstr "Отчество"
+
+#: members/models.py:55 templates/members_list.html:11
+msgid "Фамилия"
+msgstr "Фамилия"
+
+#: members/models.py:58
+msgid "Дата рождения"
+msgstr "Дата рождения"
+
+#: members/models.py:59
+msgid "Введите дату в формате дд.мм.гггг или гггг-мм-дд"
+msgstr "Введите дату в формате дд.мм.гггг или гггг-мм-дд"
+
+#: members/models.py:62
+msgid "Email"
+msgstr "Адрес электронной почты (email)"
+
+#: members/models.py:66 templates/members_list.html:14
+msgid "Организация"
+msgstr "Организация"
+
+#: members/models.py:70
+msgid "Должность"
+msgstr "Должность"
+
+#: members/models.py:74
+msgid "Ученая степень"
+msgstr "Ученая степень"
+
+#: members/models.py:80
+msgid "Научные интересы"
+msgstr "Научные интересы"
+
+#: members/models.py:86
+msgid "Примечания"
+msgstr "Примечания"
+
+#: members/models.py:91
+msgid "Публикации"
+msgstr "Публикации"
+
+#: members/models.py:92
+msgid ""
+"Вы можете просто дать ссылку на свой профиль в Research Gate, или на "
+"аналогичный ресурс"
+msgstr ""
+"Вы можете дать ссылку на свой профиль в ResearchGate или аналогичный ресурс"
+
+#: members/models.py:96
+msgid "Подтвержденo право голоса"
+msgstr "Подтвержденo право голоса"
+
+#: members/models.py:100
+msgid "Подтвердил Email"
+msgstr "Адрес электронной почты подтвержден"
+
+#: members/models.py:104
+msgid "Подписан на рассылку"
+msgstr "Подписан на рассылку"
+
+#: members/models.py:109
+msgid "Секретная строка"
+msgstr "Секретная строка"
+
+#: members/models.py:112
+msgid "Опубликован"
+msgstr "Опубликован"
 
 #: rno/settings.py:117
 msgid "Russian"
@@ -29,19 +216,27 @@ msgstr "English"
 
 #: templates/404.html:3 templates/404.html.py:8
 msgid "Такой страницы нет"
-msgstr "Такой страницы нет"
+msgstr "Запрашиваемой Вами страницы не существует"
 
 #: templates/500.html:2 templates/500.html.py:7
 msgid "Похоже что-то сломалось"
 msgstr "Похоже что-то сломалось"
 
-#: templates/base.html:8
+#: templates/base.html:9
 msgid "РОСНЕЙТРО"
 msgstr "РОСНЕЙТРО"
 
-#: templates/base.html:32
+#: templates/base.html:33
 msgid "МЕНЮ"
 msgstr "МЕНЮ"
+
+#: templates/confirm_email.html:5
+msgid "Спасибо!"
+msgstr ""
+
+#: templates/confirm_email.html:6
+msgid "Теперь ваш адрес электронной почты подтвержден"
+msgstr ""
 
 #: templates/main.html:7
 msgid "Российское Нейтронографическое Общество"
@@ -61,25 +256,9 @@ msgstr "Регистрация"
 msgid "Участники"
 msgstr "Участники"
 
-#: templates/members_list.html:11
-msgid "Фамилия"
-msgstr "Фамилия"
-
-#: templates/members_list.html:12
-msgid "Имя"
-msgstr "Имя"
-
-#: templates/members_list.html:13
-msgid "Отчество"
-msgstr "Отчество"
-
-#: templates/members_list.html:14
-msgid "Организация"
-msgstr "Организация"
-
 #: templates/members_list.html:15
 msgid "Подтвержден"
-msgstr ""
+msgstr "Членство подтверждено"
 
 #: templates/menu.html:5
 msgid "Главная"
@@ -88,3 +267,17 @@ msgstr "Главная"
 #: templates/menu.html:14
 msgid "Архивный сайт"
 msgstr "Архивный сайт"
+
+#: templates/registration_form.html:44
+#, fuzzy
+#| msgid "Регистрация"
+msgid "Зарегистрироваться"
+msgstr "Регистрация"
+
+#: templates/registration_success.html:5
+msgid "Ваши данные сохранены, но это еще не все"
+msgstr ""
+
+#: templates/registration_success.html:6
+msgid "На ваш e-mail выслана ссылка для подтверждения"
+msgstr ""

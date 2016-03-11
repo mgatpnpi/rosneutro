@@ -1,3 +1,4 @@
+{% load i18n %}
 <form action="{% url "members_registration" %}" method="post">
 		{% csrf_token %}
 		{% for field in form %}
@@ -40,24 +41,10 @@
 		<div class="row">
             <div class="col-md-8"></div>
 		<div class="col-md-4">
-		        <button type="submit" class="btn btn-success btn-lg btn-default clearfix pull-right">Зарегистрироваться</button>
+		        <button type="submit" class="btn btn-success btn-lg btn-default clearfix pull-right">{% trans 'Зарегистрироваться' %}</button>
 		</div>
 		</div>
         
         <br>
-<datalist id="degrees">
-<option value="Кандидат биологических наук">
-<option value="Кандидат геолого-минералогических наук">
-<option value="Кандидат медицинских наук">
-<option value="Кандидат технических наук">
-<option value="Кандидат физико-математических наук">
-<option value="Кандидат химических наук">
-<option value="Доктор биологических наук">
-<option value="Доктор геолого-минералогических наук">
-<option value="Доктор медицинских наук">
-<option value="Доктор технических наук">
-<option value="Доктор физико-математических наук">
-<option value="Доктор химических наук">
-</datalist>
 </form>
 

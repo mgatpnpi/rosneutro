@@ -14,6 +14,11 @@ def secret_link_email(email, random_string):
 Вот ваша секретная ссылка для подтверждения регистрации:
 http://rno.pnpi.spb.ru{% url "members_email_confirm" person.random_string %}
 
+You have received this email because this email address was used during 
+registration on the website of the Russian Neutron Scattering Society.
+Please follow this link to complete your registration
+
+http://rno.pnpi.spb.ru{% url "members_email_confirm" person.random_string %}
 
 """)
     send_mail(

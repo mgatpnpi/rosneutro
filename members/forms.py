@@ -34,6 +34,7 @@ class PersonForm(ModelBootstrappedForm):
             'email',
             'organization',
             'position',
+            'interests',
             'degree',
             'note'
         ]

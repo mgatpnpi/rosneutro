@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 from pages.models import Translation, Translatable
 import string
 import random
@@ -10,88 +11,105 @@ def generate_random_string():
 
 class Person(models.Model):
     DEGREES = (
-        (u'к.ф.-м.н.', u'к.ф.-м.н.'),
-        (u'д.ф.-м.н.', u'д.ф.-м.н.'),
-        (u'к.т.н.', u'к.т.н.'),
-        (u'д.т.н.', u'д.т.н.'),
-        (u'к.б.н.', u'к.б.н.'),
-        (u'д.б.н.', u'д.б.н.'),
-        (u'к.х.н.', u'к.х.н.'),
-        (u'д.х.н.', u'д.х.н.'),
-        (u'к.г.-м.н.', u'к.г.-м.н.'),
-        (u'д.г.-м.н.', u'д.г.-м.н.'),
-        (u'к.и.н.', u'к.и.н.'),
-        (u'д.и.н.', u'д.и.н.'),
-        (u'к.м.н.', u'к.м.н.'),
-        (u'д.м.н.', u'д.м.н.'),
-        (u'к.фарм.н.', u'к.фарм.н.'),
-        (u'д.фарм.н.', u'д.фарм.н.'),
+        (u"к.ф.-м.н.", _(u"к.ф.-м.н.")),
+        (u"д.ф.-м.н.", _(u"д.ф.-м.н.")),
+        (u"к.т.н.", _(u"к.т.н.")),
+        (u"д.т.н.", _(u"д.т.н.")),
+        (u"к.б.н.", _(u"к.б.н.")),
+        (u"д.б.н.", _(u"д.б.н.")),
+        (u"к.х.н.", _(u"к.х.н.")),
+        (u"д.х.н.", _(u"д.х.н.")),
+        (u"к.г.-м.н.", _(u"к.г.-м.н.")),
+        (u"д.г.-м.н.", _(u"д.г.-м.н.")),
+        (u"к.и.н.", _(u"к.и.н.")),
+        (u"д.и.н.", _(u"д.и.н.")),
+        (u"к.м.н.", _(u"к.м.н.")),
+        (u"д.м.н.", _(u"д.м.н.")),
+        (u"к.фарм.н.", _(u"к.фарм.н.")),
+        (u"д.фарм.н.", _(u"д.фарм.н.")),
+    )
+    INTERESTS = (
+        ("Biology", _("Biology")),
+        ("Chemistry", _("Chemistry")),
+        ("Crystallography", _("Crystallography")),
+        ("Engineering", _("Engineering")),
+        ("Cond. Matter Physics", _("Cond. Matter Physics")),
+        ("Fundamental Physics", _("Fundamental Physics")),
+        ("Ceramics", _("Ceramics")),
+        ("Metallic Materials", _("Metallic Materials")),
+        ("Polymers", _("Polymers")),
+        ("Other Materials Science", _("Other Materials Science")),
+        ("Instrumentation", _("Instrumentation")),
+        ("Other", _("Other")),
     )
     first_name = models.CharField(
             max_length = 255,
-            verbose_name = "Имя"
+            verbose_name = _(u"Имя")
     )
     middle_name = models.CharField(
             max_length = 255,
-            verbose_name = "Отчество"
+            verbose_name = _(u"Отчество")
     )
     last_name = models.CharField(
             max_length = 255,
-            verbose_name = "Фамилия"
+            verbose_name = _(u"Фамилия")
     )
     birthday = models.DateField(
-            verbose_name = "Дата рождения",
-            help_text = "Введите дату в формате дд.мм.гггг или гггг-мм-дд"
+            verbose_name = _(u"Дата рождения"),
+            help_text = _(u"Введите дату в формате дд.мм.гггг или гггг-мм-дд")
     )
     email = models.EmailField(
-            verbose_name = "Email"
+            verbose_name = _(u"Email")
     )
     organization = models.CharField(
             max_length = 255,
-            verbose_name = "Организация"    
+            verbose_name = _(u"Организация")    
     )
     position = models.CharField(
             max_length = 255,
-            verbose_name = "Должность"
+            verbose_name = _(u"Должность")
     )
     degree = models.CharField(
             max_length = 255,
-            verbose_name = "Ученая степень",
+            verbose_name = _(u"Ученая степень"),
             choices = DEGREES,
             blank = True,
     )
-    interests = models.TextField(
-            verbose_name = "Научные интересы",
+    interests = models.CharField(
+            max_length = 155,
+            verbose_name = _(u"Научные интересы"),
+            choices = INTERESTS,
+            null = True,
             blank = True
     )
     note = models.TextField(
-            verbose_name = "Примечания",
+            verbose_name = _(u"Примечания"),
             null = True,
             blank = True
     )
     publications = models.TextField(
-            verbose_name = "Публикации",
-            help_text = "Вы можете просто дать ссылку на свой профиль в Research Gate, или на аналогичный ресурс",
+            verbose_name = _(u"Публикации"),
+            help_text = _(u"Вы можете просто дать ссылку на свой профиль в Research Gate, или на аналогичный ресурс"),
             blank = True
     )
     approved = models.BooleanField(
-            verbose_name = "Подтвержденo право голоса",
+            verbose_name = _(u"Подтвержденo право голоса"),
             default = False
     )
     confirmed = models.BooleanField(
-            verbose_name = "Подтвердил Email",
+            verbose_name = _(u"Подтвердил Email"),
             default = False
     )
     subscribed = models.BooleanField(
-            verbose_name = "Подтвердил Email",
+            verbose_name = _(u"Подписан на рассылку"),
             default = False
     )
     random_string = models.SlugField(
             max_length = 50,
-            verbose_name = "Секретная строка"
+            verbose_name = _(u"Секретная строка")
     )
     published = models.BooleanField(
-            verbose_name = "Опубликован",
+            verbose_name = _(u"Опубликован"),
             default = True
     )
     created = models.DateTimeField(
