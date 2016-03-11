@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 {% load i18n %}
+{% load static %}
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}{% trans 'РОСНЕЙТРО' %}</title>
+	<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"> 
 	{% if keywords %}
 	<meta name="keywords" content="{{ keywords }}">
 	{% endif %}
 	{% if description %}
 	<meta name="description" content="{{ description }}">
 	{% endif %}
-	{% load static %}
 	{% load compress %}
 	{% compress css %}
 

@@ -16,11 +16,12 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 from pages.views import MainPageView, PageContextMixin
 
 
 urlpatterns = [
+    url('^favicon.ico', RedirectView.as_view(permanent = True, url='/static/img/favicon.ico'), name="favicon"),
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^$', MainPageView.as_view(), name = "main_page"),
     url(r'^redactor/', include('redactor.urls')),
