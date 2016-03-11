@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-11 08:08-0600\n"
+"POT-Creation-Date: 2016-03-11 09:33-0600\n"
 "PO-Revision-Date: 2016-03-11 16:58+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -266,6 +266,10 @@ msgstr "Home"
 #: templates/menu.html:14
 msgid "Архивный сайт"
 msgstr "Old website"
+
+#: templates/registration_form.html:17
+msgid "обязательно"
+msgstr "required"
 
 #: templates/registration_form.html:44
 msgid "Зарегистрироваться"

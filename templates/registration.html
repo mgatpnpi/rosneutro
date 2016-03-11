@@ -4,7 +4,9 @@
 {% block content %}
 <h1>{% trans "Регистрация" %}</h1>
 <br>
+{% if custom_settings.translated.formpagecontent%}
 {{ custom_settings.translated.formpagecontent|safe }}
+{% endif %}
 <br>
 <br>
 
