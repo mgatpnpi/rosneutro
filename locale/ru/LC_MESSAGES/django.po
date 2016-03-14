@@ -113,7 +113,7 @@ msgstr "Керамика"
 
 #: members/models.py:39
 msgid "Metallic Materials"
-msgstr "Металлические материалы"
+msgstr "Физика металлов"
 
 #: members/models.py:40
 msgid "Polymers"
