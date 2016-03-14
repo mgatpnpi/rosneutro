@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-11 09:33-0600\n"
-"PO-Revision-Date: 2016-03-11 17:02+0300\n"
+"PO-Revision-Date: 2016-03-14 10:10+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -232,11 +232,11 @@ msgstr "МЕНЮ"
 
 #: templates/confirm_email.html:5
 msgid "Спасибо!"
-msgstr ""
+msgstr "Спасибо!"
 
 #: templates/confirm_email.html:6
 msgid "Теперь ваш адрес электронной почты подтвержден"
-msgstr ""
+msgstr "Теперь ваш адрес электронной почты подтвержден!"
 
 #: templates/main.html:7
 msgid "Российское Нейтронографическое Общество"
@@ -270,7 +270,7 @@ msgstr "Архивный сайт"
 
 #: templates/registration_form.html:17
 msgid "обязательно"
-msgstr ""
+msgstr "обязательно"
 
 #: templates/registration_form.html:44
 #, fuzzy
@@ -280,8 +280,8 @@ msgstr "Регистрация"
 
 #: templates/registration_success.html:5
 msgid "Ваши данные сохранены, но это еще не все"
-msgstr ""
+msgstr "Ваши данные сохранены. "
 
 #: templates/registration_success.html:6
 msgid "На ваш e-mail выслана ссылка для подтверждения"
-msgstr ""
+msgstr "На ваш email выслана ссылка для подтверждения регистрации."

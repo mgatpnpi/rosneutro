@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-11 09:33-0600\n"
-"PO-Revision-Date: 2016-03-11 16:58+0300\n"
+"PO-Revision-Date: 2016-03-14 10:01+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -31,7 +31,7 @@ msgstr "Candidate of Technical sciences"
 
 #: members/models.py:17
 msgid "д.т.н."
-msgstr "Technical sciences"
+msgstr "Doctor of Technical sciences"
 
 #: members/models.py:18
 msgid "к.б.н."
@@ -231,11 +231,11 @@ msgstr "MENU"
 
 #: templates/confirm_email.html:5
 msgid "Спасибо!"
-msgstr ""
+msgstr "Congratulations!"
 
 #: templates/confirm_email.html:6
 msgid "Теперь ваш адрес электронной почты подтвержден"
-msgstr ""
+msgstr "Your email address has been successfully verified!"
 
 #: templates/main.html:7
 msgid "Российское Нейтронографическое Общество"
@@ -269,7 +269,7 @@ msgstr "Old website"
 
 #: templates/registration_form.html:17
 msgid "обязательно"
-msgstr "required"
+msgstr "required field"
 
 #: templates/registration_form.html:44
 msgid "Зарегистрироваться"
@@ -277,8 +277,8 @@ msgstr "Submit registration form"
 
 #: templates/registration_success.html:5
 msgid "Ваши данные сохранены, но это еще не все"
-msgstr ""
+msgstr "Your data has been saved. To complete your registration"
 
 #: templates/registration_success.html:6
 msgid "На ваш e-mail выслана ссылка для подтверждения"
-msgstr ""
+msgstr "check your e-mail for the confirmation link."
