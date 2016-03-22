@@ -122,5 +122,9 @@ class Person(models.Model):
         if not self.random_string:
             self.random_string = generate_random_string()
         return super(Person, self).save(**kwargs)
+    class Meta:
+        verbose_name = u"Участник"
+        verbose_name_plural = u"Участники"
+        ordering = ('last_name', 'first_name', 'middle_name')
     
 
