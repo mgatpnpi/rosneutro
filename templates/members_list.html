@@ -11,6 +11,7 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
+				<td> </td>
 				<td>{% trans 'Фамилия' %}</td>
 				<td>{% trans 'Имя' %}</td>
 				<td>{% trans 'Отчество' %}</td>
@@ -21,6 +22,7 @@
 		<tbody>
 		{% for member in members %}
 		<tr>
+			<td>{{ forloop.counter }}</td>
 			<td>{{ member.last_name }}</td>
 			<td>{{ member.first_name }}</td>
 			<td>{{ member.middle_name }}</td>
