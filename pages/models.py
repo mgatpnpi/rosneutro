@@ -41,3 +41,4 @@ class CustomSettingsTranslation(Translation):
 
     mainpagecontent = RedactorField("Содержимое главной страницы")
     formpagecontent = RedactorField("Содержимое страницы с формой регистрации", null = True, blank = True)
+    lettercontent = RedactorField("Обращение Вахрушева", null = True, blank = True)
