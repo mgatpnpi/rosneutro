@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-11 09:33-0600\n"
+"POT-Creation-Date: 2016-04-15 06:29-0500\n"
 "PO-Revision-Date: 2016-03-14 10:01+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -129,15 +129,15 @@ msgstr "Instrumentation"
 msgid "Other"
 msgstr "Other"
 
-#: members/models.py:47 templates/members_list.html:12
+#: members/models.py:47 templates/members_list.html:16
 msgid "Имя"
 msgstr "First name"
 
-#: members/models.py:51 templates/members_list.html:13
+#: members/models.py:51 templates/members_list.html:17
 msgid "Отчество"
 msgstr "Middle name"
 
-#: members/models.py:55 templates/members_list.html:11
+#: members/models.py:55 templates/members_list.html:15
 msgid "Фамилия"
 msgstr "Last name"
 
@@ -153,7 +153,7 @@ msgstr "Insert date in dd.mm.yyyy or yyyy-mm-dd format"
 msgid "Email"
 msgstr "Email"
 
-#: members/models.py:66 templates/members_list.html:14
+#: members/models.py:66 templates/members_list.html:18
 msgid "Организация"
 msgstr "Organization"
 
@@ -217,7 +217,7 @@ msgstr "English"
 msgid "Такой страницы нет"
 msgstr "Page not found"
 
-#: templates/500.html:2 templates/500.html.py:7
+#: templates/500.html:3 templates/500.html.py:8
 msgid "Похоже что-то сломалось"
 msgstr "Seems something broke"
 
@@ -237,6 +237,10 @@ msgstr "Congratulations!"
 msgid "Теперь ваш адрес электронной почты подтвержден"
 msgstr "Your email address has been successfully verified!"
 
+#: templates/letter.html:4
+msgid "Обращение"
+msgstr "Message"
+
 #: templates/main.html:7
 msgid "Российское Нейтронографическое Общество"
 msgstr "Russian Neutron Scattering Society"
@@ -255,7 +259,7 @@ msgstr "Membership"
 msgid "Участники"
 msgstr "Members"
 
-#: templates/members_list.html:15
+#: templates/members_list.html:19
 msgid "Подтвержден"
 msgstr "Membership verified"
 

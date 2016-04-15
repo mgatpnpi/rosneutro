@@ -1,6 +1,6 @@
 from django.conf.urls import include, url, patterns
-from django.views.generic import TemplateView
+from .views import MessageView
 
 urlpatterns = patterns('pages.views',
-    url(r"^letter/?$", TemplateView.as_view(template_name = 'letter.html'), name="letter"),
+    url(r"^message/?$", MessageView.as_view(), name="message"),
 )

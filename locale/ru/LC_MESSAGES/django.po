@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-11 09:33-0600\n"
+"POT-Creation-Date: 2016-04-15 06:29-0500\n"
 "PO-Revision-Date: 2016-03-14 10:10+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -131,15 +131,15 @@ msgstr "Приборостроение"
 msgid "Other"
 msgstr "Иное"
 
-#: members/models.py:47 templates/members_list.html:12
+#: members/models.py:47 templates/members_list.html:16
 msgid "Имя"
 msgstr "Имя"
 
-#: members/models.py:51 templates/members_list.html:13
+#: members/models.py:51 templates/members_list.html:17
 msgid "Отчество"
 msgstr "Отчество"
 
-#: members/models.py:55 templates/members_list.html:11
+#: members/models.py:55 templates/members_list.html:15
 msgid "Фамилия"
 msgstr "Фамилия"
 
@@ -155,7 +155,7 @@ msgstr "Введите дату в формате дд.мм.гггг или гг
 msgid "Email"
 msgstr "Адрес электронной почты (email)"
 
-#: members/models.py:66 templates/members_list.html:14
+#: members/models.py:66 templates/members_list.html:18
 msgid "Организация"
 msgstr "Организация"
 
@@ -218,7 +218,7 @@ msgstr "English"
 msgid "Такой страницы нет"
 msgstr "Запрашиваемой Вами страницы не существует"
 
-#: templates/500.html:2 templates/500.html.py:7
+#: templates/500.html:3 templates/500.html.py:8
 msgid "Похоже что-то сломалось"
 msgstr "Похоже что-то сломалось"
 
@@ -238,6 +238,10 @@ msgstr "Спасибо!"
 msgid "Теперь ваш адрес электронной почты подтвержден"
 msgstr "Теперь ваш адрес электронной почты подтвержден!"
 
+#: templates/letter.html:4
+msgid "Обращение"
+msgstr ""
+
 #: templates/main.html:7
 msgid "Российское Нейтронографическое Общество"
 msgstr "Российское Нейтронографическое Общество"
@@ -256,7 +260,7 @@ msgstr "Регистрация"
 msgid "Участники"
 msgstr "Участники"
 
-#: templates/members_list.html:15
+#: templates/members_list.html:19
 msgid "Подтвержден"
 msgstr "Членство подтверждено"
 

@@ -32,3 +32,6 @@ class MainPageView(PageContextMixin, TemplateView):
         context = super(MainPageView, self).get_context_data(**kwargs)
         context['form'] = PersonForm
         return context
+
+class MessageView(PageContextMixin, TemplateView):
+    template_name = 'message.html'
