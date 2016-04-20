@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{{ news_post.translated.title }}{% endblock %}
+
+{% block content %}
+        <article>
+                <h3>{{ news_post.translated.title|safe }}</h3>
+                <time class="small" datetime="{{ news_post.time|date:"c" }}">
+                        {{ news_post.created|date:"d.m.Y H:i"}}
+                </time>
+                <br>
+                <br>
+                
+        		<div>
+        		        {{ news_post.translated.content|safe }}
+        		</div>
+                <br>
+                <br>
+        </article>
+{% endblock %}

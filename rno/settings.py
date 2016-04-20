@@ -82,7 +82,8 @@ INSTALLED_APPS = (
     'compressor',
     'captcha',
     'pages',
-    'members'
+    'members',
+    'news'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -112,7 +113,7 @@ WSGI_APPLICATION = 'rno.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'ru-ru'
+LANGUAGE_CODE = 'ru'
 LANGUAGES = (
 ('ru', _('Russian')),
 ('en', _('English')),

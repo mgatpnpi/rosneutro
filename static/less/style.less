@@ -53,6 +53,11 @@
 html, body{
     height: 100%;
 }
+time{
+        display: block;
+        margin: 15px 0;
+        .text-muted;
+}
 .bgimage{
     background-position: center center;
     background-size: cover;
@@ -98,10 +103,24 @@ html, body{
     color: #fff;
 }
 .menutoptransparent{
-    .navbar-nav>li>a{
-        color: #fff;
-        &:hover, &:focus{
-            color:darken(#fff, 10%);
+    .navbar-nav{
+        li>a{
+            color: #fff;
+            &:hover, &:focus{
+                color:darken(#fff, 10%);
+                background: transparent;
+                border: none;
+            }
+        }
+        li.open>a{
+            &:hover, &:focus{
+                color:darken(#fff, 10%);
+                background: transparent;
+                border: none;
+            }
+        }
+        ul{
+                background: transparent;
         }
     }
     background: transparent;

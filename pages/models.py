@@ -8,6 +8,8 @@ class Translation(models.Model):
     language_code = models.CharField("Язык", max_length = 7, choices = settings.LANGUAGES)
     class Meta:
         abstract = True
+        verbose_name = "Перевод"
+        verbose_name_plural = "Переводы"
 
 class Translatable(models.Model):
     translated = False

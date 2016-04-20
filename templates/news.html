@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Новости" %}{% endblock %}
+
+{% block content %}
+<section>
+	<h2>Новости</h2>
+    <br>
+    <br>
+    
+        {% for news_post in news %}
+            {% include "news_teaser.html" %}
+        {% endfor %}
+    <nav>
+	<ul class="pagination">
+		{%if paginator.num_pages > 1%}
+	{% for page_number in paginator.page_range%}
+		{% if page_number != page_obj.number %}
+        <li><a href="{% url "news" page_number %}">{{ page_number }}</a></li>
+		{% else %}
+			<li class="active" ><span>{{ page_number }}</span></li>
+		{% endif %}
+	{% endfor %}
+		{% endif %}
+	</ul>
+    </nav>
+</section>
+{% endblock %}
+
+

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-15 06:29-0500\n"
+"POT-Creation-Date: 2016-04-20 02:49-0500\n"
 "PO-Revision-Date: 2016-03-14 10:10+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -206,11 +206,11 @@ msgstr "Секретная строка"
 msgid "Опубликован"
 msgstr "Опубликован"
 
-#: rno/settings.py:117
+#: rno/settings.py:118
 msgid "Russian"
 msgstr "Русский"
 
-#: rno/settings.py:118
+#: rno/settings.py:119
 msgid "English"
 msgstr "English"
 
@@ -238,25 +238,21 @@ msgstr "Спасибо!"
 msgid "Теперь ваш адрес электронной почты подтвержден"
 msgstr "Теперь ваш адрес электронной почты подтвержден!"
 
-#: templates/letter.html:4
-msgid "Обращение"
-msgstr ""
-
 #: templates/main.html:7
 msgid "Российское Нейтронографическое Общество"
 msgstr "Российское Нейтронографическое Общество"
 
-#: templates/main.html:10 templates/main.html.py:20 templates/menu.html:8
+#: templates/main.html:10 templates/main.html.py:20
 msgid "О Нас"
 msgstr "О нас"
 
-#: templates/main.html:14 templates/main.html.py:40 templates/menu.html:11
+#: templates/main.html:14 templates/main.html.py:40 templates/menu.html:14
 #: templates/registration.html:3 templates/registration.html.py:5
 msgid "Регистрация"
 msgstr "Регистрация"
 
 #: templates/members_list.html:3 templates/members_list.html.py:7
-#: templates/menu.html:13
+#: templates/menu.html:22
 msgid "Участники"
 msgstr "Участники"
 
@@ -268,9 +264,25 @@ msgstr "Членство подтверждено"
 msgid "Главная"
 msgstr "Главная"
 
-#: templates/menu.html:14
+#: templates/menu.html:8 templates/news.html:3
+msgid "Новости"
+msgstr ""
+
+#: templates/menu.html:11 templates/message.html:4
+msgid "Обращение"
+msgstr ""
+
+#: templates/menu.html:18
+msgid "Еще ..."
+msgstr ""
+
+#: templates/menu.html:23
 msgid "Архивный сайт"
 msgstr "Архивный сайт"
+
+#: templates/news_teaser.html:11
+msgid "Подробнее ..."
+msgstr ""
 
 #: templates/registration_form.html:17
 msgid "обязательно"

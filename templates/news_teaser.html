@@ -1,0 +1,16 @@
+{% load i18n %}
+        <article>
+                <h3>{{ news_post.translated.title|safe }}</h3>
+                <time class="small" datetime="{{ news_post.time|date:"c"}}">
+                        {{ news_post.created|date:"d.m.Y H:i"}}
+                </time>
+                
+        		<div>
+        		        {{ news_post.translated.content|safe|truncatechars_html:300 }}
+        		</div>
+                {% if news_post.translated.content|length > 300 %}
+                <a href="{% url 'news_post' news_post.pk %}">{% trans "Подробнее ..." %}</a>
+                {% endif %}
+                <br>
+        </article>
+

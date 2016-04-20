@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django import forms
+from django.utils.translation import get_language
 from .models import Person
 from captcha.fields import ReCaptchaField
 from datetime import date
@@ -23,7 +24,7 @@ class ModelBootstrappedForm(forms.ModelForm):
         #self.fields.values()[0].widget.attrs['autofocus'] = 'autofocus'
 
 class PersonForm(ModelBootstrappedForm):
-    captcha = ReCaptchaField(use_ssl=True, attrs={'theme':'clean', 'lang': 'ru'})
+    captcha = ReCaptchaField(use_ssl=True, attrs={'theme':'clean', 'lang': get_language()})
     class Meta:
         model = Person
         fields = [
