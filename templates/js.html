@@ -13,7 +13,7 @@
 <script>
 $(function(){
         $('.datepicker').datepicker({
-            format: 'dd.mm.yyyy',
+            format: {% if LANGUAGE_CODE == 'ru'%}'dd.mm.yyyy'{% else %}'yyyy-mm-dd'{% endif %},
             language: '{{ LANGUAGE_CODE }}',
             forceParse: false
 		});
