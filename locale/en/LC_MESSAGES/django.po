@@ -147,7 +147,7 @@ msgstr "Date of birth"
 
 #: members/models.py:59
 msgid "Введите дату в формате дд.мм.гггг или гггг-мм-дд"
-msgstr "Insert date in dd.mm.yyyy or yyyy-mm-dd format"
+msgstr "Insert date in yyyy-mm-dd format"
 
 #: members/models.py:62
 msgid "Email"
