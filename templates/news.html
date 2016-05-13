@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block title %}{% trans "Новости" %}{% endblock %}
+{% block title %}{% trans "Новости" %} - {% endblock %}
 
 {% block content %}
 <section>
@@ -10,6 +10,7 @@
     
         {% for news_post in news %}
             {% include "news_teaser.html" %}
+            <br>
         {% endfor %}
     <nav>
 	<ul class="pagination">
