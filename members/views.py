@@ -24,8 +24,14 @@ class RegistrationSuccessView(PageContextMixin, TemplateView):
 class ConfirmEmailView(PageContextMixin, TemplateView):
     template_name = "confirm_email.html"
     def dispatch(self, request, *args, **kwargs):
-        queryset = Person.objects.filter(published = True, created__gt = date.today() - relativedelta(months = 1))
-        person = get_object_or_404(queryset, random_string = self.kwargs['random_string'])
+        queryset = Person.objects.filter(
+                published = True,
+                created__gt = date.today() - relativedelta(months = 1)
+                )
+        person = get_object_or_404(
+                queryset,
+                random_string = self.kwargs['random_string']
+                )
         person.confirmed = True
         person.subscribed = True
         person.save()

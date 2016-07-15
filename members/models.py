@@ -2,6 +2,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from pages.models import Translation, Translatable
+from django.contrib.auth.models import User
 import string
 import random
 
@@ -118,9 +119,12 @@ class Person(models.Model):
     updated = models.DateTimeField(
             auto_now = True
     )
+    user = models.OneToOneField(User, null=True)
     def save(self, **kwargs):
         if not self.random_string:
             self.random_string = generate_random_string()
+        if not self.user and self.confirmed:
+            self.user = User.objects.create_user(self.email, self.email)
         return super(Person, self).save(**kwargs)
     class Meta:
         verbose_name = u"Участник"
