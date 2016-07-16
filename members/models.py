@@ -123,8 +123,13 @@ class Person(models.Model):
     def save(self, **kwargs):
         if not self.random_string:
             self.random_string = generate_random_string()
+            while Person.objects.filter(
+                    random_string = self.random_string
+                    ).count():
+                self.random_string = generate_random_string()
         if not self.user and self.confirmed:
-            self.user = User.objects.create_user(self.email, self.email)
+            username = self.email[:30]
+            self.user = User.objects.create_user(username, self.email)
         return super(Person, self).save(**kwargs)
     class Meta:
         verbose_name = u"Участник"
