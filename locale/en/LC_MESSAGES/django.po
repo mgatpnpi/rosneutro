@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-20 02:49-0500\n"
-"PO-Revision-Date: 2016-04-20 12:03+0300\n"
+"POT-Creation-Date: 2016-08-04 03:47-0500\n"
+"PO-Revision-Date: 2016-08-04 11:57+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -17,167 +17,167 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: members/models.py:14
+#: members/models.py:15
 msgid "к.ф.-м.н."
 msgstr "Candidate of Physico-mathematical sciences"
 
-#: members/models.py:15
+#: members/models.py:16
 msgid "д.ф.-м.н."
 msgstr "Doctor of Physico-mathematical sciences"
 
-#: members/models.py:16
+#: members/models.py:17
 msgid "к.т.н."
 msgstr "Candidate of Technical sciences"
 
-#: members/models.py:17
+#: members/models.py:18
 msgid "д.т.н."
 msgstr "Doctor of Technical sciences"
 
-#: members/models.py:18
+#: members/models.py:19
 msgid "к.б.н."
 msgstr "Candidate of Biological sciences"
 
-#: members/models.py:19
+#: members/models.py:20
 msgid "д.б.н."
 msgstr "Doctor of Biological sciences"
 
-#: members/models.py:20
+#: members/models.py:21
 msgid "к.х.н."
 msgstr "Candidate of Chemical sciences"
 
-#: members/models.py:21
+#: members/models.py:22
 msgid "д.х.н."
 msgstr "Doctor of Chemical sciences"
 
-#: members/models.py:22
+#: members/models.py:23
 msgid "к.г.-м.н."
 msgstr "Candidate of Geologo-mineralogical sciences"
 
-#: members/models.py:23
+#: members/models.py:24
 msgid "д.г.-м.н."
 msgstr "Doctor of Geologo-mineralogical sciences"
 
-#: members/models.py:24
+#: members/models.py:25
 msgid "к.и.н."
 msgstr "Candidate of Historical sciences"
 
-#: members/models.py:25
+#: members/models.py:26
 msgid "д.и.н."
 msgstr "Doctor of Historical sciences"
 
-#: members/models.py:26
+#: members/models.py:27
 msgid "к.м.н."
 msgstr "Candidate of Medical sciences"
 
-#: members/models.py:27
+#: members/models.py:28
 msgid "д.м.н."
 msgstr "Doctor of Medical sciences"
 
-#: members/models.py:28
+#: members/models.py:29
 msgid "к.фарм.н."
 msgstr "Candidate of Pharmaceutical sciences"
 
-#: members/models.py:29
+#: members/models.py:30
 msgid "д.фарм.н."
 msgstr "Doctor of Pharmaceutical sciences"
 
-#: members/models.py:32
+#: members/models.py:33
 msgid "Biology"
 msgstr "Biology"
 
-#: members/models.py:33
+#: members/models.py:34
 msgid "Chemistry"
 msgstr "Chemistry"
 
-#: members/models.py:34
+#: members/models.py:35
 msgid "Crystallography"
 msgstr "Crystallography"
 
-#: members/models.py:35
+#: members/models.py:36
 msgid "Engineering"
 msgstr "Engineering"
 
-#: members/models.py:36
+#: members/models.py:37
 msgid "Cond. Matter Physics"
 msgstr "Condensed Matter Physics"
 
-#: members/models.py:37
+#: members/models.py:38
 msgid "Fundamental Physics"
 msgstr "Fundamental and Nuclear Physics"
 
-#: members/models.py:38
+#: members/models.py:39
 msgid "Ceramics"
 msgstr "Ceramics"
 
-#: members/models.py:39
+#: members/models.py:40
 msgid "Metallic Materials"
 msgstr "Metallic Materials"
 
-#: members/models.py:40
+#: members/models.py:41
 msgid "Polymers"
 msgstr "Polymers"
 
-#: members/models.py:41
+#: members/models.py:42
 msgid "Other Materials Science"
 msgstr "Other Materials Science"
 
-#: members/models.py:42
+#: members/models.py:43
 msgid "Instrumentation"
 msgstr "Instrumentation"
 
-#: members/models.py:43
+#: members/models.py:44
 msgid "Other"
 msgstr "Other"
 
-#: members/models.py:47 templates/members_list.html:16
+#: members/models.py:48 templates/members_list.html:16
 msgid "Имя"
 msgstr "First name"
 
-#: members/models.py:51 templates/members_list.html:17
+#: members/models.py:52 templates/members_list.html:17
 msgid "Отчество"
 msgstr "Middle name"
 
-#: members/models.py:55 templates/members_list.html:15
+#: members/models.py:56 templates/members_list.html:15
 msgid "Фамилия"
 msgstr "Last name"
 
-#: members/models.py:58
+#: members/models.py:59
 msgid "Дата рождения"
 msgstr "Date of birth"
 
-#: members/models.py:59
+#: members/models.py:60
 msgid "Введите дату в формате дд.мм.гггг или гггг-мм-дд"
 msgstr "Insert date in yyyy-mm-dd format"
 
-#: members/models.py:62
+#: members/models.py:63
 msgid "Email"
 msgstr "Email"
 
-#: members/models.py:66 templates/members_list.html:18
+#: members/models.py:67 templates/members_list.html:18
 msgid "Организация"
 msgstr "Organization"
 
-#: members/models.py:70
+#: members/models.py:71
 msgid "Должность"
 msgstr "Job title"
 
-#: members/models.py:74
+#: members/models.py:75
 msgid "Ученая степень"
 msgstr "Academic degree"
 
-#: members/models.py:80
+#: members/models.py:81
 msgid "Научные интересы"
 msgstr "Areas of expertise"
 
-#: members/models.py:86
+#: members/models.py:87
 msgid "Примечания"
 msgstr "Comments"
 
-#: members/models.py:91
+#: members/models.py:92
 msgid "Публикации"
 msgstr "Publications"
 
-#: members/models.py:92
+#: members/models.py:93
 msgid ""
 "Вы можете просто дать ссылку на свой профиль в Research Gate, или на "
 "аналогичный ресурс"
@@ -185,25 +185,33 @@ msgstr ""
 "You may provide a web-link to your ResearchGate profile or a link to a "
 "similar Website"
 
-#: members/models.py:96
+#: members/models.py:97
 msgid "Подтвержденo право голоса"
 msgstr "Right of vote confirmed"
 
-#: members/models.py:100
+#: members/models.py:101
 msgid "Подтвердил Email"
 msgstr "Email confirmed"
 
-#: members/models.py:104
+#: members/models.py:105
 msgid "Подписан на рассылку"
 msgstr "Subscription activated"
 
-#: members/models.py:109
+#: members/models.py:110
 msgid "Секретная строка"
 msgstr "Secret entry"
 
-#: members/models.py:112
+#: members/models.py:113
 msgid "Опубликован"
 msgstr "Online application has been successfully submitted!"
+
+#: members/views.py:69
+msgid "Такого E-mail нет у зарегистрированых участников"
+msgstr "No such e-mail"
+
+#: members/views.py:77
+msgid "На ваш E-mail уже выслана ссылка для входа и она еще действует"
+msgstr "The link has been already sent to your email"
 
 #: rno/settings.py:118
 msgid "Russian"
@@ -250,6 +258,39 @@ msgstr "About us"
 msgid "Регистрация"
 msgstr "Membership"
 
+#: templates/member_enter.html:5
+msgid "Вы вошли как"
+msgstr "You signed in as"
+
+#: templates/member_enter.html:6
+msgid "Теперь вы можете изменять вашу личную информацию"
+msgstr "Now you can change your personal information"
+
+#: templates/member_logout.html:5
+msgid "Вы завершили авторизованную сессию"
+msgstr "Your authorisation session is closed"
+
+#: templates/member_logout.html:6
+msgid "Для того чтобы войти снова, запросите новую сессию"
+msgstr "To sign in again request a new link"
+
+#: templates/member_request_session.html:3
+#: templates/member_request_session.html:5
+msgid "Вход"
+msgstr "Sign In"
+
+#: templates/member_request_session_form.html:30
+msgid "Получить ссылку"
+msgstr "Get authorisation link"
+
+#: templates/member_request_session_success.html:5
+msgid "Вам выслана ссылка для входа"
+msgstr "Your authorisation link has been sent"
+
+#: templates/member_request_session_success.html:6
+msgid "На ваш e-mail выслана ссылка для входа на сайт"
+msgstr "Check your e-mail for the authorisation link"
+
 #: templates/members_list.html:3 templates/members_list.html.py:7
 #: templates/menu.html:22
 msgid "Участники"
@@ -263,7 +304,7 @@ msgstr "Membership verified"
 msgid "Главная"
 msgstr "Home"
 
-#: templates/menu.html:8 templates/news.html:3
+#: templates/menu.html:8 templates/news.html:3 templates/news.html.py:7
 msgid "Новости"
 msgstr "News"
 
@@ -279,7 +320,7 @@ msgstr "More ..."
 msgid "Архивный сайт"
 msgstr "Old website"
 
-#: templates/news_teaser.html:11
+#: templates/news_teaser.html:12
 msgid "Подробнее ..."
 msgstr "Continue reading ..."
 

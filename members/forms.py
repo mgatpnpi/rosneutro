@@ -38,3 +38,10 @@ class PersonForm(ModelBootstrappedForm):
             'degree',
             'note'
         ]
+
+class RequestLinkForm(ModelBootstrappedForm):
+    class Meta:
+        model = Person
+        fields = [
+                'email',
+                ]

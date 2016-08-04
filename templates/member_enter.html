@@ -1,0 +1,7 @@
+{% extends 'base.html'%}
+{% load i18n %}
+{% block content %}
+
+<h1>{% trans 'Вы вошли как' %} {{ user.person.first_name }} {{ user.person.last_name }}</h1>
+<span class="lead">{% trans 'Теперь вы можете изменять вашу личную информацию' %}</span>
+{% endblock %}

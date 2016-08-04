@@ -136,4 +136,32 @@ class Person(models.Model):
         verbose_name_plural = u"Участники"
         ordering = ('last_name', 'first_name', 'middle_name')
     
-
+class Secret(models.Model):
+    TIME_TO_LIVE = 24 #hours
+    created = models.DateTimeField(
+            verbose_name = u"Создан",
+            auto_now_add = True
+            )
+    user = models.ForeignKey(User)
+    secret = models.SlugField(
+            max_length = 50,
+            verbose_name = u"Секрет"
+            )
+    used = models.BooleanField(
+            verbose_name = u"Использован",
+            default = False
+            )
+    def save(self, **kwargs):
+        if not self.secret:
+            self.secret = generate_random_string()
+            while Secret.objects.filter(
+                    secret = self.secret
+                    ).count():
+                selt.secret = generate_random_string()
+        self.user.set_password(self.secret)
+        self.user.save()
+        return super(Secret, self).save(**kwargs)
+    class Meta:
+        verbose_name = u"Секрет для входа"
+        verbose_name_plural = u"Секреты для входа"
+        ordering = ('-created',)
