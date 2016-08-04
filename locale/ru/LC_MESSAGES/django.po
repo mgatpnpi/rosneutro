@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-04 03:47-0500\n"
-"PO-Revision-Date: 2016-08-04 12:01+0300\n"
+"PO-Revision-Date: 2016-08-04 15:05+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -208,13 +208,11 @@ msgstr "Опубликован"
 
 #: members/views.py:69
 msgid "Такого E-mail нет у зарегистрированых участников"
-msgstr ""
+msgstr "Нет такого адреса электронной почты"
 
 #: members/views.py:77
-#, fuzzy
-#| msgid "На ваш e-mail выслана ссылка для подтверждения"
 msgid "На ваш E-mail уже выслана ссылка для входа и она еще действует"
-msgstr "На ваш email выслана ссылка для подтверждения регистрации."
+msgstr ""
 
 #: rno/settings.py:118
 msgid "Russian"
@@ -283,22 +281,16 @@ msgid "Вход"
 msgstr "Войти"
 
 #: templates/member_request_session_form.html:30
-#, fuzzy
-#| msgid "Подписан на рассылку"
 msgid "Получить ссылку"
-msgstr "Подписан на рассылку"
+msgstr ""
 
 #: templates/member_request_session_success.html:5
-#, fuzzy
-#| msgid "На ваш e-mail выслана ссылка для подтверждения"
 msgid "Вам выслана ссылка для входа"
-msgstr "На ваш email выслана ссылка для подтверждения регистрации."
+msgstr "Вы можете авторизоваться"
 
 #: templates/member_request_session_success.html:6
-#, fuzzy
-#| msgid "На ваш e-mail выслана ссылка для подтверждения"
 msgid "На ваш e-mail выслана ссылка для входа на сайт"
-msgstr "На ваш email выслана ссылка для подтверждения регистрации."
+msgstr ""
 
 #: templates/members_list.html:3 templates/members_list.html.py:7
 #: templates/menu.html:22
@@ -338,10 +330,8 @@ msgid "обязательно"
 msgstr "обязательно"
 
 #: templates/registration_form.html:44
-#, fuzzy
-#| msgid "Регистрация"
 msgid "Зарегистрироваться"
-msgstr "Регистрация"
+msgstr ""
 
 #: templates/registration_success.html:5
 msgid "Ваши данные сохранены, но это еще не все"

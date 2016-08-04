@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-04 03:47-0500\n"
-"PO-Revision-Date: 2016-08-04 11:57+0300\n"
+"PO-Revision-Date: 2016-08-04 15:06+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -211,7 +211,8 @@ msgstr "No such e-mail"
 
 #: members/views.py:77
 msgid "На ваш E-mail уже выслана ссылка для входа и она еще действует"
-msgstr "The link has been already sent to your email"
+msgstr ""
+"The link has been already sent to your email and it is not expired yet"
 
 #: rno/settings.py:118
 msgid "Russian"

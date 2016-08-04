@@ -12,7 +12,7 @@ def confirmation_link_email(email, secret):
 Этот адрес электронной почты был указан при регистрации на сайте Российского Нейтронографического общества
 
 Вот ваша секретная ссылка для подтверждения регистрации:
-http://rno.pnpi.spb.ru{% url "members_email_confirm" person.random_string %}
+http://rno.pnpi.spb.ru{% url "members_email_confirm" secret %}
 
 You have received this email because this email address was used during 
 registration on the website of the Russian Neutron Scattering Society.
@@ -35,7 +35,12 @@ def secret_link_email(email, secret):
 Ссылка для входа на сайт РосНейтрО
 https://rno.pnpi.spb.ru{% url "member_enter" secret %}
 
-Действительна в течение двух часов
+Действительна в течение двадцати четырех часов
+
+Authorisation link
+https://rno.pnpi.spb.ru{% url "member_enter" secret %}
+
+Available for 24 hours
 
 """)
     send_mail(
