@@ -131,7 +131,6 @@ class AuthorisationTestCase(TestCase):
                 follow = True
                 )
         self.assertIn('error', smart_text(response.content))
-        self.assertIn('<input', smart_text(response.content))
         # enter
         secret = Secret.objects.get(user = self.person.user)
         response_enter = self.client.get(

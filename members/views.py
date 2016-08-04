@@ -120,13 +120,5 @@ class MemberLogoutView(PageContextMixin, TemplateView):
             random_password = generate_random_string()
             request.user.set_password(random_password)
             request.user.save()
-            for secret in request.user.secret_set.filter(
-                    created__gt = datetime.now() -
-                        relativedelta(hours = Secret.TIME_TO_LIVE),
-                    used = False
-                    ):
-                secret.used = True
-                secret.save()
-
             logout(request)
         return super(MemberLogoutView, self).dispatch(request, *args, **kwargs)

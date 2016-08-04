@@ -125,7 +125,7 @@ class Person(models.Model):
             self.random_string = generate_random_string()
             while Person.objects.filter(
                     random_string = self.random_string
-                    ).count():
+                    ).count() > 0:
                 self.random_string = generate_random_string()
         if not self.user and self.confirmed:
             username = self.email[:30]
@@ -156,10 +156,11 @@ class Secret(models.Model):
             self.secret = generate_random_string()
             while Secret.objects.filter(
                     secret = self.secret
-                    ).count():
-                selt.secret = generate_random_string()
-        self.user.set_password(self.secret)
-        self.user.save()
+                    ).count() > 0:
+                self.secret = generate_random_string()
+        if not self.used:
+            self.user.set_password(self.secret)
+            self.user.save()
         return super(Secret, self).save(**kwargs)
     class Meta:
         verbose_name = u"Секрет для входа"
