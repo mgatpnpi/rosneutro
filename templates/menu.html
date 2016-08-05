@@ -1,26 +1,39 @@
 {% load i18n %}
 {% load static %}
 <ul class="nav navbar-nav">
-    <li><a href="{% url 'main_page'%}">
-{% trans "Главная" %}
-</a></li>
-    <li><a href="{% url 'news' 1%}">
-{% trans "Новости" %}
-</a></li>
-<li>
+    <li>
+        <a href="/#main-page-header" data-toggle="collapse" data-target="#main-menu">{% trans "Главная" %}</a>
+    </li>
+    <li>
+        <a href="/#content" data-toggle="collapse" data-target="#main-menu">{% trans "О Нас" %}</a>
+    </li>
+{% if path == '/' %}
+    <li>
+        <a href="/#form-section" data-toggle="collapse" data-target="#main-menu">{% trans "Регистрация" %}</a>
+    </li>
+{% else %}
+    <li>
+        <a href="{% url 'members_registration'%}">{% trans "Регистрация" %}</a>
+    </li>
+{% endif %}
+    <li>
+        <a href="{% url 'news' 1%}">{% trans "Новости" %}</a>
+    </li>
+    <li>
         <a href="{% url 'message' %}">{% trans "Обращение" %}</a>
-</li>
-<li>
-<a href="{% url 'members_registration'%}">{% trans "Регистрация" %}</a>
-</li>
-	                                <li class="dropdown">
-                                                <a data-toggle="dropdown" href="#">
-                                                        {% trans "Еще ..."%}
-							<b class="caret"></b>
-	                                        </a>
-	                                        <ul class="dropdown-menu">
-    <li><a href="{% url 'members_list'%}">{% trans "Участники" %}</a></li>
-    <li><a href="/archive/index.php.html">{% trans "Архивный сайт"%}</a></li>
-	                                        </ul>
-	                                </li>
+    </li>
+	<li class="dropdown">
+        <a data-toggle="dropdown" href="#">
+            {% trans "Еще ..."%}
+			<b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="{% url 'members_list'%}">{% trans "Участники" %}</a>
+            </li>
+            <li>
+                <a href="/archive/index.php.html">{% trans "Архивный сайт"%}</a>
+            </li>
+        </ul>
+    </li>
 </ul>
