@@ -6,6 +6,8 @@ from .views import RegistrationView, \
     MemberEnterView, \
     MemberRequestSessionView, \
     MemberRequestSessioniSuccessView, \
+    MemberEditProfileView, \
+    MemberEditProfileSuccessView, \
     MemberLogoutView
 
 urlpatterns = patterns('members.views',
@@ -15,7 +17,7 @@ urlpatterns = patterns('members.views',
         name="members_registration"
         ),
     url(
-        r"success/?$",
+        r"^success/?$",
         RegistrationSuccessView.as_view(),
         name = "members_success"
         ),
@@ -48,5 +50,15 @@ urlpatterns = patterns('members.views',
         r"^logout/?$",
         MemberLogoutView.as_view(),
         name="member_logout"
+        ),
+    url(
+        r"^edit/profile/?$",
+        MemberEditProfileView.as_view(),
+        name="member_edit_profile"
+        ),
+    url(
+        r"^edit/profile/success/?$",
+        MemberEditProfileSuccessView.as_view(),
+        name="member_edit_profile_success"
         )
 )

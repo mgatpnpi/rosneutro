@@ -45,3 +45,8 @@ class RequestLinkForm(ModelBootstrappedForm):
         fields = [
                 'email',
                 ]
+
+class MemberEditProfileForm(ModelBootstrappedForm):
+    class Meta:
+        model = Person
+        fields = Person.MEMBER_EDIT_FIELDS

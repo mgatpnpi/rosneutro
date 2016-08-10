@@ -9,7 +9,8 @@
 			{% endif %}
 
 			<div class="form-group row">
-					<label class="control-label col-md-5">
+                    <div class="col-md-3"></div>
+					<label class="control-label col-md-3 text-right">
                     <b>
 					{{ field.label }}
 <br>
@@ -18,17 +19,20 @@
 					{{ field.help_text }}
 					</small>
                     </label>
-						<div class="col-md-7 controls">
+						<div class="col-md-3 controls">
 						        {{ field }}
 						</div>
+                    <div class="col-md-3"></div>
 			</div>
             
             {% endfor %}
+        <br>
 		<div class="row">
-            <div class="col-md-8"></div>
-		<div class="col-md-4">
+            <div class="col-md-6"></div>
+		<div class="col-md-3">
 		        <button type="submit" class="btn btn-success btn-lg btn-default clearfix pull-right">{% trans 'Получить ссылку' %}</button>
 		</div>
+                    <div class="col-md-3"></div>
 		</div>
         
         <br>

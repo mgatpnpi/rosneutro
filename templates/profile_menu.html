@@ -1,0 +1,25 @@
+{% load i18n %}
+{% load static %}
+<ul class="nav navbar-nav navbar-right">
+{% if user.is_authenticated %}
+	<li class="dropdown">
+        <a data-toggle="dropdown" href="#">
+            <span class="glyphicon glyphicon-user"></span>
+			<b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="{% url 'member_edit_profile'%}">{% trans "Профиль" %}</a>
+            </li>
+            <li>
+                <a href="{% url 'member_logout'%}">{% trans "Выйти" %}</a>
+            </li>
+        </ul>
+    </li>
+{% else %}
+    <li>
+        <a href="{% url 'member_request_session'%}">{% trans "Вход" %}</a>
+    </li>
+{% endif %}
+</ul>
+

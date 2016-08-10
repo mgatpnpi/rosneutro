@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+	{% block title %} 403 {% trans 'Доступ запрещен' %}{% endblock %}
+
+{% block content %}
+		<span style="font-size: 7em">403</span>
+		
+		<h2>{% trans 'Доступ запрещен' %}</h2>
+        <span class="lead">{% trans 'Похоже ваша сессия устарела - попробуйте получить новую'%}</span>
+{% endblock %}
+

@@ -43,13 +43,24 @@ class Person(models.Model):
         ("Instrumentation", _("Instrumentation")),
         ("Other", _("Other")),
     )
+    MEMBER_EDIT_FIELDS = [
+            'first_name',
+            'last_name',
+            'middle_name',
+            'birthday',
+            'email',
+            'organization',
+            'position',
+            'degree',
+            ]
     first_name = models.CharField(
             max_length = 255,
             verbose_name = _(u"Имя")
     )
     middle_name = models.CharField(
             max_length = 255,
-            verbose_name = _(u"Отчество")
+            verbose_name = _(u"Отчество"),
+            blank = True
     )
     last_name = models.CharField(
             max_length = 255,

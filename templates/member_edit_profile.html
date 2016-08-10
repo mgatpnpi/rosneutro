@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% load i18n %}
+{% block title %}{% trans 'Редактировать профиль' %} - {% endblock %}
+{% block content %}
+<h1 class="text-center">{% trans "Редактировать профиль" %}</h1>
+<br>
+
+
+{% include 'member_edit_profile_form.html' %}
+{% endblock %}
+
+
+{% block custom_scripts %}
+    <script>
+        emailInput = $("input[name=email]");
+        window.emailInputValue = emailInput.val();
+        emailInput.bind('focusout', function(){
+            if($(this).val() != window.emailInputValue){
+                alert("Внимание, если вы укажете неверный адрес почты, вы не сможете войти снова");
+                $(this).unbind('focusout')
+            }
+        })
+    </script>
+{% endblock %}

@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from dateutil.relativedelta import relativedelta
 from .models import Person, Secret
 import os
+import datetime
 
 class RegistrationTest(TestCase):
     def setUp(self):
@@ -31,9 +32,9 @@ class RegistrationTest(TestCase):
                     },
                 follow=True
                 )
-        self.assertEquals(200, response_submit.status_code)
+        self.assertEqual(200, response_submit.status_code)
         self.assertNotIn('error', smart_text(response_submit.content))
-        self.assertEquals(
+        self.assertEqual(
                 True,
                 bool(
                     Person.objects.filter(
@@ -42,8 +43,8 @@ class RegistrationTest(TestCase):
                     )
                 )
         person = Person.objects.get(email = 'test@test123default.org')
-        self.assertNotEquals( "", person.random_string)
-        self.assertNotEquals( None, person.random_string)
+        self.assertNotEqual( "", person.random_string)
+        self.assertNotEqual( None, person.random_string)
         response_table = self.client.get(reverse('members_list'))
         content = smart_text(response_table.content)
         self.assertNotIn(u'тестовая фамилия', content)
@@ -51,7 +52,7 @@ class RegistrationTest(TestCase):
         self.assertNotIn(u'тестовое отчество', content)
         self.assertNotIn(u'тестовая организация', content)
 
-        self.assertEquals( None, person.user)
+        self.assertEqual( None, person.user)
 
         secret_url = reverse(
                 'members_email_confirm',
@@ -60,7 +61,7 @@ class RegistrationTest(TestCase):
                     }
                 )
         response_success = self.client.get(secret_url)
-        self.assertNotEquals(200, response_success.status_code)
+        self.assertNotEqual(200, response_success.status_code)
         secret_url = reverse(
                 'members_email_confirm',
                 kwargs={
@@ -68,18 +69,18 @@ class RegistrationTest(TestCase):
                     }
                 )
         response_success = self.client.get(secret_url)
-        self.assertEquals(200, response_success.status_code)
+        self.assertEqual(200, response_success.status_code)
 
         person = Person.objects.get(email = 'test@test123default.org')
-        self.assertEquals(person.confirmed, True)
-        self.assertEquals( True, person.subscribed)
+        self.assertEqual(person.confirmed, True)
+        self.assertEqual( True, person.subscribed)
         response_table = self.client.get(reverse('members_list'))
         self.assertIn(u'тестовая фамилия', smart_text(response_table.content))
         self.assertIn(u'тестовое имя', smart_text(response_table.content))
         self.assertIn(u'тестовое отчество', smart_text(response_table.content))
         self.assertIn(u'тестовая организация', smart_text(response_table.content))
 
-        self.assertEquals(
+        self.assertEqual(
                 User.objects.get(
                     email='test@test123default.org'
                     ),
@@ -98,11 +99,7 @@ class AuthorisationTestCase(TestCase):
                 organization = "Night's Watch",
                 confirmed = True
                 )
-        os.environ['RECAPTCHA_TESTING'] = 'True'
         self.client = Client()
-    def tearDown(self):
-        os.environ['RECAPTCHA_TESTING'] = 'False'
-
     def testUserCreated(self):
         self.assertEqual(self.person.email, self.person.user.email)
     def testWrongEmailRequest(self):
@@ -177,7 +174,7 @@ class AuthorisationTestCase(TestCase):
                     ),
                 follow = True
                 )
-        self.assertEqual(404, response_enter.status_code)
+        self.assertEqual(403, response_enter.status_code)
     def testExpiredSecretEnter(self):
         # request member session
         response = self.client.post(
@@ -198,4 +195,67 @@ class AuthorisationTestCase(TestCase):
                     ),
                 follow = True
                 )
-        self.assertEqual(404, response_enter.status_code)
+        self.assertEqual(403, response_enter.status_code)
+
+class ProfileEditingTestCase(TestCase):
+    def setUp(self):
+        self.person = Person.objects.create(
+                first_name = 'John',
+                last_name = 'Snow',
+                middle_name = 'Nedovich',
+                birthday = '2010-01-01',
+                email = 'johnsnow@nosuchemail.uk',
+                organization = "Night's Watch",
+                position = 'Lord Commander',
+                confirmed = True
+                )
+        self.client = Client()
+
+    def testEditProfile(self):
+        # request member session
+        response = self.client.post(
+                reverse('member_request_session'),
+                {'email':self.person.email},
+                follow = True
+                )
+        # enter
+        secret = Secret.objects.get(user = self.person.user)
+        response_enter = self.client.get(
+                reverse_lazy(
+                    'member_enter',
+                    kwargs = {'secret': secret.secret}
+                    ),
+                follow = True
+                )
+        # edit profile
+        response = self.client.post(
+                reverse('member_edit_profile'),
+                {
+                    'first_name': 'Ramsy',
+                    'last_name': 'Bolton',
+                    'middle_name': 'bastard',
+                    'birthday': '2012-01-01',
+                    'email': 'ramsybolton@nosuchemail.uk',
+                    'organization': 'Winterfell',
+                    'position': 'Lord of Winterfell'
+                    },
+                follow = True
+                )
+        self.assertEqual(200, response.status_code)
+        self.assertNotIn('error', smart_text(response.content))
+
+        test_response = self.client.get('/')
+        self.assertEqual(200, test_response.status_code)
+        self.assertEqual(
+                self.person.user.email,
+                test_response.context['user'].email
+                )
+
+        person = secret.user.person
+        self.assertEqual(person.first_name, 'Ramsy')
+        self.assertEqual(person.last_name, 'Bolton')
+        self.assertEqual(person.middle_name, 'bastard')
+        self.assertEqual(person.birthday, datetime.date(2012,1,1))
+        self.assertEqual(person.email, 'ramsybolton@nosuchemail.uk')
+        self.assertEqual(person.organization, 'Winterfell')
+        self.assertEqual(person.position, 'Lord of Winterfell')

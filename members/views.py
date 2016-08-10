@@ -5,7 +5,10 @@ from django.views.generic import \
         DetailView, \
         ListView, \
         CreateView, \
+        UpdateView, \
         FormView
+from django.views.defaults import permission_denied
+from django.forms.models import model_to_dict
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse_lazy, reverse
@@ -17,10 +20,14 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
 from .models import Person, Secret, generate_random_string
-from .forms import PersonForm, RequestLinkForm
+from .forms import \
+        PersonForm, \
+        RequestLinkForm, \
+        MemberEditProfileForm
 from .tasks import \
         confirmation_link_email, \
         secret_link_email
+
 
 class RegistrationView(PageContextMixin, CreateView):
     model = Person
@@ -100,18 +107,22 @@ class MemberEnterView(PageContextMixin, TemplateView):
                         relativedelta(hours = Secret.TIME_TO_LIVE),
                     used = False
                     )
-            self.secret = get_object_or_404(
-                    queryset,
-                    secret = self.kwargs['secret']
-                    )
+            try:
+                self.secret = queryset.get(secret = self.kwargs['secret'])
+            except Secret.DoesNotExist:
+                return permission_denied(request)
             self.secret.used = True
             self.secret.save()
-            user = authenticate(
-                    username = self.secret.user.username,
-                    password = self.secret.secret
-                    )
-            login(request, user)
-        return super(MemberEnterView, self).dispatch(request, *args, **kwargs)
+            try:
+                user = authenticate(
+                        username = self.secret.user.username,
+                        password = self.secret.secret
+                        )
+                login(request, user)
+            except:
+                return permission_denied(request)
+
+            return super(MemberEnterView, self).dispatch(request, *args, **kwargs)
 
 class MemberLogoutView(PageContextMixin, TemplateView):
     template_name = "member_logout.html"
@@ -122,3 +133,36 @@ class MemberLogoutView(PageContextMixin, TemplateView):
             request.user.save()
             logout(request)
         return super(MemberLogoutView, self).dispatch(request, *args, **kwargs)
+
+class MemberEditProfileView(PageContextMixin, UpdateView):
+    template_name = "member_edit_profile.html"
+    model = Person
+    form_class = MemberEditProfileForm
+    def get_success_url(self):
+        return reverse("member_edit_profile_success")
+    def get_object(self):
+        return self.request.user.person
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated():
+            return permission_denied(request)
+        return super(MemberEditProfileView, self).dispatch(request, *args, **kwargs)
+
+class MemberEditProfileSuccessView(PageContextMixin, DetailView):
+    template_name = "member_edit_profile_success.html"
+    model = Person
+    def get_object(self):
+        obj = self.request.user.person
+        obj.fields =[ 
+                (
+                    obj._meta.get_field(name).verbose_name,
+                    obj._meta.get_field(name).value_to_string(obj)
+                    )
+                    for name in obj.MEMBER_EDIT_FIELDS
+                    if getattr(obj, name)
+                 ]
+        return obj
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated():
+            return permission_denied(request)
+        return super(MemberEditProfileSuccessView, self).dispatch(request, *args, **kwargs)
+
