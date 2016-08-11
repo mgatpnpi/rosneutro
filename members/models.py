@@ -224,6 +224,9 @@ class CustomEmailMessage(models.Model):
             default = None
             )
     def save(self, **kwargs):
+        if self.sent and not self.send:
+            self.send = True
+        res = super(CustomEmailMessage, self).save(**kwargs)
         if self.send and not self.sent:
             attach1 = None
             attach2 = None
@@ -259,6 +262,5 @@ class CustomEmailMessage(models.Model):
                             attach3 = attach3,
                             )
             self.sent = datetime.now()
-        if self.sent and not self.send:
-            self.send = True
-        return super(CustomEmailMessage, self).save(**kwargs)
+            return super(CustomEmailMessage, self).save(**kwargs)
+        return res
