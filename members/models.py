@@ -238,7 +238,7 @@ class CustomEmailMessage(models.Model):
                 for person in Person.objects.filter(
                         subscribed = True
                         ):
-                    send_email_message(
+                    send_email_message.delay(
                             self.subject,
                             self.message,
                             person.email,
@@ -250,7 +250,7 @@ class CustomEmailMessage(models.Model):
                 for person in Person.objects.filter(
                         confirmed = True
                         ):
-                    send_email_message(
+                    send_email_message.delay(
                             self.subject,
                             self.message,
                             person.email,
