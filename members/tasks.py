@@ -3,7 +3,7 @@ from __future__ import absolute_import
 
 from celery import shared_task
 from django.template import Template, Context
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 from django.conf import settings
 
 @shared_task
@@ -50,4 +50,21 @@ Available for 24 hours
         [email],
         fail_silently = False
     )
+
+@shared_task
+def send_email_message(subject, body, email, attach1, attach2, attach3):
+    email_messabe = EmailMessage(
+            subject,
+            body,
+            settings.FROM_EMAIL,
+            [email],
+            fail_silently = False
+            )
+    if attach1:
+        email_message.attach_file(attach1)
+    if attach2:
+        email_message.attach_file(attach2)
+    if attach3:
+        email_message.attach_file(attach3)
+    email_message.send(fail_silently = False)
 

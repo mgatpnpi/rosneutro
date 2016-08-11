@@ -259,3 +259,4 @@ class ProfileEditingTestCase(TestCase):
         self.assertEqual(person.email, 'ramsybolton@nosuchemail.uk')
         self.assertEqual(person.organization, 'Winterfell')
         self.assertEqual(person.position, 'Lord of Winterfell')
+

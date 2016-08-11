@@ -3,6 +3,8 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from pages.models import Translation, Translatable
 from django.contrib.auth.models import User
+from .tasks import send_email_message
+from datetime import datetime
 import string
 import random
 
@@ -177,3 +179,86 @@ class Secret(models.Model):
         verbose_name = u"Секрет для входа"
         verbose_name_plural = u"Секреты для входа"
         ordering = ('-created',)
+
+class CustomEmailMessage(models.Model):
+    created = models.DateTimeField(
+            verbose_name = u"Создан",
+            auto_now_add = True
+            )
+    subject = models.CharField(
+            verbose_name = u"Тема сообщения",
+            max_length = 255
+            )
+    message = models.TextField(
+            verbose_name = u"Сообщение"
+            )
+    subscribers_only = models.BooleanField(
+            verbose_name = "Только подписанным",
+            default = True
+            )
+    attachment1 = models.FileField(
+            upload_to = "emailing",
+            verbose_name = u"Прикрепленный файл",
+            blank = True,
+            null = True
+            )
+    attachment2 = models.FileField(
+            upload_to = "emailing",
+            verbose_name = u"Прикрепленный файл",
+            blank = True,
+            null = True
+            )
+    attachment3 = models.FileField(
+            upload_to = "emailing",
+            verbose_name = u"Прикрепленный файл",
+            blank = True,
+            null = True
+            )
+    send = models.BooleanField(
+            verbose_name = u"Отправить",
+            default = False
+            )
+    sent = models.DateTimeField(
+            verbose_name = u"Отправлено",
+            null = True,
+            default = None
+            )
+    def save(self, **kwargs):
+        if self.send and not self.sent:
+            attach1 = None
+            attach2 = None
+            attach3 = None
+            if self.attachment1:
+                attach1 = self.attachment1.path,
+            if self.attachment2:
+                attach2 = self.attachment2.path,
+            if self.attachment3:
+                attach3 = self.attachment3.path,
+            if self.subscribers_only:
+                for person in Person.objects.filter(
+                        subscribed = True
+                        ):
+                    send_email_message(
+                            self.subject,
+                            self.message,
+                            person.email,
+                            attach1 = attach1,
+                            attach2 = attach2,
+                            attach3 = attach3,
+                            )
+            else:
+                for person in Person.objects.filter(
+                        confirmed = True
+                        ):
+                    send_email_message(
+                            self.subject,
+                            self.message,
+                            person.email,
+                            attach1 = attach1,
+                            attach2 = attach2,
+                            attach3 = attach3,
+                            )
+            self.sent = datetime.now()
+        if self.sent and not self.send:
+            self.send = True
+        return super(EmailMessage, self).save(**kwargs)

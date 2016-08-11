@@ -154,11 +154,9 @@ COMPRESS_PRECOMPILERS = (
 
 
 CELERY_TASK_RESULT_EXPIRES=3600
-CELERY_ROUTES = {
-    'rno.tasks.confirmation_link_email': {'queue': 'confirmation'},
-    'rno.tasks.secret_link_email': {'queue': 'confirmation'},
-}
-
+CELERY_ANNOTATIONS = {
+    'rno.tasks.send_email_message': {'limit_rate': '1/m'}
+        }
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
