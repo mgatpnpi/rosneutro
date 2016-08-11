@@ -155,7 +155,7 @@ COMPRESS_PRECOMPILERS = (
 
 CELERY_TASK_RESULT_EXPIRES=3600
 CELERY_ANNOTATIONS = {
-    'rno.tasks.send_email_message': {'limit_rate': '1/m'}
+    'rno.tasks.send_email_message': {'rate_limit': '1/m'}
         }
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'

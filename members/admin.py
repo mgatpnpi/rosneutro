@@ -15,7 +15,6 @@ class PersonAdmin(admin.ModelAdmin):
             'publications',
             'approved',
             'confirmed',
-            'random_string',
             'published',
             'created',
             'updated',
@@ -30,7 +29,6 @@ class PersonAdmin(admin.ModelAdmin):
             'degree',
             'interests',
             'publications',
-            'random_string',
             )
     list_filter = (
             'approved',
