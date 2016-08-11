@@ -53,7 +53,7 @@ Available for 24 hours
 
 @shared_task
 def send_email_message(subject, body, email, attach1, attach2, attach3):
-    email_messabe = EmailMessage(
+    email_message = EmailMessage(
             subject,
             body,
             settings.FROM_EMAIL,
