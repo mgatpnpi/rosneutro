@@ -226,18 +226,17 @@ class CustomEmailMessage(models.Model):
     def save(self, **kwargs):
         if self.sent and not self.send:
             self.send = True
-        res = super(CustomEmailMessage, self).save(**kwargs)
         if self.send and not self.sent:
             attach1 = None
             attach2 = None
             attach3 = None
-            if res.attachment1:
-                attach1 = res.attachment1.path
-            if res.attachment2:
-                attach2 = res.attachment2.path
-            if res.attachment3:
-                attach3 = res.attachment3.path
-            if res.subscribers_only:
+            if self.attachment1:
+                attach1 = self.attachment1.path
+            if self.attachment2:
+                attach2 = self.attachment2.path
+            if self.attachment3:
+                attach3 = self.attachment3.path
+            if self.subscribers_only:
                 for person in Person.objects.filter(
                         subscribed = True
                         ):
@@ -245,9 +244,9 @@ class CustomEmailMessage(models.Model):
                             self.subject,
                             self.message,
                             person.email,
-                            attach1 = attach1,
-                            attach2 = attach2,
-                            attach3 = attach3,
+                            attach1,
+                            attach2,
+                            attach3
                             )
             else:
                 for person in Person.objects.filter(
@@ -257,10 +256,9 @@ class CustomEmailMessage(models.Model):
                             self.subject,
                             self.message,
                             person.email,
-                            attach1 = attach1,
-                            attach2 = attach2,
-                            attach3 = attach3,
+                            attach1,
+                            attach2,
+                            attach3
                             )
-            res.sent = datetime.now()
-            return super(CustomEmailMessage, res).save(**kwargs)
-        return res
+            self.sent = datetime.now()
+        return super(CustomEmailMessage, self).save(**kwargs)
