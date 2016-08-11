@@ -57,8 +57,7 @@ def send_email_message(subject, body, email, attach1, attach2, attach3):
             subject,
             body,
             settings.FROM_EMAIL,
-            [email],
-            fail_silently = False
+            [email]
             )
     if attach1:
         email_message.attach_file(attach1)
