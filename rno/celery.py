@@ -16,6 +16,7 @@ app = Celery('rno')
 app.config_from_object('django.conf:settings')
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 
+app.control.rate_limit('rno.send_email_message', '100/h')
 
 @app.task(bind=True)
 def debug_task(self):
