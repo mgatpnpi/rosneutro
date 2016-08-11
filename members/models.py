@@ -231,13 +231,13 @@ class CustomEmailMessage(models.Model):
             attach1 = None
             attach2 = None
             attach3 = None
-            if self.attachment1:
-                attach1 = self.attachment1.path
-            if self.attachment2:
-                attach2 = self.attachment2.path
-            if self.attachment3:
-                attach3 = self.attachment3.path
-            if self.subscribers_only:
+            if res.attachment1:
+                attach1 = res.attachment1.path
+            if res.attachment2:
+                attach2 = res.attachment2.path
+            if res.attachment3:
+                attach3 = res.attachment3.path
+            if res.subscribers_only:
                 for person in Person.objects.filter(
                         subscribed = True
                         ):
@@ -261,6 +261,6 @@ class CustomEmailMessage(models.Model):
                             attach2 = attach2,
                             attach3 = attach3,
                             )
-            self.sent = datetime.now()
-            return super(CustomEmailMessage, self).save(**kwargs)
+            res.sent = datetime.now()
+            return super(CustomEmailMessage, res).save(**kwargs)
         return res
