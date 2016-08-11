@@ -261,4 +261,4 @@ class CustomEmailMessage(models.Model):
             self.sent = datetime.now()
         if self.sent and not self.send:
             self.send = True
-        return super(EmailMessage, self).save(**kwargs)
+        return super(CustomEmailMessage, self).save(**kwargs)
