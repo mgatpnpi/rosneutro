@@ -154,14 +154,13 @@ COMPRESS_PRECOMPILERS = (
 
 
 CELERY_TASK_RESULT_EXPIRES=36000
+CELERY_DEFAULT_RATE_LIMIT = '30/m'
 CELERY_ROUTES = {
         'members.tasks.confirmation_link_email': {'queue': 'celery'},
         'members.tasks.secret_link_email': {'queue': 'celery'},
         'members.tasks.send_email_message': {'queue': 'emailing'},
         }
 CELERY_ANNOTATIONS = {
-        'members.tasks.confirmation_link_email': {'rate_limit': '30/m'},
-        'members.tasks.secret_link_email': {'rate_limit': '30/m'},
         'members.tasks.send_email_message': {'rate_limit': '90/h'}
         }
 CELERY_ACCEPT_CONTENT = ['json']
