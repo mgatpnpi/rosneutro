@@ -3,8 +3,6 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from pages.models import Translation, Translatable
 from django.contrib.auth.models import User
-from .tasks import send_email_message
-from datetime import datetime
 import string
 import random
 
@@ -214,51 +212,8 @@ class CustomEmailMessage(models.Model):
             blank = True,
             null = True
             )
-    send = models.BooleanField(
-            verbose_name = u"Отправить",
-            default = False
-            )
     sent = models.DateTimeField(
             verbose_name = u"Отправлено",
             null = True,
             default = None
             )
-    def save(self, **kwargs):
-        if self.sent and not self.send:
-            self.send = True
-        if self.send and not self.sent:
-            attach1 = None
-            attach2 = None
-            attach3 = None
-            if self.attachment1:
-                attach1 = self.attachment1.path
-            if self.attachment2:
-                attach2 = self.attachment2.path
-            if self.attachment3:
-                attach3 = self.attachment3.path
-            if self.subscribers_only:
-                for person in Person.objects.filter(
-                        subscribed = True
-                        ):
-                    send_email_message.delay(
-                            self.subject,
-                            self.message,
-                            person.email,
-                            attach1,
-                            attach2,
-                            attach3
-                            )
-            else:
-                for person in Person.objects.filter(
-                        confirmed = True
-                        ):
-                    send_email_message.delay(
-                            self.subject,
-                            self.message,
-                            person.email,
-                            attach1,
-                            attach2,
-                            attach3
-                            )
-            self.sent = datetime.now()
-        return super(CustomEmailMessage, self).save(**kwargs)
