@@ -154,6 +154,11 @@ COMPRESS_PRECOMPILERS = (
 
 
 CELERY_TASK_RESULT_EXPIRES=36000
+CELERY_ROUTES = {
+        'members.tasks.confirmation_link_email': {'queue': 'celery'},
+        'members.tasks.secret_link_email': {'queue': 'celery'},
+        'members.tasks.send_email_message': {'queue': 'emailing'},
+        }
 CELERY_ANNOTATIONS = {
         'members.tasks.send_email_message': {'rate_limit': '90/h'}
         }
