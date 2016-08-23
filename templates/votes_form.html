@@ -1,0 +1,39 @@
+{% load i18n %}
+<form action="{% url "votes" %}" method="post">
+		{% csrf_token %}
+		{% for field in form %}
+			{% if field.errors %}
+				<div class="alert alert-danger">
+					{{ field.errors }}
+				</div>
+			{% endif %}
+
+                                {% for candidate in field.field.queryset %}
+			<div class="form-group row">
+					<div class="control-label col-md-2 text-right">
+                            <input type="radio" name="candidate" value="{{candidate.id}}" class="form-control" id="id_candidate_{{candidate.id}}" autocomplete="off">
+                    </div>
+                    <label for="id_candidate_{{candidate.id}}" class="col-md-10 controls">
+                                    <span class="lead">
+                                            {{ candidate.person.first_name }}
+                                            {{ candidate.person.last_name }}
+                                    </span>
+                                    <span>{{ candidate.person.organization}}</span>
+                                    <br>
+                                    {{ candidate.translated.description|safe }} 
+						</label>
+			</div>
+                                {% endfor %}
+            
+
+            {% endfor %}
+		<div class="row">
+            <div class="col-md-8"></div>
+		<div class="col-md-4">
+		        <button type="submit" class="btn btn-success btn-lg btn-default clearfix pull-right">{% trans 'Проголосовать' %}</button>
+		</div>
+		</div>
+        
+        <br>
+</form>
+

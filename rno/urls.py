@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^pages/', include('pages.urls')),
     url(r'^news/', include('news.urls')),
     url(r'^members/', include('members.urls')),
+    url(r'^votes/', include('voting.urls')),
     url(r'^robots\.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 ]
 if settings.DEBUG:

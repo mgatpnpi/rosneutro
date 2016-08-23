@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load static %}
 <ul class="nav navbar-nav navbar-right">
-{% if user.is_authenticated %}
+{% if user.is_authenticated and user.person %}
 	<li class="dropdown">
         <a data-toggle="dropdown" href="#">
             <span class="glyphicon glyphicon-user"></span>
@@ -11,6 +11,11 @@
             <li>
                 <a href="{% url 'member_edit_profile'%}">{% trans "Профиль" %}</a>
             </li>
+            {% if voting %}
+            <li>
+                <a href="{% url 'votes'%}">{% trans "Голосование" %}</a>
+            </li>
+            {% endif %}
             <li>
                 <a href="{% url 'member_logout'%}">{% trans "Выйти" %}</a>
             </li>

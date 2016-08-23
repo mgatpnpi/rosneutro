@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% load i18n %}
+{% block content %}
+
+<h1>{% trans 'Ваш голос учтен' %}</h1>
+<br>
+<br>
+
+
+<div class="row">
+{% for candidate in voting.candidate_set.all %}
+<div class="col-md-8">
+
+        <span class="lead">
+                {{ candidate.person.first_name }}
+                {{ candidate.person.last_name }}
+        </span>
+        <span>{{candidate.person.organization }}</span>
+</div>
+<div class="col-md-4">{{ candidate.vote_set.all.count }} </div>
+{% endfor %}
+</div>
+{% endblock %}
+

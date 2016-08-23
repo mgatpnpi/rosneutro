@@ -39,9 +39,26 @@ class CustomSettingsTranslation(Translation):
         unique_together = ( 'parent', 'language_code')
         verbose_name = "Перевод"
         verbose_name_plural = "Переводы"
-    parent = models.ForeignKey('CustomSettings', related_name='translations')
+    parent = models.ForeignKey(
+            'CustomSettings',
+            related_name='translations'
+            )
 
-    mainpagecontent = RedactorField("Содержимое главной страницы")
-    formpagecontent = RedactorField("Содержимое страницы с формой регистрации", null = True, blank = True)
-    lettercontent = RedactorField("Обращение Вахрушева", null = True, blank = True)
-    requestsessioncontent = RedactorField("Содержимое страницы с формой запроса ссылки для входа", null = True, blank = True)
+    mainpagecontent = RedactorField(
+            verbose_name = "Содержимое главной страницы"
+            )
+    formpagecontent = RedactorField(
+            verbose_name = "Содержимое страницы с формой регистрации",
+            null = True,
+            blank = True
+            )
+    lettercontent = RedactorField(
+            "Обращение Вахрушева",
+            null = True,
+            blank = True
+            )
+    requestsessioncontent = RedactorField(
+            "Содержимое страницы с формой запроса ссылки для входа",
+            null = True,
+            blank = True
+            )

@@ -29,6 +29,14 @@ from .tasks import \
         secret_link_email
 
 
+class MemberOnlyMixin(object):
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated() or not request.user.person:
+            return permission_denied(request)
+        self.person = request.user.person
+        return super(MemberOnlyMixin, self).dispatch(request, *args, **kwargs)
+
+
 class RegistrationView(PageContextMixin, CreateView):
     model = Person
     form_class = PersonForm
@@ -122,7 +130,7 @@ class MemberEnterView(PageContextMixin, TemplateView):
             except:
                 return permission_denied(request)
 
-            return super(MemberEnterView, self).dispatch(request, *args, **kwargs)
+        return super(MemberEnterView, self).dispatch(request, *args, **kwargs)
 
 class MemberLogoutView(PageContextMixin, TemplateView):
     template_name = "member_logout.html"
@@ -134,7 +142,7 @@ class MemberLogoutView(PageContextMixin, TemplateView):
             logout(request)
         return super(MemberLogoutView, self).dispatch(request, *args, **kwargs)
 
-class MemberEditProfileView(PageContextMixin, UpdateView):
+class MemberEditProfileView(PageContextMixin, MemberOnlyMixin, UpdateView):
     template_name = "member_edit_profile.html"
     model = Person
     form_class = MemberEditProfileForm
@@ -142,12 +150,8 @@ class MemberEditProfileView(PageContextMixin, UpdateView):
         return reverse("member_edit_profile_success")
     def get_object(self):
         return self.request.user.person
-    def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_authenticated():
-            return permission_denied(request)
-        return super(MemberEditProfileView, self).dispatch(request, *args, **kwargs)
 
-class MemberEditProfileSuccessView(PageContextMixin, DetailView):
+class MemberEditProfileSuccessView(PageContextMixin, MemberOnlyMixin, DetailView):
     template_name = "member_edit_profile_success.html"
     model = Person
     def get_object(self):
@@ -161,8 +165,3 @@ class MemberEditProfileSuccessView(PageContextMixin, DetailView):
                     if getattr(obj, name)
                  ]
         return obj
-    def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_authenticated():
-            return permission_denied(request)
-        return super(MemberEditProfileSuccessView, self).dispatch(request, *args, **kwargs)
-

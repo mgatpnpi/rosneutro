@@ -83,7 +83,8 @@ INSTALLED_APPS = (
     'captcha',
     'pages',
     'members',
-    'news'
+    'news',
+    'voting'
 )
 
 MIDDLEWARE_CLASSES = (

@@ -131,6 +131,8 @@ class Person(models.Model):
             auto_now = True
     )
     user = models.OneToOneField(User, null=True)
+    def __str__(self):
+        return self.first_name+' '+self.last_name
     def save(self, **kwargs):
         if not self.random_string:
             self.random_string = generate_random_string()
@@ -217,3 +219,8 @@ class CustomEmailMessage(models.Model):
             null = True,
             default = None
             )
+    def __str__(self):
+        return self.subject
+    class Meta:
+        verbose_name = u"Сообщение почтовой рассылки"
+        verbose_name_plural = u"Сообщения почтовой рассылки"

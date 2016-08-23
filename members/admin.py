@@ -38,6 +38,11 @@ class PersonAdmin(admin.ModelAdmin):
             'confirmed',
             'published',
             )
+    exclude = [
+            'user',
+            'random_string',
+            'confirmed',
+            ]
 
 class CustomEmailMessageAdmin(admin.ModelAdmin):
     list_display = (
