@@ -13,7 +13,7 @@ class CustomSettingsTranslationInline(TranslationInlineMixin, admin.StackedInlin
     model = CustomSettingsTranslation
 
 class CustomSettingsAdmin(admin.ModelAdmin):
-    list_display = ('__str__',)
+    list_display = ('__unicode__',)
     inlines = [ CustomSettingsTranslationInline ]
 
 admin.site.register(CustomSettings, CustomSettingsAdmin)

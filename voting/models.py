@@ -21,7 +21,7 @@ class Voting(Translatable):
             verbose_name = u"Окончание голосования",
             null = True
             )
-    def __str__(self):
+    def __unicode__(self):
         return self.name
     def clean(self):
         if not self.pk:
@@ -67,7 +67,7 @@ class Candidate(Translatable):
             Person,
             verbose_name = u"Человек из участников"
             )
-    def __str__(self):
+    def __unicode__(self):
         return self.person.first_name + " " + self.person.last_name
     class Meta:
         verbose_name = u"Кандидат"
