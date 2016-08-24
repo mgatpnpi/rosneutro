@@ -36,6 +36,6 @@ class VotesView(PageContextMixin, MemberOnlyMixin, FormView):
         self.getvoting()
         if not self.voting:
             return NoVotesAtTheMomentView.as_view()(request, *args, **kwargs)
-        if request.user.is_authenticated() and request.user.person and request.user.person.vote_set.filter(voting = self.voting):
+        if request.user.is_authenticated() and hasattr(request.user, 'person') and request.user.person.vote_set.filter(voting = self.voting):
             return VotesSuccessView.as_view()(request, *args, **kwargs)
         return super(VotesView, self).dispatch(request, *args, **kwargs)
