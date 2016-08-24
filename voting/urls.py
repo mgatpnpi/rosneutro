@@ -7,10 +7,5 @@ urlpatterns = patterns('voting.views',
             VotesView.as_view(),
             name = "votes"
             ),
-        url(
-            r"^success/?$",
-            VotesSuccessView.as_view(),
-            name = "votes_success"
-            )
     )
 

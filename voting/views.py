@@ -20,7 +20,7 @@ class VotesSuccessView(PageContextMixin, MemberOnlyMixin, TemplateView):
 class VotesView(PageContextMixin, MemberOnlyMixin, FormView):
     form_class = VoteForm
     template_name = "voting.html" 
-    success_url = reverse_lazy('votes_success')
+    success_url = reverse_lazy('votes')
     def form_valid(self, form):
         candidate = form.cleaned_data['candidate']
         if not candidate:
