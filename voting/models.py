@@ -65,7 +65,8 @@ class Candidate(Translatable):
             )
     person = models.ForeignKey(
             Person,
-            verbose_name = u"Человек из участников"
+            verbose_name = u"Человек из участников",
+            limit_choices_to={'confirmed': True, 'published': True}
             )
     def __unicode__(self):
         return self.person.first_name + " " + self.person.last_name

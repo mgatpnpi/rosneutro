@@ -147,7 +147,7 @@ class Person(models.Model):
     class Meta:
         verbose_name = u"Участник"
         verbose_name_plural = u"Участники"
-        ordering = ('last_name', 'first_name', 'middle_name')
+        ordering = ('last_name', 'first_name', 'middle_name',)
     
 class Secret(models.Model):
     TIME_TO_LIVE = 24 #hours
