@@ -21,6 +21,9 @@ class Voting(Translatable):
             verbose_name = u"Окончание голосования",
             null = True
             )
+    def vote_count(self):
+        return self.vote_set.count()
+    vote_count.short_description = "число голосов"
     def __unicode__(self):
         return self.name
     def clean(self):
@@ -68,6 +71,9 @@ class Candidate(Translatable):
             verbose_name = u"Человек из участников",
             limit_choices_to={'confirmed': True, 'published': True}
             )
+    def vote_count(self):
+        return self.vote_set.count()
+    vote_count.short_description = "число голосов"
     def __unicode__(self):
         return self.person.first_name + " " + self.person.last_name
     class Meta:

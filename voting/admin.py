@@ -21,11 +21,11 @@ class CandidateInline(PersonFieldSortMixin, admin.StackedInline):
     model = Candidate
 
 class CandidateAdmin(admin.ModelAdmin):
-    list_display = ('person', 'voting')
+    list_display = ('person', 'voting', 'vote_count')
     inlines = [CandidateTranslationInline,]
 
 class VotingAdmin(admin.ModelAdmin):
-    list_display = ('name', 'start_date', 'end_date')
+    list_display = ('name', 'start_date', 'end_date', 'vote_count')
     inlines = [VotingTranslationInline, CandidateInline]
 
 admin.site.register(Voting, VotingAdmin)
