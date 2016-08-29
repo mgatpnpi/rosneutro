@@ -75,7 +75,7 @@ class Candidate(Translatable):
         return self.vote_set.count()
     vote_count.short_description = "число голосов"
     def __unicode__(self):
-        return self.person.first_name + " " + self.person.last_name
+        return self.person.first_name + " " + self.person.last_name + " " + self.middle_name
     class Meta:
         verbose_name = u"Кандидат"
         verbose_name_plural = u"Кандидаты"
