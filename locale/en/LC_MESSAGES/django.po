@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-04 03:47-0500\n"
-"PO-Revision-Date: 2016-08-04 15:06+0300\n"
+"POT-Creation-Date: 2016-08-31 02:33-0500\n"
+"PO-Revision-Date: 2016-09-02 13:51+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.8.7\n"
 
 #: members/models.py:15
 msgid "к.ф.-м.н."
@@ -129,55 +129,55 @@ msgstr "Instrumentation"
 msgid "Other"
 msgstr "Other"
 
-#: members/models.py:48 templates/members_list.html:16
+#: members/models.py:58 templates/members_list.html:16
 msgid "Имя"
 msgstr "First name"
 
-#: members/models.py:52 templates/members_list.html:17
+#: members/models.py:62 templates/members_list.html:17
 msgid "Отчество"
 msgstr "Middle name"
 
-#: members/models.py:56 templates/members_list.html:15
+#: members/models.py:67 templates/members_list.html:15
 msgid "Фамилия"
 msgstr "Last name"
 
-#: members/models.py:59
+#: members/models.py:70
 msgid "Дата рождения"
 msgstr "Date of birth"
 
-#: members/models.py:60
+#: members/models.py:71
 msgid "Введите дату в формате дд.мм.гггг или гггг-мм-дд"
 msgstr "Insert date in yyyy-mm-dd format"
 
-#: members/models.py:63
+#: members/models.py:74
 msgid "Email"
 msgstr "Email"
 
-#: members/models.py:67 templates/members_list.html:18
+#: members/models.py:78 templates/members_list.html:18
 msgid "Организация"
 msgstr "Organization"
 
-#: members/models.py:71
+#: members/models.py:82
 msgid "Должность"
 msgstr "Job title"
 
-#: members/models.py:75
+#: members/models.py:86
 msgid "Ученая степень"
 msgstr "Academic degree"
 
-#: members/models.py:81
+#: members/models.py:92
 msgid "Научные интересы"
 msgstr "Areas of expertise"
 
-#: members/models.py:87
+#: members/models.py:98
 msgid "Примечания"
 msgstr "Comments"
 
-#: members/models.py:92
+#: members/models.py:103
 msgid "Публикации"
 msgstr "Publications"
 
-#: members/models.py:93
+#: members/models.py:104
 msgid ""
 "Вы можете просто дать ссылку на свой профиль в Research Gate, или на "
 "аналогичный ресурс"
@@ -185,42 +185,49 @@ msgstr ""
 "You may provide a web-link to your ResearchGate profile or a link to a "
 "similar Website"
 
-#: members/models.py:97
+#: members/models.py:108
 msgid "Подтвержденo право голоса"
 msgstr "Right of vote confirmed"
 
-#: members/models.py:101
+#: members/models.py:112
 msgid "Подтвердил Email"
 msgstr "Email confirmed"
 
-#: members/models.py:105
+#: members/models.py:116
 msgid "Подписан на рассылку"
 msgstr "Subscription activated"
 
-#: members/models.py:110
+#: members/models.py:121
 msgid "Секретная строка"
 msgstr "Secret entry"
 
-#: members/models.py:113
+#: members/models.py:124
 msgid "Опубликован"
 msgstr "Online application has been successfully submitted!"
 
-#: members/views.py:69
+#: members/views.py:87
 msgid "Такого E-mail нет у зарегистрированых участников"
-msgstr "No such e-mail"
+msgstr "Your email address is not registered."
 
-#: members/views.py:77
+#: members/views.py:96
 msgid "На ваш E-mail уже выслана ссылка для входа и она еще действует"
-msgstr ""
-"The link has been already sent to your email and it is not expired yet"
-
-#: rno/settings.py:118
-msgid "Russian"
-msgstr "Русский"
+msgstr "The link has been already sent to your email and it is not expired yet"
 
 #: rno/settings.py:119
+msgid "Russian"
+msgstr "Russian"
+
+#: rno/settings.py:120
 msgid "English"
 msgstr "English"
+
+#: templates/403.html:3 templates/403.html.py:8
+msgid "Доступ запрещен"
+msgstr "Access denied"
+
+#: templates/403.html:9
+msgid "Похоже ваша сессия устарела - попробуйте получить новую"
+msgstr "Your session has timed out - please start a new one"
 
 #: templates/404.html:3 templates/404.html.py:8
 msgid "Такой страницы нет"
@@ -250,18 +257,35 @@ msgstr "Your email address has been successfully verified!"
 msgid "Российское Нейтронографическое Общество"
 msgstr "Russian Neutron Scattering Society"
 
-#: templates/main.html:10 templates/main.html.py:20
+#: templates/main.html:15 templates/menu.html:8
 msgid "О Нас"
 msgstr "About us"
 
-#: templates/main.html:14 templates/main.html.py:40 templates/menu.html:14
+#: templates/main.html:35 templates/menu.html:12 templates/menu.html.py:16
 #: templates/registration.html:3 templates/registration.html.py:5
 msgid "Регистрация"
 msgstr "Membership"
 
+#: templates/member_edit_profile.html:3 templates/member_edit_profile.html:5
+msgid "Редактировать профиль"
+msgstr "Edit profile"
+
+#: templates/member_edit_profile_form.html:17
+#: templates/registration_form.html:17
+msgid "обязательно"
+msgstr "required field"
+
+#: templates/member_edit_profile_form.html:44
+msgid "Сохранить"
+msgstr "Save"
+
+#: templates/member_edit_profile_success.html:5
+msgid "Ваш профиль отредактирован"
+msgstr "Your profile has been successfully updated."
+
 #: templates/member_enter.html:5
 msgid "Вы вошли как"
-msgstr "You signed in as"
+msgstr "You are signed in as"
 
 #: templates/member_enter.html:6
 msgid "Теперь вы можете изменять вашу личную информацию"
@@ -269,31 +293,31 @@ msgstr "Now you can change your personal information"
 
 #: templates/member_logout.html:5
 msgid "Вы завершили авторизованную сессию"
-msgstr "Your authorisation session is closed"
+msgstr "Your authorization session is closed"
 
 #: templates/member_logout.html:6
 msgid "Для того чтобы войти снова, запросите новую сессию"
 msgstr "To sign in again request a new link"
 
 #: templates/member_request_session.html:3
-#: templates/member_request_session.html:5
+#: templates/member_request_session.html:5 templates/profile_menu.html:26
 msgid "Вход"
 msgstr "Sign In"
 
-#: templates/member_request_session_form.html:30
+#: templates/member_request_session_form.html:33
 msgid "Получить ссылку"
-msgstr "Get authorisation link"
+msgstr "Get authorization link"
 
 #: templates/member_request_session_success.html:5
 msgid "Вам выслана ссылка для входа"
-msgstr "Your authorisation link has been sent"
+msgstr "Your authorization link has been sent to your email"
 
 #: templates/member_request_session_success.html:6
 msgid "На ваш e-mail выслана ссылка для входа на сайт"
 msgstr "Check your e-mail for the authorisation link"
 
 #: templates/members_list.html:3 templates/members_list.html.py:7
-#: templates/menu.html:22
+#: templates/menu.html:32
 msgid "Участники"
 msgstr "Members"
 
@@ -305,29 +329,42 @@ msgstr "Membership verified"
 msgid "Главная"
 msgstr "Home"
 
-#: templates/menu.html:8 templates/news.html:3 templates/news.html.py:7
+#: templates/menu.html:20 templates/news.html:3 templates/news.html.py:7
 msgid "Новости"
 msgstr "News"
 
-#: templates/menu.html:11 templates/message.html:4
-msgid "Обращение"
-msgstr "Message"
-
-#: templates/menu.html:18
+#: templates/menu.html:24
 msgid "Еще ..."
 msgstr "More ..."
 
-#: templates/menu.html:23
+#: templates/menu.html:29 templates/message.html:4
+msgid "Обращение"
+msgstr "Message"
+
+#: templates/menu.html:35
 msgid "Архивный сайт"
 msgstr "Old website"
 
 #: templates/news_teaser.html:12
 msgid "Подробнее ..."
-msgstr "Continue reading ..."
+msgstr "Expand text ..."
 
-#: templates/registration_form.html:17
-msgid "обязательно"
-msgstr "required field"
+#: templates/no_votes_at_the_moment.html:5
+msgid "Сейчас нет доступного голосования"
+msgstr "No poll available"
+
+#: templates/profile_menu.html:12
+msgid "Профиль"
+msgstr "Profile"
+
+#: templates/profile_menu.html:16 templates/voting.html:3
+#: templates/voting.html.py:5
+msgid "Голосование"
+msgstr "Poll"
+
+#: templates/profile_menu.html:20
+msgid "Выйти"
+msgstr "Sign out"
 
 #: templates/registration_form.html:44
 msgid "Зарегистрироваться"
@@ -340,3 +377,15 @@ msgstr "Your data has been saved. To complete your registration"
 #: templates/registration_success.html:6
 msgid "На ваш e-mail выслана ссылка для подтверждения"
 msgstr "check your e-mail for the confirmation link."
+
+#: templates/votes_form.html:33
+msgid "Проголосовать"
+msgstr "Vote"
+
+#: templates/votes_success.html:5
+msgid "Ваш голос учтен"
+msgstr "Your vote has been recorded."
+
+#: voting/views.py:27
+msgid "Обязательно нужно выбрать одного из представленных кандидатов"
+msgstr "Please choose one of the candidates."

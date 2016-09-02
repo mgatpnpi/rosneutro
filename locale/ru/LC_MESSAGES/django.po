@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-04 03:47-0500\n"
-"PO-Revision-Date: 2016-08-04 15:05+0300\n"
+"POT-Creation-Date: 2016-08-31 02:33-0500\n"
+"PO-Revision-Date: 2016-09-02 14:14+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -131,96 +131,104 @@ msgstr "Приборостроение"
 msgid "Other"
 msgstr "Иное"
 
-#: members/models.py:48 templates/members_list.html:16
+#: members/models.py:58 templates/members_list.html:16
 msgid "Имя"
 msgstr "Имя"
 
-#: members/models.py:52 templates/members_list.html:17
+#: members/models.py:62 templates/members_list.html:17
 msgid "Отчество"
 msgstr "Отчество"
 
-#: members/models.py:56 templates/members_list.html:15
+#: members/models.py:67 templates/members_list.html:15
 msgid "Фамилия"
 msgstr "Фамилия"
 
-#: members/models.py:59
+#: members/models.py:70
 msgid "Дата рождения"
 msgstr "Дата рождения"
 
-#: members/models.py:60
+#: members/models.py:71
 msgid "Введите дату в формате дд.мм.гггг или гггг-мм-дд"
 msgstr "Введите дату в формате дд.мм.гггг"
 
-#: members/models.py:63
+#: members/models.py:74
 msgid "Email"
 msgstr "Адрес электронной почты (email)"
 
-#: members/models.py:67 templates/members_list.html:18
+#: members/models.py:78 templates/members_list.html:18
 msgid "Организация"
 msgstr "Организация"
 
-#: members/models.py:71
+#: members/models.py:82
 msgid "Должность"
 msgstr "Должность"
 
-#: members/models.py:75
+#: members/models.py:86
 msgid "Ученая степень"
 msgstr "Ученая степень"
 
-#: members/models.py:81
+#: members/models.py:92
 msgid "Научные интересы"
 msgstr "Научные интересы"
 
-#: members/models.py:87
+#: members/models.py:98
 msgid "Примечания"
 msgstr "Примечания"
 
-#: members/models.py:92
+#: members/models.py:103
 msgid "Публикации"
 msgstr "Публикации"
 
-#: members/models.py:93
+#: members/models.py:104
 msgid ""
 "Вы можете просто дать ссылку на свой профиль в Research Gate, или на "
 "аналогичный ресурс"
 msgstr ""
 "Вы можете дать ссылку на свой профиль в ResearchGate или аналогичный ресурс"
 
-#: members/models.py:97
+#: members/models.py:108
 msgid "Подтвержденo право голоса"
 msgstr "Подтвержденo право голоса"
 
-#: members/models.py:101
+#: members/models.py:112
 msgid "Подтвердил Email"
 msgstr "Адрес электронной почты подтвержден"
 
-#: members/models.py:105
+#: members/models.py:116
 msgid "Подписан на рассылку"
 msgstr "Подписан на рассылку"
 
-#: members/models.py:110
+#: members/models.py:121
 msgid "Секретная строка"
 msgstr "Секретная строка"
 
-#: members/models.py:113
+#: members/models.py:124
 msgid "Опубликован"
 msgstr "Опубликован"
 
-#: members/views.py:69
+#: members/views.py:87
 msgid "Такого E-mail нет у зарегистрированых участников"
-msgstr "Нет такого адреса электронной почты"
+msgstr "Адрес электронной почты не зарегистрирован"
 
-#: members/views.py:77
+#: members/views.py:96
 msgid "На ваш E-mail уже выслана ссылка для входа и она еще действует"
-msgstr ""
+msgstr "На ваш E-mail уже выслана ссылка для входа, и она еще действует"
 
-#: rno/settings.py:118
+#: rno/settings.py:119
 msgid "Russian"
 msgstr "Русский"
 
-#: rno/settings.py:119
+#: rno/settings.py:120
 msgid "English"
 msgstr "English"
+
+#: templates/403.html:3 templates/403.html.py:8
+msgid "Доступ запрещен"
+msgstr "Доступ запрещен"
+
+#: templates/403.html:9
+msgid "Похоже ваша сессия устарела - попробуйте получить новую"
+msgstr "Похоже ваша сессия устарела - начните заново "
 
 #: templates/404.html:3 templates/404.html.py:8
 msgid "Такой страницы нет"
@@ -250,39 +258,56 @@ msgstr "Теперь ваш адрес электронной почты под�
 msgid "Российское Нейтронографическое Общество"
 msgstr "Российское Нейтронографическое Общество"
 
-#: templates/main.html:10 templates/main.html.py:20
+#: templates/main.html:15 templates/menu.html:8
 msgid "О Нас"
 msgstr "О нас"
 
-#: templates/main.html:14 templates/main.html.py:40 templates/menu.html:14
+#: templates/main.html:35 templates/menu.html:12 templates/menu.html.py:16
 #: templates/registration.html:3 templates/registration.html.py:5
 msgid "Регистрация"
 msgstr "Регистрация"
 
+#: templates/member_edit_profile.html:3 templates/member_edit_profile.html:5
+msgid "Редактировать профиль"
+msgstr "Редактировать профиль"
+
+#: templates/member_edit_profile_form.html:17
+#: templates/registration_form.html:17
+msgid "обязательно"
+msgstr "обязательно"
+
+#: templates/member_edit_profile_form.html:44
+msgid "Сохранить"
+msgstr "Сохранить"
+
+#: templates/member_edit_profile_success.html:5
+msgid "Ваш профиль отредактирован"
+msgstr "Ваш профиль отредактирован"
+
 #: templates/member_enter.html:5
 msgid "Вы вошли как"
-msgstr ""
+msgstr "Вы вошли как"
 
 #: templates/member_enter.html:6
 msgid "Теперь вы можете изменять вашу личную информацию"
-msgstr ""
+msgstr "Теперь вы можете изменять вашу личную информацию"
 
 #: templates/member_logout.html:5
 msgid "Вы завершили авторизованную сессию"
-msgstr ""
+msgstr "Вы завершили авторизованную сессию"
 
 #: templates/member_logout.html:6
 msgid "Для того чтобы войти снова, запросите новую сессию"
-msgstr ""
+msgstr "Для того чтобы войти снова, запросите новую сессию"
 
 #: templates/member_request_session.html:3
-#: templates/member_request_session.html:5
+#: templates/member_request_session.html:5 templates/profile_menu.html:26
 msgid "Вход"
 msgstr "Войти"
 
-#: templates/member_request_session_form.html:30
+#: templates/member_request_session_form.html:33
 msgid "Получить ссылку"
-msgstr ""
+msgstr "Получить ссылку"
 
 #: templates/member_request_session_success.html:5
 msgid "Вам выслана ссылка для входа"
@@ -290,10 +315,10 @@ msgstr "Вы можете авторизоваться"
 
 #: templates/member_request_session_success.html:6
 msgid "На ваш e-mail выслана ссылка для входа на сайт"
-msgstr ""
+msgstr "На ваш e-mail выслана ссылка для входа на сайт"
 
 #: templates/members_list.html:3 templates/members_list.html.py:7
-#: templates/menu.html:22
+#: templates/menu.html:32
 msgid "Участники"
 msgstr "Участники"
 
@@ -305,33 +330,46 @@ msgstr "Членство подтверждено"
 msgid "Главная"
 msgstr "Главная"
 
-#: templates/menu.html:8 templates/news.html:3 templates/news.html.py:7
+#: templates/menu.html:20 templates/news.html:3 templates/news.html.py:7
 msgid "Новости"
-msgstr ""
+msgstr "Новости"
 
-#: templates/menu.html:11 templates/message.html:4
-msgid "Обращение"
-msgstr ""
-
-#: templates/menu.html:18
+#: templates/menu.html:24
 msgid "Еще ..."
-msgstr ""
+msgstr "Еще ..."
 
-#: templates/menu.html:23
+#: templates/menu.html:29 templates/message.html:4
+msgid "Обращение"
+msgstr "Обращение"
+
+#: templates/menu.html:35
 msgid "Архивный сайт"
 msgstr "Архивный сайт"
 
 #: templates/news_teaser.html:12
 msgid "Подробнее ..."
-msgstr ""
+msgstr "Подробнее ..."
 
-#: templates/registration_form.html:17
-msgid "обязательно"
-msgstr "обязательно"
+#: templates/no_votes_at_the_moment.html:5
+msgid "Сейчас нет доступного голосования"
+msgstr "Сейчас нет доступного голосования"
+
+#: templates/profile_menu.html:12
+msgid "Профиль"
+msgstr "Профиль"
+
+#: templates/profile_menu.html:16 templates/voting.html:3
+#: templates/voting.html.py:5
+msgid "Голосование"
+msgstr "Голосование"
+
+#: templates/profile_menu.html:20
+msgid "Выйти"
+msgstr "Выйти"
 
 #: templates/registration_form.html:44
 msgid "Зарегистрироваться"
-msgstr ""
+msgstr "Зарегистрироваться"
 
 #: templates/registration_success.html:5
 msgid "Ваши данные сохранены, но это еще не все"
@@ -340,3 +378,15 @@ msgstr "Ваши данные сохранены. "
 #: templates/registration_success.html:6
 msgid "На ваш e-mail выслана ссылка для подтверждения"
 msgstr "На ваш email выслана ссылка для подтверждения регистрации."
+
+#: templates/votes_form.html:33
+msgid "Проголосовать"
+msgstr "Проголосовать"
+
+#: templates/votes_success.html:5
+msgid "Ваш голос учтен"
+msgstr "Ваш голос учтен"
+
+#: voting/views.py:27
+msgid "Обязательно нужно выбрать одного из представленных кандидатов"
+msgstr "Выберите одного из представленных кандидатов"
