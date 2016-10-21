@@ -61,6 +61,7 @@ SECRET_KEY = '7q$gxw_g00e(+nx5#7nm056b(4m(tj2s-9_fwfgg*v79(ck4^l'
 
 EMAIL_PORT = 1025
 EMAIL_HOST = 'localhost'
+FROM_EMAIL = 'noreply@rno.pnpi.spb.ru'
 
 DEFAULT_FROM_EMAIL = 'noreply@rno.pnpi.spb.ru'
 # <<< development settings overrided by localsettings.py
@@ -72,7 +73,7 @@ except:
 
 # Application definition
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -86,8 +87,11 @@ INSTALLED_APPS = (
     'members',
     'news',
     'voting',
-    'django-dia'
-)
+    ]
+if DEBUG:
+    INSTALLED_APPS += [
+        'django-dia',
+        ]
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

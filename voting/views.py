@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from django.views.generic import \
         TemplateView, \
+        CreateView, \
         FormView
 from django.http import Http404
 from django.utils.translation import ugettext as _
@@ -17,16 +18,13 @@ class NoVotesAtTheMomentView(PageContextMixin, MemberOnlyMixin, TemplateView):
 class PreVotesSuccessView(MemberOnlyMixin, PageContextMixin, TemplateView):
     template_name = 'prevotes_success.html'
 
-class PreVotesView(PageContextMixin, MemberOnlyMixin, FormView):
+class PreVotesView(PageContextMixin, MemberOnlyMixin, CreateView):
     form_class = PreVoteForm
-    template_name = "prevoting.html"
+    template_name = "prevotes.html"
     success_url = reverse_lazy("prevotes")
     def form_valid(self, form):
-        self.prevoting.proposed_candidates.add(form.cleaned_data['candidates'])
-        self.prevoting.prevoters.add(self.person)
-        self.prevoting.save()
-        
-        return super(PreVotesView, self).form_valid(form)
+        form.cleaned_data['prevoting'] = self.prevoting
+        super(PreVotesView, self).form_valid(form)
     def dispatch(self, request, *args, **kwargs):
         self.getprevoting()
         if not self.prevoting:
@@ -48,7 +46,10 @@ class VotesView(MemberOnlyMixin, PageContextMixin, FormView):
     def form_valid(self, form):
         candidate = form.cleaned_data['candidate']
         if not candidate:
-            form.add_error('candidate', _("Обязательно нужно выбрать одного из представленных кандидатов"))
+            form.add_error(
+                    'candidate',
+                    _("Обязательно нужно выбрать одного из представленных кандидатов")
+                    )
             return self.form_invalid(form)
         Vote.objects.create(
                 voting = self.voting,

@@ -13,13 +13,6 @@ class VoteForm(ModelBootstrappedForm):
                 }
 
 class PreVoteForm(ModelBootstrappedForm):
-    candidates = forms.ModelMultipleChoiceField(
-            queryset = Person.objects.filter(
-                confirmed = True,
-                published = True
-                ).order_by('last_name'),
-            widget = forms.CheckboxSelectMultiple
-            )
     class Meta:
         model = PreVote
-        fields = ['remarks', ]
+        fields = ['remarks', 'candidates']

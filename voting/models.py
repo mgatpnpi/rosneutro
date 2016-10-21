@@ -79,13 +79,6 @@ class VotingTranslation(Translation):
             )
 
 class PreVoting(Translatable, StartEndModel):
-    proposed_candidates = models.ManyToManyField(
-            Person,
-            verbose_name = u"Предложенные кандидаты",
-            limit_choices_to={'confirmed': True, 'published': True},
-            null = True,
-            blank = True
-            )
     prevoters = models.ManyToManyField(
             Person,
             verbose_name = u"Предложившие участников",

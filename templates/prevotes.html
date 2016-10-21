@@ -16,7 +16,48 @@
 				</div>
 			{% endif %}
 
-            {{ field }}
+            {% if field.name = 'candidates' %}
+            {{field.queryset}}
+                                {% for person in field.field.queryset.all %}
+			<div class="form-group row">
+					<div class="control-label col-md-2 text-right">
+                            <input autocomplete="off" class="form-control" id="id_candidates_{{person.id}}" name="candidates" type="checkbox" value="{{ person.id }}" />
+                    </div>
+                    <label for="id_candidates_{{person.id}}" class="col-md-10 controls">
+                                    <span class="lead">
+                                            {{ person.last_name }}
+                                            {{ person.first_name }}
+                                            {{ person.middle_name }}
+                                    </span>
+                                    <span>{{ person.organization}}</span>
+						</label>
+			</div>
+                                {% endfor %}
+            
+            {% else %}
+            
+			<div class="form-group row">
+					<label class="control-label col-md-5 text-right">
+                    <b>
+					{{ field.label }}
+					{% if field.field.required %}
+					<sup>
+						<span class="text-danger">{% trans "обязательно" %}<span>
+								</sup>
+					{% endif %}
+					</b>
+<br>
+
+					<small style="font-weight: normal">
+					{{ field.help_text }}
+					</small>
+                    </label>
+						<div class="col-md-7 controls">
+						        {{ field }}
+						</div>
+			</div>
+            {% endif %}
+
 
             {% endfor %}
 		<div class="row">
