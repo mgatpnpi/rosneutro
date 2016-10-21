@@ -193,7 +193,7 @@ class CustomEmailMessage(models.Model):
             verbose_name = u"Сообщение"
             )
     subscribers_only = models.BooleanField(
-            verbose_name = "Только подписанным",
+            verbose_name = u"Только подписанным",
             default = True
             )
     attachment1 = models.FileField(

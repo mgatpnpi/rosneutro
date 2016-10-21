@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% load i18n %}
+{% block title %}{% trans 'Предложить кандидатов для голосования' %} - {% endblock %}
+{% block content %}
+<h1>{% trans "Предложить кандидатов для голосования" %}</h1>
+{{ prevoting.translated.description|safe }}
+<br>
+<br>
+
+<form action="{% url "prevotes" %}" method="post">
+		{% csrf_token %}
+		{% for field in form %}
+			{% if field.errors %}
+				<div class="alert alert-danger">
+					{{ field.errors }}
+				</div>
+			{% endif %}
+
+            {{ field }}
+
+            {% endfor %}
+		<div class="row">
+            <div class="col-md-8"></div>
+		<div class="col-md-4">
+		        <button type="submit" class="btn btn-success btn-lg btn-default clearfix pull-right">{% trans 'Предложить' %}</button>
+		</div>
+		</div>
+       
+        <br>
+</form>
+
+{% endblock %}

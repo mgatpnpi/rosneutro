@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from .models import Voting, VotingTranslation, Candidate, CandidateTranslation
+from .models import PreVoting, PreVotingTranslation, Voting, VotingTranslation, Candidate, CandidateTranslation
 from members.models import Person
 from pages.admin import TranslationInlineMixin
 
@@ -28,5 +28,18 @@ class VotingAdmin(admin.ModelAdmin):
     list_display = ('name', 'start_date', 'end_date', 'vote_count')
     inlines = [VotingTranslationInline, CandidateInline]
 
+class VotingInline(admin.StackedInline):
+    extra = 1
+    max_num = 1
+    model = Voting
+
+class PreVotingTranslationInline(TranslationInlineMixin, admin.StackedInline):
+    model = PreVotingTranslation
+
+class PreVotingAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'start_date', 'end_date')
+    inlines = [VotingInline, PreVotingTranslationInline]
+
 admin.site.register(Voting, VotingAdmin)
+admin.site.register(PreVoting, PreVotingAdmin)
 admin.site.register(Candidate, CandidateAdmin)

@@ -49,6 +49,7 @@ DATABASES = {
     }
 }
 
+BROKER_URL = 'amqp://guest:guest@localhost:5672//'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -84,7 +85,8 @@ INSTALLED_APPS = (
     'pages',
     'members',
     'news',
-    'voting'
+    'voting',
+    'django-dia'
 )
 
 MIDDLEWARE_CLASSES = (

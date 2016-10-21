@@ -5,11 +5,11 @@ from django.utils.translation import get_language
 from django.conf import settings
 
 class Translation(models.Model):
-    language_code = models.CharField("Язык", max_length = 7, choices = settings.LANGUAGES)
+    language_code = models.CharField(u"Язык", max_length = 7, choices = settings.LANGUAGES)
     class Meta:
         abstract = True
-        verbose_name = "Перевод"
-        verbose_name_plural = "Переводы"
+        verbose_name = u"Перевод"
+        verbose_name_plural = u"Переводы"
 
 class Translatable(models.Model):
     translated = False
@@ -31,34 +31,34 @@ class Translatable(models.Model):
 
 class CustomSettings(Translatable):
     class Meta:
-        verbose_name = "Настройки"
+        verbose_name = u"Настройки"
 
 
 class CustomSettingsTranslation(Translation):
     class Meta:
         unique_together = ( 'parent', 'language_code')
-        verbose_name = "Перевод"
-        verbose_name_plural = "Переводы"
+        verbose_name = u"Перевод"
+        verbose_name_plural = u"Переводы"
     parent = models.ForeignKey(
             'CustomSettings',
             related_name='translations'
             )
 
     mainpagecontent = RedactorField(
-            verbose_name = "Содержимое главной страницы"
+            verbose_name = u"Содержимое главной страницы"
             )
     formpagecontent = RedactorField(
-            verbose_name = "Содержимое страницы с формой регистрации",
+            verbose_name = u"Содержимое страницы с формой регистрации",
             null = True,
             blank = True
             )
     lettercontent = RedactorField(
-            "Обращение Вахрушева",
+            u"Обращение Вахрушева",
             null = True,
             blank = True
             )
     requestsessioncontent = RedactorField(
-            "Содержимое страницы с формой запроса ссылки для входа",
+            u"Содержимое страницы с формой запроса ссылки для входа",
             null = True,
             blank = True
             )
