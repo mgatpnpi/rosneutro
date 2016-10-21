@@ -53,6 +53,10 @@ class Person(models.Model):
             'position',
             'degree',
             ]
+    last_name = models.CharField(
+            max_length = 255,
+            verbose_name = _(u"Фамилия")
+    )
     first_name = models.CharField(
             max_length = 255,
             verbose_name = _(u"Имя")
@@ -61,10 +65,6 @@ class Person(models.Model):
             max_length = 255,
             verbose_name = _(u"Отчество"),
             blank = True
-    )
-    last_name = models.CharField(
-            max_length = 255,
-            verbose_name = _(u"Фамилия")
     )
     birthday = models.DateField(
             verbose_name = _(u"Дата рождения"),

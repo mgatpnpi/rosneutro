@@ -6,9 +6,9 @@ from datetime import datetime
 
 class PersonAdmin(admin.ModelAdmin):
     list_display = (
+            'last_name',
             'first_name',
             'middle_name',
-            'last_name',
             'birthday',
             'email',
             'organization',
@@ -34,7 +34,6 @@ class PersonAdmin(admin.ModelAdmin):
             'publications',
             )
     list_filter = (
-            'approved',
             'confirmed',
             'published',
             )
