@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django import forms
+from django.utils.translation import get_language
 from .models import Person
 from captcha.fields import ReCaptchaField
 from datetime import date

@@ -37,15 +37,34 @@ class VotingTestCase(TestCase):
                 organization = "Winterfell",
                 confirmed = True
                 )
-        self.prevoting = PreVoting.objects.create(
+        self.person3 = Person.objects.create(
+                first_name = 'person3name',
+                last_name = 'person3lastname',
+                middle_name = 'bastard',
+                birthday = '2010-01-01',
+                email = 'person3@nosuchemail.uk',
+                organization = "Winterfell",
+                confirmed = True
+                )
+        self.person4 = Person.objects.create(
+                first_name = 'person4name',
+                last_name = 'person4lastname',
+                middle_name = 'bastard',
+                birthday = '2010-01-01',
+                email = 'person4@nosuchemail.uk',
+                organization = "Winterfell",
+                confirmed = True
+                )
+        self.prevotes = PreVoting.objects.create(
                 start_date = datetime.now() + relativedelta(days = -1),
                 end_date = datetime.now() + relativedelta(days = 1),
+
                 )
         self.voting = Voting.objects.create(
                 name = 'test-votes',
                 start_date = datetime.now() + relativedelta(days = -1),
                 end_date = datetime.now() + relativedelta(days = 1),
-                prevoting = self.prevoting
+                prevoting = self.prevotes
                 )
         self.voting_person = Person.objects.create(
                 first_name = 'Sansa',
@@ -156,6 +175,57 @@ class VotingTestCase(TestCase):
 
         self.assertIn(self.person2.first_name, smart_text(response.content))
         self.assertIn(self.person2.last_name, smart_text(response.content))
+    def testPreVotesProcess(self):
+        response = self.client.post(
+                reverse('prevotes'),
+                {
+                    'candidates': [ self.person1.pk,self.person2.pk]
+                    },
+                follow = True
+                )
+        self.assertEqual(200, response.status_code)
+        self.assertNotIn('error', smart_text(response.content))
+        self.assertNotIn('candidates', smart_text(response.content))
+        self.assertIn(self.person2 , self.prevotes.prevote_set.first().candidates.all())
+        self.assertNotIn(self.person3 , self.prevotes.prevote_set.first().candidates.all())
+
+        # check no votes form after the choise
+        response_later = self.client.get(reverse_lazy('prevotes'))
+        self.assertNotIn('candidates', smart_text(response_later.content))
+    def testPreVotesMoreThanThreeError(self):
+        response = self.client.post(
+                reverse('prevotes'),
+                {
+                    'candidates': [
+                            self.person1.pk,
+                            self.person2.pk,
+                            self.person3.pk,
+                            self.person4.pk
+                            ]
+                    },
+                follow = True
+                )
+        self.assertEqual(200, response.status_code)
+        self.assertIn('danger', smart_text(response.content))
+        self.assertIn('candidates', smart_text(response.content))
+
+        # check no votes form after the choise
+        response_later = self.client.get(reverse_lazy('prevotes'))
+        self.assertIn('candidates', smart_text(response_later.content))
+    def testPreVotesChoseSelfError(self):
+        response = self.client.post(
+                reverse('prevotes'),
+                {
+                    'candidates': [
+                            self.person1.pk,
+                            self.voting_person.pk,
+                            ]
+                    },
+                follow = True
+                )
+        self.assertEqual(200, response.status_code)
+        self.assertNotIn('danger', smart_text(response.content))
+        self.assertNotIn('candidates', smart_text(response.content))
     def testVotesLink(self):
         response = self.client.get('/')
         self.assertIn(reverse('votes'), smart_text(response.content))

@@ -4,18 +4,19 @@ from django.views.generic import \
         TemplateView, \
         CreateView, \
         FormView
+from django.forms.utils import ValidationError
 from django.http import Http404
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse_lazy, reverse
 from pages.views import PageContextMixin
 from members.views import MemberOnlyMixin
-from .models import Vote, Voting, Candidate
+from .models import PreVote, Vote, PreVoting, Voting, Candidate
 from .forms import PreVoteForm, VoteForm
 
 class NoVotesAtTheMomentView(PageContextMixin, MemberOnlyMixin, TemplateView):
     template_name = 'no_votes_at_the_moment.html'
 
-class PreVotesSuccessView(MemberOnlyMixin, PageContextMixin, TemplateView):
+class PreVotesSuccessView(PageContextMixin, MemberOnlyMixin, TemplateView):
     template_name = 'prevotes_success.html'
 
 class PreVotesView(PageContextMixin, MemberOnlyMixin, CreateView):
@@ -23,8 +24,15 @@ class PreVotesView(PageContextMixin, MemberOnlyMixin, CreateView):
     template_name = "prevotes.html"
     success_url = reverse_lazy("prevotes")
     def form_valid(self, form):
-        form.cleaned_data['prevoting'] = self.prevoting
-        super(PreVotesView, self).form_valid(form)
+        prevote = PreVote.objects.create(
+                prevoting = self.prevoting,
+                remarks = form.cleaned_data['remarks'],
+                )
+        candidates = form.cleaned_data['candidates']
+        for person in candidates:
+            prevote.candidates.add(person)
+        self.prevoting.prevoters.add(self.person)
+        return super(PreVotesView, self).form_valid(form)
     def dispatch(self, request, *args, **kwargs):
         self.getprevoting()
         if not self.prevoting:

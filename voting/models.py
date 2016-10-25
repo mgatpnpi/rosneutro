@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.utils.translation import ugettext_lazy as _
 from redactor.fields import RedactorField
 from pages.models import Translation, Translatable
 from members.models import Person
@@ -50,7 +51,6 @@ class Voting(Translatable, StartEndModel):
             Person,
             verbose_name = u"Проголосовавшие",
             related_name = "votings",
-            null = True,
             blank = True
             )
     def vote_count(self):
@@ -83,7 +83,6 @@ class PreVoting(Translatable, StartEndModel):
             Person,
             verbose_name = u"Предложившие участников",
             related_name = "prevotings",
-            null = True,
             blank = True
             )
     def __unicode__(self):
@@ -111,7 +110,6 @@ class PreVote(models.Model):
     candidates = models.ManyToManyField(
             Person,
             verbose_name = u"Предложенные кандидаты для выборов",
-            null = True,
             blank = True
             )
     remarks = models.TextField(
@@ -122,12 +120,7 @@ class PreVote(models.Model):
     prevoting = models.ForeignKey(
             PreVoting,
             verbose_name = u"Предварительное голосование",
-            blank=True,
-            null=True
             )
-    def clean(self):
-        if not self.pk and self.candidates.count() > 3:
-            raise ValidationError(_(u'Каждый участник может предложить не более 3х кандидатов'))
     class Meta:
         verbose_name = u"Предварительный голос"
         verbose_name_plural = u"Предварительные голоса"

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from django import forms
+from django.core.exceptions import ValidationError
+from django.utils.translation import ugettext_lazy as _
 from members.forms import ModelBootstrappedForm
 from members.models import Person
 from .models import PreVote, Vote
@@ -13,6 +15,11 @@ class VoteForm(ModelBootstrappedForm):
                 }
 
 class PreVoteForm(ModelBootstrappedForm):
+    def clean_candidates(self):
+        candidates = self.cleaned_data['candidates']
+        if len(candidates) > 3:
+            raise forms.ValidationError(_("Можно предложить не более трех человек"))
+        return candidates
     class Meta:
         model = PreVote
         fields = ['remarks', 'candidates']
