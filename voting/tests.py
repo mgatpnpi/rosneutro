@@ -4,7 +4,7 @@ from django.utils.encoding import smart_text
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.core.exceptions import ValidationError
 from members.models import Person, Secret
-from .models import PreVoting, Voting, Vote, Candidate
+from .models import PreVote, PreVoting, Voting, Vote, Candidate
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
@@ -188,6 +188,8 @@ class VotingTestCase(TestCase):
         self.assertNotIn('candidates', smart_text(response.content))
         self.assertIn(self.person2 , self.prevotes.prevote_set.first().candidates.all())
         self.assertNotIn(self.person3 , self.prevotes.prevote_set.first().candidates.all())
+
+        self.assertNotEqual(PreVote.objects.first().prevoting, None)
 
         # check no votes form after the choise
         response_later = self.client.get(reverse_lazy('prevotes'))

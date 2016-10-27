@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.views.generic import \
         TemplateView, \
         CreateView, \
@@ -31,8 +32,9 @@ class PreVotesView(PageContextMixin, MemberOnlyMixin, CreateView):
         candidates = form.cleaned_data['candidates']
         for person in candidates:
             prevote.candidates.add(person)
+        self.object = prevote
         self.prevoting.prevoters.add(self.person)
-        return super(PreVotesView, self).form_valid(form)
+        return HttpResponseRedirect(self.get_success_url())
     def dispatch(self, request, *args, **kwargs):
         self.getprevoting()
         if not self.prevoting:

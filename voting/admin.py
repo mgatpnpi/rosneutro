@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from .models import PreVoting, PreVotingTranslation, Voting, VotingTranslation, Candidate, CandidateTranslation
+from .models import PreVote, PreVoting, PreVotingTranslation, Voting, VotingTranslation, Candidate, CandidateTranslation
 from members.models import Person
 from pages.admin import TranslationInlineMixin
 
@@ -21,7 +21,8 @@ class CandidateInline(PersonFieldSortMixin, admin.StackedInline):
     model = Candidate
 
 class CandidateAdmin(admin.ModelAdmin):
-    list_display = ('person', 'voting', 'vote_count')
+    list_display = ('person', 'voting', 'agree', 'vote_count')
+    list_editable = ('agree',)
     inlines = [CandidateTranslationInline,]
 
 class VotingAdmin(admin.ModelAdmin):
@@ -40,6 +41,20 @@ class PreVotingAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'start_date', 'end_date')
     inlines = [VotingInline, PreVotingTranslationInline]
 
+class PreVoteAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'show_candidates', 'remarks')
+    actions = ['move_to_candidates',]
+    def move_to_candidates(self,request, queryset):
+        for prevote in queryset:
+            for person in prevote.candidates.all():
+                for voting in prevote.prevoting.voting_set.all():
+                    Candidate.objects.create(
+                            voting = voting,
+                            person = person
+                            )
+    move_to_candidates.short_description = u"Создать кандидатов (вкладка Кандидаты)"
+
 admin.site.register(Voting, VotingAdmin)
 admin.site.register(PreVoting, PreVotingAdmin)
+admin.site.register(PreVote, PreVoteAdmin)
 admin.site.register(Candidate, CandidateAdmin)

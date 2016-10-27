@@ -56,6 +56,8 @@ class Voting(Translatable, StartEndModel):
     def vote_count(self):
         return self.vote_set.count()
     vote_count.short_description = u"число голосов"
+    def get_candidates(self):
+        return Candidate.objects.filter(voting=self, agree=True)
     def __unicode__(self):
         return self.name
     class Meta:
@@ -110,6 +112,7 @@ class PreVote(models.Model):
     candidates = models.ManyToManyField(
             Person,
             verbose_name = u"Предложенные кандидаты для выборов",
+            limit_choices_to = {'confirmed': True, 'published': True},
             blank = True
             )
     remarks = models.TextField(
@@ -120,7 +123,18 @@ class PreVote(models.Model):
     prevoting = models.ForeignKey(
             PreVoting,
             verbose_name = u"Предварительное голосование",
+            null = True
             )
+    def show_candidates(self):
+        result = ""
+        for candidate in self.candidates.all():
+            result += "<p>" + candidate.last_name + " "\
+                    + candidate.first_name + " "\
+                    + candidate.middle_name + " "\
+                    + candidate.organization + "</p>"
+        return result
+    show_candidates.allow_tags = True
+    show_candidates.short_description = u"Предложенные кандидаты"
     class Meta:
         verbose_name = u"Предварительный голос"
         verbose_name_plural = u"Предварительные голоса"
@@ -166,5 +180,6 @@ class Vote(models.Model):
             Voting
             )
     candidate = models.ForeignKey(
-            Candidate
+            Candidate,
+            limit_choices_to = {'agree': True}
             )
