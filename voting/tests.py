@@ -12,11 +12,13 @@ class VotingTestCase(TestCase):
     def addCandidates(self):
         self.candidate1 = Candidate.objects.create(
                 person = self.person1,
-                voting = self.voting
+                voting = self.voting,
+		agree = True
                 )
         self.candidate2 = Candidate.objects.create(
                 person = self.person2,
-                voting = self.voting
+                voting = self.voting,
+		agree = True
                 )
     def setUp(self):
         self.person1 = Person.objects.create(
