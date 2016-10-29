@@ -18,19 +18,26 @@
 
             {% if field.name = 'candidates' %}
 
+            <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10"><input id="filter" type="text" class="form-control" placeholder="{% trans "Фильтр"%}"></div>
+            </div>
+            <br>
+            <br>
+            
                                 {% for person in field.field.queryset.all %}
-                                <div class="form-group row" id="group_{{person.id}}">
+                                <div class="form-group row checkboxgroup">
 					
 					<div class="control-label col-md-2 text-right">
                             <input autocomplete="off" class="form-control" id="id_candidates_{{person.id}}" name="candidates" type="checkbox" value="{{ person.id }}" />
                     </div>
                     <label for="id_candidates_{{person.id}}" class="col-md-10 controls">
-                            <span class="lead" id="name_{{person.id}}">
+                            <span class="lead person">
                                             {{ person.last_name }}
                                             {{ person.first_name }}
                                             {{ person.middle_name }}
                                     </span>
-                                    <span id="org_{{person.id}}">{{ person.organization}}</span>
+                                    <span class="org">{{ person.organization}}</span>
 						</label>
 				<br/>
 			</div>

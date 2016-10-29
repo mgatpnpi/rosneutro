@@ -42,6 +42,18 @@ $(function(){
             }
         }
     });
+   $("input#filter").keyup(function(){
+           $(".checkboxgroup").each(function(){
+               var cbg = $(this);
+               var search = $("input#filter").val();
+               if( cbg.is(":visible") && !cbg.find('input').is(':checked') && cbg.find('.person').text().indexOf(search) == -1 && cbg.find('.org').text().indexOf(search) == -1){
+                       cbg.hide();
+               }
+               if ( !cbg.is(":visible") && (cbg.find('.person').text().indexOf(search) != -1 || cbg.find('.org').text().indexOf(search) != -1)){
+                       cbg.show();
+               }
+           });
+   });
 });
 </script>
 {% endcompress %}
