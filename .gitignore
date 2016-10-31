@@ -12,3 +12,4 @@ archive/*
 *.log
 *.mo
 rno/localsettings.py
+.coverage

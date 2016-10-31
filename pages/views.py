@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.views.generic.base import ContextMixin
-from voting.models import Voting
+from voting.models import PreVoting, Voting
 from members.forms import PersonForm
 from .models import CustomSettings
 from datetime import datetime
@@ -12,15 +12,23 @@ class PageContextMixin(ContextMixin):
     description = ''
     module = False
     voting = None
-    def getvoting(self):
-        if self.voting == None:
-            now = datetime.now()
-            self.voting = Voting.objects.filter(
+    prevoting = None
+    def getcurrentstartendmodel(self, model):
+        now = datetime.now()
+        return model.objects.filter(
                     start_date__lt = now,
                     end_date__gt = now
                     ).first()
+    def getvoting(self):
+        if self.voting == None:
+            self.voting = self.getcurrentstartendmodel(Voting)
             if not self.voting:
                 self.voting = False
+    def getprevoting(self):
+        if self.prevoting == None:
+            self.prevoting = self.getcurrentstartendmodel(PreVoting)
+            if not self.prevoting:
+                self.prevoting = False
     def get_context_data(self, **kwargs):
         context = super(PageContextMixin, self).get_context_data(**kwargs)
         custom_settings = CustomSettings.objects.first()
@@ -31,7 +39,9 @@ class PageContextMixin(ContextMixin):
         if self.module:
             context["module"] = self.module
         self.getvoting()
+        self.getprevoting()
         context['voting'] = self.voting
+        context['prevoting'] = self.prevoting
         return context
 
 class NoPageView(PageContextMixin, TemplateView):

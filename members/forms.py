@@ -1,8 +1,15 @@
 # -*- coding: utf-8 -*-
 from django import forms
+from django.utils.translation import get_language
 from .models import Person
 from captcha.fields import ReCaptchaField
 from datetime import date
+
+def translate_captcha(form):
+    try:
+        form.fields.get('captcha').widget.js_attrs = {'lang': get_language()[:2]}
+    except Exception:
+        pass
 
 class ModelBootstrappedForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -20,6 +27,7 @@ class ModelBootstrappedForm(forms.ModelForm):
                         'class': 'form-control datepicker',
                         })
                     field.widget.input_type = 'date'
+        translate_captcha(self)
         #self.fields.values()[0].widget.attrs['autofocus'] = 'autofocus'
 
 class PersonForm(ModelBootstrappedForm):

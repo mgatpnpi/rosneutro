@@ -1,0 +1,84 @@
+{% extends 'base.html'%}
+{% load i18n %}
+{% block title %}{% trans 'Предложить кандидатов для голосования' %} - {% endblock %}
+{% block content %}
+<h1>{% trans "Предложить кандидатов для голосования" %}</h1>
+{{ prevoting.translated.description|safe }}
+<br>
+<br>
+
+<form action="{% url "prevotes" %}" method="post">
+		{% csrf_token %}
+		{% for field in form %}
+			{% if field.errors %}
+				<div class="alert alert-danger">
+					{{ field.errors }}
+				</div>
+			{% endif %}
+
+            {% if field.name = 'candidates' %}
+
+            <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10"><input id="filter" type="text" class="form-control" placeholder="{% trans "Фильтр"%}"></div>
+            </div>
+            <br>
+            <br>
+            
+                                {% for person in field.field.queryset.all %}
+                                <div class="form-group row checkboxgroup">
+					
+					<div class="control-label col-md-2 text-right">
+                            <input autocomplete="off" class="form-control" id="id_candidates_{{person.id}}" name="candidates" type="checkbox" value="{{ person.id }}" />
+                    </div>
+                    <label for="id_candidates_{{person.id}}" class="col-md-10 controls">
+                            <span class="lead person">
+                                            {{ person.last_name }}
+                                            {{ person.first_name }}
+                                            {{ person.middle_name }}
+                                    </span>
+                                    <span class="org">{{ person.organization}}</span>
+						</label>
+				<br/>
+			</div>
+                                {% endfor %}
+            
+            {% else %}
+            
+			<div class="form-group row">
+				<br/>
+				<br/>
+					<label class="control-label col-md-3 text-right">
+                    <b>
+					{{ field.label }}
+					{% if field.field.required %}
+					<sup>
+						<span class="text-danger">{% trans "обязательно" %}<span>
+								</sup>
+					{% endif %}
+					</b>
+<br>
+
+					<small style="font-weight: normal">
+					{{ field.help_text }}
+					</small>
+                    </label>
+						<div class="col-md-7 controls">
+						        {{ field }}
+						</div>
+			</div>
+            {% endif %}
+
+
+            {% endfor %}
+		<div class="row">
+            <div class="col-md-8"></div>
+		<div class="col-md-4">
+		        <button type="submit" class="btn btn-success btn-lg btn-default clearfix pull-right">{% trans 'Предложить' %}</button>
+		</div>
+		</div>
+       
+        <br>
+</form>
+
+{% endblock %}
