@@ -46,10 +46,10 @@ $(function(){
            $(".checkboxgroup").each(function(){
                var cbg = $(this);
                var search = $("input#filter").val().toLowerCase();
-               if( cbg.is(":visible") && !cbg.find('input').is(':checked') && cbg.find('.person').text().toLowerCase().indexOf(search) == -1 && cbg.find('.org').text().toLowerCase().indexOf(search) == -1){
+               if( cbg.is(":visible") && !cbg.children().eq(0).children().eq(0).is(':checked') && cbg.children().eq(1).children().eq(0).text().toLowerCase().indexOf(search) == -1 && cbg.find('.org').text().toLowerCase().indexOf(search) == -1){
                        cbg.hide();
                }
-               if ( !cbg.is(":visible") && (cbg.find('.person').text().toLowerCase().indexOf(search) != -1 || cbg.find('.org').text().toLowerCase().indexOf(search) != -1)){
+               if ( !cbg.is(":visible") && (cbg.children().eq(1).children().eq(0).text().toLowerCase().indexOf(search) != -1 || cbg.children().eq(1).children().eq(1).text().toLowerCase().indexOf(search) != -1)){
                        cbg.show();
                }
            });
