@@ -88,10 +88,6 @@ INSTALLED_APPS = [
     'news',
     'voting',
     ]
-if DEBUG:
-    INSTALLED_APPS += [
-        'django-dia',
-        ]
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
