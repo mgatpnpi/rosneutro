@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-31 02:33-0500\n"
+"POT-Creation-Date: 2016-11-01 04:13-0500\n"
 "PO-Revision-Date: 2016-09-02 14:14+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -131,17 +131,17 @@ msgstr "Приборостроение"
 msgid "Other"
 msgstr "Иное"
 
-#: members/models.py:58 templates/members_list.html:16
+#: members/models.py:58 templates/members_list.html:15
+msgid "Фамилия"
+msgstr "Фамилия"
+
+#: members/models.py:62 templates/members_list.html:16
 msgid "Имя"
 msgstr "Имя"
 
-#: members/models.py:62 templates/members_list.html:17
+#: members/models.py:66 templates/members_list.html:17
 msgid "Отчество"
 msgstr "Отчество"
-
-#: members/models.py:67 templates/members_list.html:15
-msgid "Фамилия"
-msgstr "Фамилия"
 
 #: members/models.py:70
 msgid "Дата рождения"
@@ -214,11 +214,11 @@ msgstr "Адрес электронной почты не зарегистрир
 msgid "На ваш E-mail уже выслана ссылка для входа и она еще действует"
 msgstr "На ваш E-mail уже выслана ссылка для входа, и она еще действует"
 
-#: rno/settings.py:119
+#: rno/settings.py:121
 msgid "Russian"
 msgstr "Русский"
 
-#: rno/settings.py:120
+#: rno/settings.py:122
 msgid "English"
 msgstr "English"
 
@@ -271,7 +271,7 @@ msgstr "Регистрация"
 msgid "Редактировать профиль"
 msgstr "Редактировать профиль"
 
-#: templates/member_edit_profile_form.html:17
+#: templates/member_edit_profile_form.html:17 templates/prevotes.html:56
 #: templates/registration_form.html:17
 msgid "обязательно"
 msgstr "обязательно"
@@ -292,6 +292,18 @@ msgstr "Вы вошли как"
 msgid "Теперь вы можете изменять вашу личную информацию"
 msgstr "Теперь вы можете изменять вашу личную информацию"
 
+#: templates/member_enter.html:10
+msgid "Вы можете предложить кандидатов для будущего голосования"
+msgstr ""
+
+#: templates/member_enter.html:10 templates/member_enter.html.py:13
+msgid "здесь"
+msgstr ""
+
+#: templates/member_enter.html:13
+msgid "В настоящий момент Вы можете выбрать председателя РосНейтрО"
+msgstr ""
+
 #: templates/member_logout.html:5
 msgid "Вы завершили авторизованную сессию"
 msgstr "Вы завершили авторизованную сессию"
@@ -301,7 +313,7 @@ msgid "Для того чтобы войти снова, запросите но
 msgstr "Для того чтобы войти снова, запросите новую сессию"
 
 #: templates/member_request_session.html:3
-#: templates/member_request_session.html:5 templates/profile_menu.html:26
+#: templates/member_request_session.html:5 templates/profile_menu.html:30
 msgid "Вход"
 msgstr "Войти"
 
@@ -354,16 +366,40 @@ msgstr "Подробнее ..."
 msgid "Сейчас нет доступного голосования"
 msgstr "Сейчас нет доступного голосования"
 
-#: templates/profile_menu.html:12
+#: templates/prevotes.html:3 templates/prevotes.html.py:5
+#, fuzzy
+#| msgid "Сейчас нет доступного голосования"
+msgid "Предложить кандидатов для голосования"
+msgstr "Сейчас нет доступного голосования"
+
+#: templates/prevotes.html:23
+msgid "Фильтр"
+msgstr ""
+
+#: templates/prevotes.html:77
+msgid "Предложить"
+msgstr ""
+
+#: templates/prevotes_success.html:5
+#, fuzzy
+#| msgid "Ваш голос учтен"
+msgid "Ваше предложение учтено"
+msgstr "Ваш голос учтен"
+
+#: templates/profile_menu.html:11
 msgid "Профиль"
 msgstr "Профиль"
 
-#: templates/profile_menu.html:16 templates/voting.html:3
+#: templates/profile_menu.html:15 templates/voting.html:3
 #: templates/voting.html.py:5
 msgid "Голосование"
 msgstr "Голосование"
 
 #: templates/profile_menu.html:20
+msgid "Предложить кандидатов"
+msgstr ""
+
+#: templates/profile_menu.html:24
 msgid "Выйти"
 msgstr "Выйти"
 
@@ -387,6 +423,6 @@ msgstr "Проголосовать"
 msgid "Ваш голос учтен"
 msgstr "Ваш голос учтен"
 
-#: voting/views.py:27
+#: voting/views.py:61
 msgid "Обязательно нужно выбрать одного из представленных кандидатов"
 msgstr "Выберите одного из представленных кандидатов"
