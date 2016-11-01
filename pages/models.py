@@ -30,6 +30,8 @@ class Translatable(models.Model):
         abstract = True
 
 class CustomSettings(Translatable):
+    def __unicode__(self):
+        return "setting" + str(self.pk)
     class Meta:
         verbose_name = u"Настройки"
 
