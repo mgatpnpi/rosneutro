@@ -50,13 +50,22 @@ class PreVoteAdmin(admin.ModelAdmin):
     actions = ['move_to_candidates',]
     list_filter = ['prevoting',]
     def move_to_candidates(self,request, queryset):
+        candidates_pks = []
+        votings_pks = []
         for prevote in queryset:
-            for person in prevote.candidates.all():
-                for voting in prevote.prevoting.voting_set.all():
-                    Candidate.objects.create(
-                            voting = voting,
-                            person = person
-                            )
+            candidates_pks += prevote.candidates.values_list('pk', flat=True)
+            votings_pks +=prevote.prevoting.voting_set.values_list(
+                    'pk',
+                    flat=True
+                    )
+        for voting_pk in set(votings_pks):
+            voting = Voting.objects.get(pk=voting_pk)
+            for person_pk in set(candidates_pks):
+                person = Person.objects.get(pk=person_pk)
+                Candidate.objects.create(
+                        voting = voting,
+                        person = person
+                        )
     move_to_candidates.short_description = u"Создать кандидатов (вкладка Кандидаты)"
 
 admin.site.register(Voting, VotingAdmin)
