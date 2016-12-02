@@ -8,7 +8,7 @@
 
 
 <div class="row">
-{% for candidate in voting.candidate_set.all %}
+{% for candidate in voting.get_candidates %}
 <div class="col-md-8">
 
         <span class="lead">

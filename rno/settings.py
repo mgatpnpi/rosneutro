@@ -49,6 +49,7 @@ DATABASES = {
     }
 }
 
+BROKER_URL = 'amqp://guest:guest@localhost:5672//'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -60,6 +61,7 @@ SECRET_KEY = '7q$gxw_g00e(+nx5#7nm056b(4m(tj2s-9_fwfgg*v79(ck4^l'
 
 EMAIL_PORT = 1025
 EMAIL_HOST = 'localhost'
+FROM_EMAIL = 'noreply@rno.pnpi.spb.ru'
 
 DEFAULT_FROM_EMAIL = 'noreply@rno.pnpi.spb.ru'
 # <<< development settings overrided by localsettings.py
@@ -71,7 +73,7 @@ except:
 
 # Application definition
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -84,8 +86,8 @@ INSTALLED_APPS = (
     'pages',
     'members',
     'news',
-    'voting'
-)
+    'voting',
+    ]
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

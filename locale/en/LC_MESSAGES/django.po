@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-31 02:33-0500\n"
-"PO-Revision-Date: 2016-09-02 13:51+0300\n"
+"POT-Creation-Date: 2016-11-01 04:13-0500\n"
+"PO-Revision-Date: 2016-11-01 14:47+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: members/models.py:15
 msgid "к.ф.-м.н."
@@ -129,17 +129,17 @@ msgstr "Instrumentation"
 msgid "Other"
 msgstr "Other"
 
-#: members/models.py:58 templates/members_list.html:16
+#: members/models.py:58 templates/members_list.html:15
+msgid "Фамилия"
+msgstr "Last name"
+
+#: members/models.py:62 templates/members_list.html:16
 msgid "Имя"
 msgstr "First name"
 
-#: members/models.py:62 templates/members_list.html:17
+#: members/models.py:66 templates/members_list.html:17
 msgid "Отчество"
 msgstr "Middle name"
-
-#: members/models.py:67 templates/members_list.html:15
-msgid "Фамилия"
-msgstr "Last name"
 
 #: members/models.py:70
 msgid "Дата рождения"
@@ -203,7 +203,7 @@ msgstr "Secret entry"
 
 #: members/models.py:124
 msgid "Опубликован"
-msgstr "Online application has been successfully submitted!"
+msgstr "Published"
 
 #: members/views.py:87
 msgid "Такого E-mail нет у зарегистрированых участников"
@@ -213,11 +213,11 @@ msgstr "Your email address is not registered."
 msgid "На ваш E-mail уже выслана ссылка для входа и она еще действует"
 msgstr "The link has been already sent to your email and it is not expired yet"
 
-#: rno/settings.py:119
+#: rno/settings.py:121
 msgid "Russian"
 msgstr "Russian"
 
-#: rno/settings.py:120
+#: rno/settings.py:122
 msgid "English"
 msgstr "English"
 
@@ -239,7 +239,7 @@ msgstr "Seems something broke"
 
 #: templates/base.html:9
 msgid "РОСНЕЙТРО"
-msgstr "ROSNEITRO"
+msgstr "ROSNEUTRO"
 
 #: templates/base.html:33
 msgid "МЕНЮ"
@@ -270,7 +270,7 @@ msgstr "Membership"
 msgid "Редактировать профиль"
 msgstr "Edit profile"
 
-#: templates/member_edit_profile_form.html:17
+#: templates/member_edit_profile_form.html:17 templates/prevotes.html:56
 #: templates/registration_form.html:17
 msgid "обязательно"
 msgstr "required field"
@@ -291,6 +291,18 @@ msgstr "You are signed in as"
 msgid "Теперь вы можете изменять вашу личную информацию"
 msgstr "Now you can change your personal information"
 
+#: templates/member_enter.html:10
+msgid "Вы можете предложить кандидатов для будущего голосования"
+msgstr "You can propose candidates for the future voting"
+
+#: templates/member_enter.html:10 templates/member_enter.html.py:13
+msgid "здесь"
+msgstr "here"
+
+#: templates/member_enter.html:13
+msgid "В настоящий момент Вы можете выбрать председателя РосНейтрО"
+msgstr "At the present moment you can vote for the president of ROSNEUTRO"
+
 #: templates/member_logout.html:5
 msgid "Вы завершили авторизованную сессию"
 msgstr "Your authorization session is closed"
@@ -300,7 +312,7 @@ msgid "Для того чтобы войти снова, запросите но
 msgstr "To sign in again request a new link"
 
 #: templates/member_request_session.html:3
-#: templates/member_request_session.html:5 templates/profile_menu.html:26
+#: templates/member_request_session.html:5 templates/profile_menu.html:30
 msgid "Вход"
 msgstr "Sign In"
 
@@ -353,16 +365,36 @@ msgstr "Expand text ..."
 msgid "Сейчас нет доступного голосования"
 msgstr "No poll available"
 
-#: templates/profile_menu.html:12
+#: templates/prevotes.html:3 templates/prevotes.html.py:5
+msgid "Предложить кандидатов для голосования"
+msgstr "Propose members as candidates for polls"
+
+#: templates/prevotes.html:23
+msgid "Фильтр"
+msgstr "Filter"
+
+#: templates/prevotes.html:77
+msgid "Предложить"
+msgstr "Propose"
+
+#: templates/prevotes_success.html:5
+msgid "Ваше предложение учтено"
+msgstr "Your proposition has been recorded."
+
+#: templates/profile_menu.html:11
 msgid "Профиль"
 msgstr "Profile"
 
-#: templates/profile_menu.html:16 templates/voting.html:3
+#: templates/profile_menu.html:15 templates/voting.html:3
 #: templates/voting.html.py:5
 msgid "Голосование"
 msgstr "Poll"
 
 #: templates/profile_menu.html:20
+msgid "Предложить кандидатов"
+msgstr "Propose candidates"
+
+#: templates/profile_menu.html:24
 msgid "Выйти"
 msgstr "Sign out"
 
@@ -386,6 +418,6 @@ msgstr "Vote"
 msgid "Ваш голос учтен"
 msgstr "Your vote has been recorded."
 
-#: voting/views.py:27
+#: voting/views.py:61
 msgid "Обязательно нужно выбрать одного из представленных кандидатов"
 msgstr "Please choose one of the candidates."

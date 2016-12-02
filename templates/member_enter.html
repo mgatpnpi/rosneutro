@@ -4,4 +4,12 @@
 
 <h1>{% trans 'Вы вошли как' %} {{ user.person.first_name }} {{ user.person.last_name }}</h1>
 <span class="lead">{% trans 'Теперь вы можете изменять вашу личную информацию' %}</span>
+<br/>
+<br/>
+{% if prevoting %}
+<span class="lead">{% trans "Вы можете предложить кандидатов для будущего голосования" %} <a href="{% url 'prevotes'%}">{% trans "здесь"%}</a></span>
+{% endif %}
+{% if voting %}
+<span class="lead">{% trans "В настоящий момент Вы можете выбрать председателя РосНейтрО" %} <a href="{% url 'votes'%}">{% trans "здесь" %}</a></span>
+{% endif %}
 {% endblock %}

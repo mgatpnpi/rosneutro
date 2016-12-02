@@ -148,7 +148,7 @@ class Person(models.Model):
         verbose_name = u"Участник"
         verbose_name_plural = u"Участники"
         ordering = ('last_name', 'first_name', 'middle_name',)
-    
+
 class Secret(models.Model):
     TIME_TO_LIVE = 24 #hours
     created = models.DateTimeField(
@@ -193,7 +193,7 @@ class CustomEmailMessage(models.Model):
             verbose_name = u"Сообщение"
             )
     subscribers_only = models.BooleanField(
-            verbose_name = "Только подписанным",
+            verbose_name = u"Только подписанным",
             default = True
             )
     attachment1 = models.FileField(

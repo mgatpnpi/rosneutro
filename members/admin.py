@@ -15,8 +15,6 @@ class PersonAdmin(admin.ModelAdmin):
             'position',
             'degree',
             'interests',
-            'publications',
-            'approved',
             'confirmed',
             'published',
             'created',

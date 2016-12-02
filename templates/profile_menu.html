@@ -4,8 +4,7 @@
 {% if user.is_authenticated and user.person %}
 	<li class="dropdown">
         <a data-toggle="dropdown" href="#">
-            <span class="glyphicon glyphicon-user"></span>
-			<b class="caret"></b>
+                {{ user.person.first_name }}
         </a>
         <ul class="dropdown-menu">
             <li>
@@ -14,6 +13,11 @@
             {% if voting %}
             <li>
                 <a href="{% url 'votes'%}">{% trans "Голосование" %}</a>
+            </li>
+            {% endif %}
+            {% if prevoting %}
+            <li>
+                <a href="{% url 'prevotes'%}">{% trans "Предложить кандидатов" %}</a>
             </li>
             {% endif %}
             <li>

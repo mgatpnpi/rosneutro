@@ -42,6 +42,30 @@ $(function(){
             }
         }
     });
+   $("input#filter").keyup(function(){
+           $(".checkboxgroup:visible").each(function(){
+               var cbg = $(this);
+               var search = $("input#filter").val().toLowerCase();
+               if( !cbg.children().eq(0).children().eq(0).is(':checked') && cbg.children().eq(1).children().eq(0).text().toLowerCase().indexOf(search) == -1 && cbg.find('.org').text().toLowerCase().indexOf(search) == -1){
+                       cbg.hide();
+               }
+           });
+           $(".checkboxgroup:hidden").each(function(){
+               var cbg = $(this);
+               var search = $("input#filter").val().toLowerCase();
+               if ( cbg.children().eq(1).children().eq(0).text().toLowerCase().indexOf(search) != -1 || cbg.children().eq(1).children().eq(1).text().toLowerCase().indexOf(search) != -1){
+                       cbg.show();
+               }
+           });
+   });
+   $('form').keypress(function(event){
+
+               if (event.keyCode === 10 || event.keyCode === 13) 
+                               event.preventDefault();
+
+                 });
+
+
 });
 </script>
 {% endcompress %}
