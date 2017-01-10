@@ -162,6 +162,7 @@ class Candidate(Translatable):
         verbose_name = u"Кандидат"
         verbose_name_plural = u"Кандидаты"
         unique_together = ['person', 'voting']
+        ordering = ['person']
 
 class CandidateTranslation(Translation):
     class Meta:
