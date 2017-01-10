@@ -54,7 +54,7 @@ class PreVoteAdmin(admin.ModelAdmin):
         votings_pks = []
         for prevote in queryset:
             candidates_pks += prevote.candidates.values_list('pk', flat=True)
-            votings_pks +=prevote.prevoting.voting_set.values_list(
+            votings_pks += prevote.prevoting.voting_set.values_list(
                     'pk',
                     flat=True
                     )
