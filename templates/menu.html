@@ -7,15 +7,6 @@
     <li>
         <a href="/#content" data-toggle="collapse" data-target="#main-menu">{% trans "О Нас" %}</a>
     </li>
-{% if path == '/' %}
-    <li>
-        <a href="/#form-section" data-toggle="collapse" data-target="#main-menu">{% trans "Регистрация" %}</a>
-    </li>
-{% else %}
-    <li>
-        <a href="{% url 'members_registration'%}">{% trans "Регистрация" %}</a>
-    </li>
-{% endif %}
     <li>
         <a href="{% url 'news' 1%}">{% trans "Новости" %}</a>
     </li>
@@ -28,6 +19,15 @@
             <li>
                 <a href="{% url 'message' %}">{% trans "Обращение" %}</a>
             </li>
+        {% if path == '/' %}
+            <li>
+                <a href="/#form-section" data-toggle="collapse" data-target="#main-menu">{% trans "Регистрация" %}</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{% url 'members_registration'%}">{% trans "Регистрация" %}</a>
+            </li>
+        {% endif %}
             <li>
                 <a href="{% url 'members_list'%}">{% trans "Участники" %}</a>
             </li>
