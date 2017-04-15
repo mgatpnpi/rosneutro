@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
+from django.http import HttpResponse
 from .models import Person, CustomEmailMessage
 from .tasks import send_email_message
 from datetime import datetime
+import csv
+
+
 
 class PersonAdmin(admin.ModelAdmin):
     list_display = (
@@ -40,6 +44,52 @@ class PersonAdmin(admin.ModelAdmin):
             'random_string',
             'confirmed',
             ]
+    actions = [
+            'export_to_csv',
+            ]
+    export_fields = [
+            'first_name',
+            'last_name',
+            'middle_name',
+            'birthday',
+            'email',
+            'organization',
+            'position',
+            'degree',
+            ]
+
+    def get_table_fields(self):
+        opts = self.model._meta
+        fields = []
+        for field in opts.fields:
+            if field.name in self.export_fields:
+                fields.append(field)
+        return fields
+
+    def export_to_csv(self, request, queryset):
+        """
+            Generic csv export admin action.
+            based on http://djangosnippets.org/snippets/1697/
+        """
+        fields = self.get_table_fields()
+        field_names = [field.name for field in fields]
+        field_verbose_names = [field.verbose_name.encode(
+                'utf-8'
+                ) for field in fields]
+
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; \
+filename=%s.csv' % unicode(self.model._meta).replace('.', '_')
+
+        writer = csv.writer(response)
+        writer.writerow(field_verbose_names)
+        for obj in queryset:
+            writer.writerow([unicode(getattr(obj, field)).encode(
+                "utf-8",
+                "replace"
+                ) for field in field_names])
+        return response
+
 
 class CustomEmailMessageAdmin(admin.ModelAdmin):
     list_display = (
