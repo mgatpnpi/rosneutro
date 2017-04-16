@@ -90,6 +90,12 @@ filename=%s.csv' % unicode(self.model._meta).replace('.', '_')
                 ) for field in field_names])
         return response
 
+    def export_to_csv_all(self, request, queryset):
+        return self.export_to_csv(request, Person.objects.all())
+
+    export_to_csv.short_description = u"Скачать CSV файл - помеченых галочками"
+    export_to_csv_all.short_description = u"Скачать CSV файл - всех"
+
 
 class CustomEmailMessageAdmin(admin.ModelAdmin):
     list_display = (
