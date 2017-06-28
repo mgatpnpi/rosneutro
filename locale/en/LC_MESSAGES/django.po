@@ -251,7 +251,7 @@ msgstr "link"
 
 #: templates/base.html:34
 msgid "- новый сайт даже лучше!"
-msgstr "- new website is even better!"
+msgstr "- the new website is even better!"
 
 #: templates/base.html:41
 msgid "МЕНЮ"
