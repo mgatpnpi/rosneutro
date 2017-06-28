@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-01 04:13-0500\n"
+"POT-Creation-Date: 2017-06-28 02:23-0500\n"
 "PO-Revision-Date: 2016-11-01 14:47+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -241,7 +241,19 @@ msgstr "Seems something broke"
 msgid "РОСНЕЙТРО"
 msgstr "ROSNEUTRO"
 
+#: templates/base.html:32
+msgid "Этот сайт больше не поддерживается! Перейдите по "
+msgstr "This website is about to close! Hit the "
+
 #: templates/base.html:33
+msgid "ссылке"
+msgstr "link"
+
+#: templates/base.html:34
+msgid "- новый сайт даже лучше!"
+msgstr "- new website is even better!"
+
+#: templates/base.html:41
 msgid "МЕНЮ"
 msgstr "MENU"
 
@@ -261,7 +273,7 @@ msgstr "Russian Neutron Scattering Society"
 msgid "О Нас"
 msgstr "About us"
 
-#: templates/main.html:35 templates/menu.html:12 templates/menu.html.py:16
+#: templates/main.html:35 templates/menu.html:24 templates/menu.html.py:28
 #: templates/registration.html:3 templates/registration.html.py:5
 msgid "Регистрация"
 msgstr "Membership"
@@ -341,15 +353,15 @@ msgstr "Membership verified"
 msgid "Главная"
 msgstr "Home"
 
-#: templates/menu.html:20 templates/news.html:3 templates/news.html.py:7
+#: templates/menu.html:11 templates/news.html:3 templates/news.html.py:7
 msgid "Новости"
 msgstr "News"
 
-#: templates/menu.html:24
+#: templates/menu.html:15
 msgid "Еще ..."
 msgstr "More ..."
 
-#: templates/menu.html:29 templates/message.html:4
+#: templates/menu.html:20 templates/message.html:4
 msgid "Обращение"
 msgstr "Message"
 
@@ -410,7 +422,7 @@ msgstr "Your data has been saved. To complete your registration"
 msgid "На ваш e-mail выслана ссылка для подтверждения"
 msgstr "check your e-mail for the confirmation link."
 
-#: templates/votes_form.html:33
+#: templates/votes_form.html:27
 msgid "Проголосовать"
 msgstr "Vote"
 

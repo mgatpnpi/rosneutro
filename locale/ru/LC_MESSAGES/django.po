@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-01 04:13-0500\n"
+"POT-Creation-Date: 2017-06-28 02:23-0500\n"
 "PO-Revision-Date: 2016-09-02 14:14+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -242,7 +242,19 @@ msgstr "Похоже что-то сломалось"
 msgid "РОСНЕЙТРО"
 msgstr "РОСНЕЙТРО"
 
+#: templates/base.html:32
+msgid "Этот сайт больше не поддерживается! Перейдите по "
+msgstr ""
+
 #: templates/base.html:33
+msgid "ссылке"
+msgstr ""
+
+#: templates/base.html:34
+msgid "- новый сайт даже лучше!"
+msgstr ""
+
+#: templates/base.html:41
 msgid "МЕНЮ"
 msgstr "МЕНЮ"
 
@@ -262,7 +274,7 @@ msgstr "Российское Нейтронографическое Общест
 msgid "О Нас"
 msgstr "О нас"
 
-#: templates/main.html:35 templates/menu.html:12 templates/menu.html.py:16
+#: templates/main.html:35 templates/menu.html:24 templates/menu.html.py:28
 #: templates/registration.html:3 templates/registration.html.py:5
 msgid "Регистрация"
 msgstr "Регистрация"
@@ -342,15 +354,15 @@ msgstr "Членство подтверждено"
 msgid "Главная"
 msgstr "Главная"
 
-#: templates/menu.html:20 templates/news.html:3 templates/news.html.py:7
+#: templates/menu.html:11 templates/news.html:3 templates/news.html.py:7
 msgid "Новости"
 msgstr "Новости"
 
-#: templates/menu.html:24
+#: templates/menu.html:15
 msgid "Еще ..."
 msgstr "Еще ..."
 
-#: templates/menu.html:29 templates/message.html:4
+#: templates/menu.html:20 templates/message.html:4
 msgid "Обращение"
 msgstr "Обращение"
 
@@ -415,7 +427,7 @@ msgstr "Ваши данные сохранены. "
 msgid "На ваш e-mail выслана ссылка для подтверждения"
 msgstr "На ваш email выслана ссылка для подтверждения регистрации."
 
-#: templates/votes_form.html:33
+#: templates/votes_form.html:27
 msgid "Проголосовать"
 msgstr "Проголосовать"
 
