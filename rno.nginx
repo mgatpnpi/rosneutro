@@ -1,0 +1,105 @@
+map $http_user_agent $wxp {
+	default 0;
+	"~Gecko" 0;
+	"~Windows NT 5" 1;
+}
+
+server {
+	listen 80;
+	server_name rno.pnpi.spb.ru;
+	if ($wxp = 0){
+	  return 302 https://$server_name$request_uri;
+	}
+	access_log /var/log/nginx/rno-access.log;
+	error_log /var/log/nginx/rno-error.log;
+	client_max_body_size 250M;
+	keepalive_timeout   78600;
+
+
+
+	location /static/
+	{
+		alias /home/rno/rno/static/;
+		access_log      off;
+	}
+
+	location /media/
+	{
+		alias /home/rno/rno/media/;
+		access_log      off;
+	}
+
+	rewrite ^(?!/archive)(.*\.php)$ /archive$1.html permanent;
+
+	location /archive/
+	{
+		alias /home/rno/rno/archive/;
+                try_files "${uri}_${args}" $uri 404.html;
+		access_log      off;
+	}
+
+	location /
+	{
+		uwsgi_pass unix:/tmp/rno.socket;
+        	include /etc/nginx/uwsgi_params;
+	}
+	
+}
+server
+{
+	if ($wxp = 1){
+	  return 302 http://$server_name$request_uri;
+	}
+	listen 443 ssl http2;
+	server_name rno.pnpi.spb.ru;
+	resolver 192.168.14.195;
+	ssl_stapling on;
+	ssl on;
+	ssl_certificate /etc/letsencrypt/live/rno.pnpi.spb.ru/fullchain.pem;
+	ssl_certificate_key /etc/letsencrypt/live/rno.pnpi.spb.ru/privkey.pem;
+	ssl_dhparam /etc/nginx/ssl/dhparam.pem;
+	ssl_session_timeout 24h;
+	ssl_session_cache shared:SSL:5m;
+	ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+	ssl_ciphers kEECDH+AES128:kEECDH:kEDH:-3DES:kRSA+AES128:kEDH+3DES:DES-CBC3-SHA:!RC4:!aNULL:!eNULL:!MD5:!EXPORT:!LOW:!SEED:!CAMELLIA:!IDEA:!PSK:!SRP:!SSLv2;
+
+	ssl_prefer_server_ciphers on;
+	# Add headers to serve security related headers
+	add_header Strict-Transport-Security "max-age=15768000; includeSubDomains; preload;";
+	add_header X-Content-Type-Options nosniff;
+	add_header X-Frame-Options "SAMEORIGIN";
+	add_header Content-Security-Policy-Report-Only "default-src https:; script-src https: 'unsafe-eval' 'unsafe-inline'; style-src https: 'unsafe-inline'; img-src https: data:; font-src https: data:; report-uri /csp-report";
+
+	access_log /var/log/nginx/rno-access.log;
+	error_log /var/log/nginx/rno-error.log;
+	client_max_body_size 250M;
+	keepalive_timeout   78600;
+
+	location /static/
+	{
+		alias /home/rno/rno/static/;
+		access_log      off;
+	}
+
+	location /media/
+	{
+		alias /home/rno/rno/media/;
+		access_log      off;
+	}
+
+	rewrite ^(?!/archive)(.*\.php)$ /archive$1.html permanent;
+
+	location /archive/
+	{
+		alias /home/rno/rno/archive/;
+                try_files "${uri}_${args}" $uri 404.html;
+		access_log      off;
+	}
+
+	location /
+	{
+		uwsgi_pass unix:/tmp/rno.socket;
+        	include /etc/nginx/uwsgi_params;
+	}
+
+}

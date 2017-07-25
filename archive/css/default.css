@@ -1,0 +1,408 @@
+<!--
+/* основные параметры страницы */
+BODY, P, DIV {
+        FONT-SIZE: 12px;
+        FONT-FAMILY: Arial, Helvetica, Tahoma, Verdana, sans-serif; /* Tahoma, Helvetica */
+        /*BACKGROUND-COLOR: #ffffff;*/
+        COLOR: #000000;
+        MARGIN: 0px;
+}
+
+/* таблица-шапка */
+TABLE.hheadtable {
+        BORDER: 0px;
+        WIDTH: 100%;
+        BACKGROUND-COLOR: #008837;
+        MARGIN: 0px;
+        PADDING: 0px;
+        EMPTY-CELLS: show;
+        BORDER-COLLAPSE: collapse;
+        border-spacing: 0px;
+}
+/* €чейка таблицы-шапки */
+TABLE TR TD.hheadtable2 {
+        BORDER:0px;
+        MARGIN: 0px;
+        PADDING: 0px;
+}
+
+/* таблица формы запроса */
+TABLE.qform { BORDER: 0px; WIDTH: 100%; MARGIN: 6px 2px 6px 2px; PADDING: 0px; BORDER-COLLAPSE: collapse; border-spacing: 0px; }
+
+/* €чейка формы сера€ */
+TABLE TD.qformTD1 { BACKGROUND-COLOR: #C5C8D0; COLOR: #000000; FONT-FAMILY: Tahoma, Arial, Verdana, Sans-serif; FONT-SIZE:12px; FONT-WEIGHT:bold; PADDING: 3px 3px 3px 3px; VERTICAL-ALIGN: middle; }
+
+/* €чейка формы сера€ */
+TABLE TD.qformTD3 { border:#8EC6FF; border-width:1px; border-style:solid; BACKGROUND-COLOR:#FFE1AE; COLOR:#000000; FONT-FAMILY: Verdana, Tahoma, Arial, Sans-serif; FONT-SIZE:12px; FONT-WEIGHT:bold; PADDING: 3px 3px 3px 3px; VERTICAL-ALIGN: middle; text-align: center}
+
+/* €чейка формы светло-сера€ */
+TABLE TD.qformTD2 { BACKGROUND-COLOR: #f0f1f3; COLOR: #000000; FONT-FAMILY: Tahoma, Arial, Verdana, Sans-serif; FONT-SIZE:11px; PADDING: 3px 3px 3px 3px; VERTICAL-ALIGN: middle; }
+
+/* пуста€ бела€ строка в таблице высотой в 1 пиксел */
+TABLE TR TD.hheadsp {
+        BACKGROUND-COLOR: #ffffff;
+        height:1px;
+        MARGIN: 0px;
+        PADDING: 0px;
+        BORDER:0px;
+}
+
+/* таблица отдел€юща€ шапку от основной таблицы */
+TABLE.hheadlinetext {
+        BORDER:0px;
+        MARGIN: 0px;
+        PADDING: 0px;
+}
+TABLE TR TD.hheadlinetext2 {
+        FONT-WEIGHT:bold;
+        FONT-SIZE:10px;
+        FONT-FAMILY: Tahoma, Arial, Verdana, Sans-serif;
+        VERTICAL-ALIGN:middle;
+        BACKGROUND-COLOR: #666666;
+        COLOR: #ffffff;
+}
+
+/* безпор€дковый список */
+UL.mylist, OL.mylist {
+        FONT-SIZE: 12px;
+        MARGIN-TOP: 0px;
+        MARGIN-BOTTOM: 5px;
+}
+
+OL.mylist LI {        PADDING: 1px 5px 5px 0px;
+        TEXT-ALIGN: justify;}
+
+/* item зеленый квадратик - безпор€дковый список */
+UL LI.mylist2 {
+        PADDING: 1px 5px 2px 0px;
+        color:#027a42;
+        TEXT-ALIGN: justify;
+        FONT-SIZE: 12px;
+        list-style-image: url("../pics/bullet.gif");
+}
+/* item черный квадратик - безпор€дковый список */
+UL LI.mylist1 {
+        COLOR: #000000;
+        PADDING: 1px 5px 2px 0px;
+        TEXT-ALIGN: justify;
+        FONT-SIZE: 12px;
+        list-style-image: url("../pics/li2.gif");
+}
+
+/* */
+OL LI.myordlist1 {
+        PADDING: 0px 2px 7px 0px;
+        color:#000000;
+        TEXT-ALIGN: justify;
+        FONT-SIZE: 12px;
+        FONT-FAMILY: Arial, Helvetica, Tahoma, Verdana,sans-serif;
+}
+
+/* зеленые айтамы дл€ заголовков нормального размера*/
+.greenheader {
+        FONT-SIZE: 12px;
+        text-decoration: none;
+        FONT-FAMILY: Arial, Helvetica, Tahoma, Verdana, sans-serif;
+        font-weight: bold;
+        /*font-style: italic;*/
+        color:#027a42;
+}
+
+/* таблица дл€ картинок с рамкой серого цвета */
+TABLE.imgtable {
+        BORDER: 0px;
+        MARGIN: 5px 20px 5px 20px;
+        PADDING: 0px;
+        BORDER-COLLAPSE: collapse;
+        BORDER-SPACING: 0px;
+}
+/* таблица дл€ картинок, €чейка дл€ картинки */
+TABLE TR TD.imgtableTD1 {
+        border-color:#d0d0d0;
+        border-width:1px;
+        border-style:solid;
+}
+/* таблица дл€ картинок, €чейка дл€ подписи */
+TABLE TR TD.imgtableTD2 {
+        text-align: justify;
+        FONT-SIZE: 12px;
+}
+
+/* тавлица дл€ новостей справа */
+TABLE.newstable {
+        BORDER:0px;
+        MARGIN: 0px;
+        PADDING: 0px;
+        BORDER-COLLAPSE: collapse;
+        border-spacing: 0px;
+}
+/* €чейка заголовка новостей */
+TD.newshead {
+        background-color:#dddddd;
+        color:black;
+        font-size: 11px;
+        text-align: left;
+        font-weight: bold;
+        FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+        font-style: normal;
+}
+/* €чейка items новостей */
+TD.newsitem {
+        color: black;
+        font-size: 11px;
+        text-align: left;
+        FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+        font-style: normal;
+}
+
+TD.newsitem_delim {	background-image: url("../pics/sh1.gif");
+	background-repeat: repeat-x;
+	background-position: top left;
+	height:5px;}
+
+/* ссылка дл€ обычного черного текста без начального подчеркивани€ */
+A.textlink:link { color:#000000; text-decoration: none }
+A.textlink:visited { color:#000000; text-decoration: none }
+A.textlink:hover { color:#808080; text-decoration: underline }
+A.textlink:active { color:#A00000; text-decoration : none }
+
+/* ссылка зеленого цвета без начального подчеркивани€ */
+A.gtextlink:link { color:#01502B; text-decoration: none }
+A.gtextlink:visited { color:#01502B; text-decoration: none }
+A.gtextlink:hover { color:#01502B; text-decoration: underline }
+A.gtextlink:active { color:#01502B; text-decoration : none }
+
+/* ссылка зеленого цвета c начальным подчеркиванием */
+A.ugtextlink:link { color:#027a42; text-decoration: underline }
+A.ugtextlink:visited { color:#027a42; text-decoration: underline }
+A.ugtextlink:hover { color:#229a62; text-decoration: underline }
+A.ugtextlink:active { color:#027a42; text-decoration : underline }
+
+/* ссылка дл€ обычного черного текста с начальным подчеркиванием */
+A.utextlink:link { color:#000000; text-decoration: underline }
+A.utextlink:visited { color:#000000; text-decoration: underline }
+A.utextlink:hover { color:#808080; text-decoration: underline }
+A.utextlink:active { color:#A00000; text-decoration: underline }
+
+/* ссылка дл€ меню слева */
+A.menuleftlink:link { color:#000000; text-decoration: none }
+A.menuleftlink:visited { color:#000000; text-decoration: none }
+A.menuleftlink:hover { color:#000000; text-decoration: underline }
+A.menuleftlink:active { color:#000000; text-decoration: none }
+
+/* все остальные ссылки */
+A:link { color:#000000; text-decoration: underline }
+A:visited { color:#000000; text-decoration: underline }
+A:hover { color:#B00000; text-decoration: underline }
+A:active { color:#A00000; text-decoration: underline }
+
+/* зеленый заголовок, аналог зеленого линка */
+.greenheader {
+        font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif;;
+        font-size:13px;
+        color: #01502B;
+}
+
+/* простой текст */
+.text {
+        font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+        font-size:12px;
+        color: black;
+        text-align: justify;
+        MARGIN: 5px 0px 7px 0px;
+}
+
+/* текст в формах */
+.formtext {
+        font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif;
+        font-size:12px;
+        color: black;
+}
+
+/* подсветка слов а абстракте */
+#hightlight {
+        color:black;
+        font-weight:bold;
+        background-color:#f0f0f0;
+        border:1px;
+        border-color:#a0a0a0;
+        border-style:dotted;
+}
+
+/* меню слева - €чейка заголовка */
+TABLE TR TD.menuhead {
+        font-family: Tahoma, Arial, Helvetica, sans-serif;
+        background-color:#b3b3b3;
+        color:#000000;
+        font-weight: bold;
+        font-size:12px;
+}
+
+/* €чейка, €вл€юща€с€ фоном дл€ меню слева */
+TABLE TR TD.leftmenu { background-color:#eeeeee; }
+
+/* меню слева - строка с подсветкой */
+TABLE TR.menuitem1 {
+        background-color:#eeeeee;
+}
+/* меню слева - строка с подсветкой 2 */
+TABLE TR.menuitem2 {
+        cursor: pointer;
+        background-color: #dddddd;
+}
+/* меню слева - €чейка */
+TABLE TR TD.menucell {
+        font-family: Tahoma, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+}
+
+/* горизонтальна€ лини€ зелена€ */
+HR.hr1 {
+        background-color:#027a42;
+        color:#027a42;
+        height:1px;
+        border:0px;
+        MARGIN: 2px;
+        PADDING: 0px;
+}
+/* горизонтальна€ лини€ сера€ */
+HR.hr2 {
+        background-color:#A0A0A0;
+        color:#A0A0A0;
+        height:1px;
+        border:0px;
+        MARGIN: 2px;
+        PADDING: 0px;
+}
+
+/* ссылки внизу страницы */
+A.linkbottom:link { color:#ffffff; text-decoration: none }
+A.linkbottom:visited { color:#ffffff; text-decoration: none }
+A.linkbottom:hover { color:#ffff00; text-decoration: underline }
+A.linkbottom:active { color:#ffffff; text-decoration : none }
+
+/* нижнее зеленое горизонтальное меню */
+TABLE TR TD.bheadsp { background-color:#008837; font-family: Tahoma, Arial, Helvetica, sans-serif; font-weight:normal; font-size:11px; color:#ffffff; }
+
+/* ссылка на другой €зык */
+A.linklang:link { color:#ffffff; text-decoration: none }
+A.linklang:visited { color:#ffffff; text-decoration: none }
+A.linklang:hover { color:#ffff00; text-decoration: underline }
+A.linklang:active { color:#A0A000; text-decoration : none }
+
+/* греческие символы */
+SPAN.symb2 { font-family: Serif; font-size:125%; }
+
+/* изменение размера символов */
+#size8 { FONT-SIZE: 8px; }
+#size9 { FONT-SIZE: 9px; }
+#size10 { FONT-SIZE: 10px; }
+#size11 { FONT-SIZE: 11px; }
+#size12 { FONT-SIZE: 12px; }
+#size13 { FONT-SIZE: 13px; }
+#size14 { FONT-SIZE: 14px; }
+#size15 { FONT-SIZE: 15px; }
+#size16 { FONT-SIZE: 16px; }
+
+/* первые буквы в параграфе */
+#fl { font-size:150%; color:#027a42; background-color:#eeeeee; }
+
+/* выделение цветом */
+#cred { color: red; }
+#cblue { color: #0000ff; }
+#cgreen { color: #01502B; }
+#gray { color: #808080; }
+#cyellow { color: yellow; }
+#bold { font-weight: bold; }
+#hlback { background-color: yellow; }
+
+#aligncenter { text-align:center; }
+#alignright { text-align:right; }
+#alignleft { text-align:left; }
+
+/* мелкий шрифт */
+SMALL { FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif; }
+
+/* заголовка */
+H2 { font-family: Tahoma, Arial, Helvetica, sans-serif; font-size:18px; margin:7px 2px 2px 2px; padding:0px 0px 0px 0px; }
+H3 { font-family: Tahoma, Arial, Helvetica, sans-serif; font-size:15px; margin:7px 2px 2px 2px; padding:0px 0px 0px 0px; }
+H4 { font-family: Tahoma, Arial, Helvetica, sans-serif; font-size:13px; margin:7px 2px 2px 2px; padding:0px 0px 0px 0px; }
+
+SUP, SUB { font-size:10px }
+
+/* таблица дл€ текста абстракта */
+TABLE.utb1 { margin:0px; background-color:#c0c0c0; border-width:1px; border-style:solid; border-color:gray; }
+TABLE.utb1 TR TD { font-size:13px; text-align:center; background-color:white; padding:5px; }
+#utb1head { background-color:#008837; color:white; font-weight:bold; }
+#utb1ligth { background-color:#efefef; font-weight:bold; }
+
+/* green tab */
+TABLE.tabgr {
+        BORDER: 0px;
+        WIDTH: 100%;
+        MARGIN: 0px;
+        PADDING: 0px;
+        EMPTY-CELLS: show;
+        BORDER-COLLAPSE: collapse;
+        border-spacing: 0px;
+}
+
+TABLE TR TD.tabgr {
+        BORDER:0px;
+        MARGIN: 0px;
+        PADDING: 0px;
+}
+
+TABLE TR TD.tabgr2 {
+        BORDER:0px;
+        MARGIN: 0px;
+        PADDING: 0px;
+        BACKGROUND-COLOR: #42a76b;
+        COLOR: #ffffff;
+        font-size: 12px;
+        font-weight:bold;
+}
+
+form.news {
+     font-size: 12px;
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     color: #000000;
+     background: #EEEEEE;
+     border: 1px solid #808080;
+     padding: 10px;
+}
+
+form.news input, form.news textarea, form.news select {
+     font-size: 12px;
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     color: #000000;
+}
+
+table.newsform tr td {
+     font-size: 12px;
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     border: 0px;
+     text-align: center;
+}
+
+TABLE TR #bggrey {	background: #E5E5E5;}
+
+TABLE TR #bgdark {
+	background: #808080;
+	color: #FFFFFF;
+	font-weight:bold;
+	text-align: center;
+}
+
+IMG.imgover {	border-width: 1px;
+	border-color: #CCCCCC;
+	border-style: solid;
+	margin:2px;
+}
+IMG.imgover:hover {	border-width: 1px;
+	border-color: #808080;
+	border-style: solid;
+	margin: 2px;
+}
+
+// -->

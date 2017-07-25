@@ -1,0 +1,78 @@
+body {background: #111111; font-family: tahoma; font-size: 12px; color: #d2d2d2; margin: 0; padding: 0}
+img {border:0;}
+
+a:link {text-decoration: underline; color: #d2d2d2}
+a:visited {text-decoration: underline; color: #d2d2d2}
+a:active {text-decoration: underline; color: #d2d2d2}
+a:hover {text-decoration: underline; color: #f2f2f2}
+
+#imglist a img {filter:alpha(opacity=70); opacity:0.7; -khtml-opacity:0.7;}
+
+#main .top {margin: 90px auto 0 auto; width: 965px; height: 40px; text-align: left}
+#main .nav {padding: 5px; cursor: pointer; color: #a6a6a6; font-size: 14px; font-weight: bold; }
+#main .content {height: auto;  background: #2a2a2a; padding: 20px 0 20px 0; border-top:10px #181818 solid; border-bottom:4px #181818 solid;}
+#main .inside {width: 950px; text-align: left; margin: 0 auto}
+#main .content .box {background-color:#222222; padding:4px; margin:5px 10px 5px 0; width:170px; height:115px; float:left;}
+#main .bottom {height: 30px; padding: 20px 0 0 0; margin: 0 auto; color: #222222; width: 950px; text-align: left}
+#main .bottom a:link {color:#222222}
+#main .bottom a:active {color:#222222}
+#main .bottom a:visited {color:#222222}
+#main .bottom a:hover {color:#f2f2f2; text-decoration: underline}
+#main .floatfix {clear: both}
+#main .loading {opacity:0.3; background:url(../img/loading2.gif) no-repeat; background-position:center center; min-height: 100px;}
+#main .imgload {background: url(../img/loading2.gif) no-repeat center center;width:170px; height:115px; }
+#main .catlistload { filter:alpha(opacity=20); opacity:0.2; }
+
+#paginator {float: left; margin-top: 20px; font-size: 12px; color: #606060; clear: both}
+#paginator .prev {cursor: pointer}
+#paginator .next {cursor: pointer}
+#imglist {text-align: center}
+#about {line-height: 150%}
+#load {background: url(../img/loading2.gif) no-repeat center center;width:20px; height:20px; display: none }
+
+#config {float:right; cursor: pointer}
+
+#main, #main ul { list-style: none; }
+#main, #main * { padding: 0; margin: 0; }
+
+#main li.dropdown {float: left; padding: 5px 10px 4px 10px;  margin-right: 20px}
+#main li.dropdown a { display: block;}
+#main li.dropdown a:hover {text-decoration: none}
+#main li.hover {background: #000; padding: 5px 10px 4px 10px;  border-top: 4px solid #2a2a2a;}
+
+#main li.dropdown ul {margin:0 5px 0 -10px; padding: 10px 0 10px 0; display: none; text-align: left;  position: absolute; z-index: 99; background-color: #000; width: 160px}
+#main li.dropdown:hover ul { display: block; }
+#main li.dropdown ul li a { padding: 3px 30px 3px 15px; font-weight: normal; font-size: 12px}
+#main li.dropdown ul li a:hover {  color: #000}
+#main li.dropdown ul li:hover { color: #000; background: #d2d2d2}
+#main span.count {float: right; margin-right: -15px; opacity:0.5; }
+
+#lightbox{position: absolute;left: 0;width: 100%;z-index: 100;text-align: center;line-height: 0;}
+#lightbox a img{ border: none; }
+#outerImageContainer{position: relative;background-color: #000;width: 250px;height: 250px;margin: 0 auto;}
+#imageContainer{padding: 10px;}
+#loading{position: absolute;top: 40%;left: 0%;height: 25%;width: 100%;text-align: center;line-height: 0;}
+#hoverNav{position: absolute;top: 0;left: 0;height: 100%;width: 100%;z-index: 10;}
+#imageContainer>#hoverNav{ left: 0;}
+#hoverNav a{ outline: none;}
+#prevLink, #nextLink{width: 49%;height: 100%;background: transparent url(../img/blank.gif) no-repeat; /* Trick IE into showing hover */display: block;}
+#prevLink { left: 0; float: left;}
+#nextLink { right: 0; float: right;}
+#prevLink:hover, #prevLink:visited:hover { background: url(../img/prev.gif) left 50% no-repeat; }
+#nextLink:hover, #nextLink:visited:hover { background: url(../img/next.gif) right 50% no-repeat; }
+#nextLinkText, #prevLinkText {color: #FF9834;font-weight:bold;text-decoration: none;}
+#nextLinkText {padding-left: 20px;}
+#prevLinkText {padding-right: 20px;}
+.ontop #imageData {padding-top: 5px;}
+#imageDataContainer{font: 10px Verdana, Helvetica, sans-serif;background-color: #000;margin: 0 auto;line-height: 1.4em;color:#d2d2d2;}
+#imageData{padding:0 10px;}
+#imageData #imageDetails{ width: 70%; float: left; text-align: left; }	
+#imageData #caption{ font-weight: bold;	}
+#imageData #numberDisplay{ display: block; clear: left; padding-bottom: 1.0em;	color:#d2d2d2; opacity:0.5; filter:alpha(opacity=50);}
+#imageData #bottomNavClose{ width: 66px; float: right;  padding-bottom: 0.7em;	}
+#imageData #helpDisplay {clear: left; float: left; display: block; }
+#overlay{position: absolute;top: 0;left: 0;z-index: 90;width: 100%;height: 500px;background-color: #000;filter:alpha(opacity=40);-moz-opacity: 0.4;opacity: 0.4;display: none;}
+.clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+* html>body .clearfix {display: inline-block; width: 100%;}
+* html .clearfix {height: 1%;}	
+#lightboxIframe {display: none;}	

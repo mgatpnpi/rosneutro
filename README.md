@@ -1,17 +1,30 @@
-##First version of Rosneutro website
+## Second reincarnation of Rosneutro website
 
 This repo is for archaeologists and recruiters
 
-Originally it was hosted at rno.pnpi.spb.ru and was not as good as new one at rosneutro.ru
 
-Here is some screenshots
+The first website was coded in PHP MySQL and published with Apache webserver in 2008 by Sergey Seminikhin at PNPI
 
-![about](https://raw.githubusercontent.com/mgatpnpi/rosneutro/master/static/demo/1.png)
+Originaly it was hosted at rno.pnpi.spb.ru
 
-![message](https://raw.githubusercontent.com/mgatpnpi/rosneutro/master/static/demo/2.png)
 
-![aboutmobile](https://raw.githubusercontent.com/mgatpnpi/rosneutro/master/static/demo/3.png)
+Present work holds static pages of this first website in ./archive/ for SEO compability
 
-![menumobile](https://raw.githubusercontent.com/mgatpnpi/rosneutro/master/static/demo/4.png)
+It coded in Python with Django framework in short period featuring translations, members registration, members emailing, some editable pages, news feed and voting for the head of the community
 
-![registrationformmobile](https://raw.githubusercontent.com/mgatpnpi/rosneutro/master/static/demo/5.png)
+.. but something went wrong and it was replaced with third reincarnation at rosneutro.ru
+
+As only developer of this website I(owner of mgatpnpi at github) decided to publish the source code 
+
+
+Here is some screenshots of last hours of this website been published
+
+![about](static/demo/1.png)
+
+![message](static/demo/2.png)
+
+![aboutmobile](static/demo/3.png)
+
+![menumobile](static/demo/4.png)
+
+![registrationformmobile](static/demo/5.png)
