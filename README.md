@@ -10,14 +10,15 @@ Originaly it was hosted at rno.pnpi.spb.ru
 
 Present work holds static pages of this first website in ./archive/ for SEO compability
 
-It coded in Python with Django framework in short period featuring translations, members registration, members emailing, some editable pages, news feed and voting for the head of the community
+It coded in Python with Django framework in short period of time featuring translations, members registration, members emailing, some editable pages, news feed and voting for the head of the community
 
 .. but something went wrong and it was replaced with third reincarnation at rosneutro.ru
+
 
 As only developer of this website I(owner of mgatpnpi at github) decided to publish the source code 
 
 
-Here is some screenshots of last hours of this website been published
+Here is some screenshots of last hours of this website had been published
 
 ![about](static/demo/1.png)
 
