@@ -24,8 +24,3 @@ Here is some screenshots of last hours of this website had been published
 
 ![message](static/demo/2.png)
 
-![aboutmobile](static/demo/3.png)
-
-![menumobile](static/demo/4.png)
-
-![registrationformmobile](static/demo/5.png)
